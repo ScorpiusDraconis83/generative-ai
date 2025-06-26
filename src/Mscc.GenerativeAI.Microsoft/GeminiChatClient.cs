@@ -20,6 +20,17 @@ public sealed class GeminiChatClient : mea.IChatClient
     private readonly mea.ChatClientMetadata _metadata;
 
     /// <summary>
+    /// Creates a new instance of the <see cref="GeminiChatClient"/> class for the specified Gemini API client.
+    /// </summary>
+    /// <param name="client">The underlying client.</param>
+    /// <exception cref="ArgumentNullException">Thrown when the specified client is null.</exception>
+    public GeminiChatClient(GenerativeModel client)
+    {
+        _client = client ?? throw new ArgumentNullException(nameof(client));
+        _metadata = new(ProviderName, null, client.Model);
+    }
+    
+    /// <summary>
     /// Creates an instance of the Gemini API client using Google AI.
     /// </summary>
     /// <param name="apiKey">API key provided by Google AI Studio</param>
@@ -54,7 +65,7 @@ public sealed class GeminiChatClient : mea.IChatClient
 
         var request = MicrosoftAi.AbstractionMapper.ToGeminiGenerateContentRequest(this, messages, options);
         var requestOptions = MicrosoftAi.AbstractionMapper.ToGeminiGenerateContentRequestOptions(options);
-		var response = await _client.GenerateContent(request, requestOptions);
+		var response = await _client.GenerateContent(request, requestOptions, cancellationToken);
 		return MicrosoftAi.AbstractionMapper.ToChatResponse(response) ?? new mea.ChatResponse([]);
     }
 
@@ -76,6 +87,7 @@ public sealed class GeminiChatClient : mea.IChatClient
     object? mea.IChatClient.GetService(Type serviceType, object? serviceKey) =>
         serviceKey is not null ? null :
         serviceType == typeof(mea.ChatClientMetadata) ? _metadata :
+        serviceType == typeof(GenerativeModel) ? _client :
         serviceType?.IsInstanceOfType(this) is true ? this :
         null;
         
