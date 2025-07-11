@@ -32,7 +32,7 @@ namespace Mscc.GenerativeAI
         // Gemini 1.5
         public const string GeminiPro = Gemini15Pro;
         public const string Gemini15Pro = "gemini-1.5-pro";
-        public const string Gemini15Pro001 = "gemini-1.5-pro-001";
+        //public const string Gemini15Pro001 = "gemini-1.5-pro-001";
         public const string Gemini15Pro002 = "gemini-1.5-pro-002";
         public const string Gemini15ProTuning = Gemini15Pro002;
         public const string Gemini15ProPreview = "gemini-1.5-pro-preview-0409";
@@ -42,16 +42,16 @@ namespace Mscc.GenerativeAI
         public const string Gemini15ProLatest = "gemini-1.5-pro-latest";
         public const string Gemini15Flash = "gemini-1.5-flash";
         public const string Gemini15FlashLatest = "gemini-1.5-flash-latest";
-        public const string Gemini15Flash001 = "gemini-1.5-flash-001";
+        //public const string Gemini15Flash001 = "gemini-1.5-flash-001";
         public const string Gemini15Flash002 = "gemini-1.5-flash-002";
-        public const string Gemini15Flash001Tuning = "gemini-1.5-flash-001-tuning";
-        public const string Gemini15FlashTuning = Gemini15Flash001Tuning;
+        //public const string Gemini15Flash001Tuning = "gemini-1.5-flash-001-tuning";
+        //public const string Gemini15FlashTuning = Gemini15Flash001Tuning;
         public const string Gemini15Flash8B = "gemini-1.5-flash-8b";
         public const string Gemini15Flash8B001 = "gemini-1.5-flash-8b-001";
         public const string Gemini15Flash8BLatest = "gemini-1.5-flash-8b-latest";
         public const string Gemini15FlashExperimental0827 = GeminiExperimental1206;
-        public const string Gemini15FlashExperimental0827_8B = "gemini-1.5-flash-8b-exp-0827";
-        public const string Gemini15FlashExperimental0924_8B = "gemini-1.5-flash-8b-exp-0924";
+        //public const string Gemini15FlashExperimental0827_8B = "gemini-1.5-flash-8b-exp-0827";
+        //public const string Gemini15FlashExperimental0924_8B = "gemini-1.5-flash-8b-exp-0924";
 
         public const string GeminiExperimental = GeminiExperimental1206;
         public const string GeminiExperimental1114 = GeminiExperimental1206;
@@ -74,8 +74,9 @@ namespace Mscc.GenerativeAI
         public const string Gemini20FlashLive = Gemini20FlashLive001;
         public const string Gemini20FlashLive001 = "gemini-2.0-flash-live-001";
         public const string Gemini20FlashExperimental = "gemini-2.0-flash-exp";
-        public const string Gemini20FlashImageGeneration = Gemini20FlashPreviewImageGeneration;
+        public const string Gemini20FlashImageGeneration = Gemini20FlashImageGenerationPreview;
         public const string Gemini20FlashPreviewImageGeneration = "gemini-2.0-flash-preview-image-generation";
+        public const string Gemini20FlashImageGenerationPreview = "gemini-2.0-flash-preview-image-generation";
         public const string Gemini20FlashImageGenerationExperimental = "gemini-2.0-flash-exp-image-generation";
         public const string Gemini20FlashThinking = Gemini20FlashThinkingExperimental;
         public const string Gemini20FlashThinkingExperimental = "gemini-2.0-flash-thinking-exp";
@@ -88,23 +89,30 @@ namespace Mscc.GenerativeAI
         public const string GeminiEmbeddingExperimental0307 = "gemini-embedding-exp-03-07";
 
         // Gemini 2.5
-        public const string Gemini25Flash = Gemini25FlashPreview;
+        public const string Gemini25Flash = "gemini-2.5-flash";
         public const string Gemini25FlashPreview = Gemini25FlashPreview0520;
         public const string Gemini25FlashPreview0417 = "gemini-2.5-flash-preview-04-17";
         public const string Gemini25FlashPreview0520 = "gemini-2.5-flash-preview-05-20";
+        public const string Gemini25FlashLite = Gemini25FlashLitePreview;
+        public const string Gemini25FlashLitePreview = Gemini25FlashLitePreview0617;
+        public const string Gemini25FlashLitePreview0617 = "gemini-2.5-flash-lite-preview-06-17";
         public const string Gemini25FlashThinking = Gemini25FlashPreviewThinking;
         public const string Gemini25FlashPreviewThinking = Gemini25FlashPreview0417Thinking;
         public const string Gemini25FlashPreview0417Thinking = "gemini-2.5-flash-preview-04-17-thinking";
         public const string Gemini25FlashPreviewTts = "gemini-2.5-flash-preview-tts";
         public const string Gemini25FlashPreviewNativeAudio = "gemini-2.5-flash-preview-native-audio-dialog";
         public const string Gemini25FlashPreviewNativeAudioThinking = "gemini-2.5-flash-exp-native-audio-thinking-dialog";
-        public const string Gemini25Pro = Gemini25ProExperimental;
+        public const string Gemini25FlashPreviewNativeAudioDialog = "gemini-2.5-flash-preview-native-audio-dialog-rai-v3";
+        public const string Gemini25Pro = "gemini-2.5-pro";
         public const string Gemini25ProExperimental = Gemini25ProExperimental0325;
         public const string Gemini25ProExperimental0325 = "gemini-2.5-pro-exp-03-25";
-        public const string Gemini25ProPreview = Gemini25ProPreview0506;
+        public const string Gemini25ProPreview = Gemini25ProPreview0605;
         public const string Gemini25ProPreview0325 = "gemini-2.5-pro-preview-03-25";
         public const string Gemini25ProPreview0506 = "gemini-2.5-pro-preview-05-06";
+        public const string Gemini25ProPreview0605 = "gemini-2.5-pro-preview-06-05";
         public const string Gemini25ProPreviewTts = "gemini-2.5-pro-preview-tts";
+        public const string Gemini25LiveFlash = Gemini25LiveFlashPreview;
+        public const string Gemini25LiveFlashPreview = "gemini-2.5-flash-live-preview";
 
         // Gemma 3
         public const string Gemma3 = Gemma3_27B;
@@ -113,6 +121,7 @@ namespace Mscc.GenerativeAI
         public const string Gemma3_12B = "gemma-3-12b-it";
         public const string Gemma3_27B = "gemma-3-27b-it";
         public const string Gemma3n = Gemma3n_E4B;
+        public const string Gemma3n_E2B = "gemma-3n-e2b-it";
         public const string Gemma3n_E4B = "gemma-3n-e4b-it";
 
         // PaLM 2 models
@@ -174,9 +183,13 @@ namespace Mscc.GenerativeAI
 
         // Models for Imagen on Vertex AI - image generation and editing
         public const string Imagen4 = Imagen4Preview;
-        public const string Imagen4Preview = "imagen-4.0-generate-preview-05-20";
-        public const string Imagen4Ultra = Imagen4UltraExperimental;
-        public const string Imagen4UltraExperimental = "imagen-4.0-ultra-generate-exp-05-20";
+        public const string Imagen4Preview = Imagen4Preview0606;
+        public const string Imagen4Preview0520 = "imagen-4.0-generate-preview-05-20";
+        public const string Imagen4Preview0606 = "imagen-4.0-generate-preview-06-06";
+        public const string Imagen4Ultra = Imagen4UltraPreview;
+        public const string Imagen4UltraPreview = Imagen4UltraPreview0606;
+        public const string Imagen4UltraPreview0520 = "imagen-4.0-ultra-generate-exp-05-20";
+        public const string Imagen4UltraPreview0606 = "imagen-4.0-ultra-generate-preview-06-06";
         public const string Imagen3 = Imagen3Generate002;
         public const string Imagen3Generate001 = "imagen-3.0-generate-001";
         public const string Imagen3Generate002 = "imagen-3.0-generate-002";
