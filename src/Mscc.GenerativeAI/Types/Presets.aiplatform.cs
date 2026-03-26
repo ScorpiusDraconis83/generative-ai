@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Preset configuration for example-based explanations
 	/// </summary>
-	public partial class Presets
+	public sealed partial class Presets
 	{
 		/// <summary>
 		/// The modality of the uploaded model, which automatically configures the distance measurement and feature normalization for the underlying example index and queries. If your model does not precisely fit one of these types, it is okay to choose the closest type.

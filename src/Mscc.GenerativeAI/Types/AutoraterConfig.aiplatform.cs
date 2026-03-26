@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The configs for autorater. This is applicable to both EvaluateInstances and EvaluateDataset.
 	/// </summary>
-	public partial class AutoraterConfig
+	public sealed partial class AutoraterConfig
 	{
 		/// <summary>
 		/// Optional. The fully qualified name of the publisher model or tuned autorater endpoint to use. Publisher model format: <c>projects/{project}/locations/{location}/publishers/*/models/*</c> Tuned model endpoint format: <c>projects/{project}/locations/{location}/endpoints/{endpoint}</c>

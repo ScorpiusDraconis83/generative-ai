@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Represents an environment variable present in a Container or Python Module.
 	/// </summary>
-	public partial class EnvVar
+	public sealed partial class EnvVar
 	{
 		/// <summary>
 		/// Required. Name of the environment variable. Must be a valid C identifier.

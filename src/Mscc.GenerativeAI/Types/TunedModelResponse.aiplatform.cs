@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The Model Registry Model and Online Prediction Endpoint associated with this TuningJob.
 	/// </summary>
-	public partial class TunedModelResponse
+	public sealed partial class TunedModelResponse
 	{
 
 		/// <summary>

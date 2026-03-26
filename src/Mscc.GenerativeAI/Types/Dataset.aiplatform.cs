@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A collection of DataItems and Annotations on them.
 	/// </summary>
-	public partial class Dataset
+	public sealed partial class Dataset
 	{
 
 		/// <summary>

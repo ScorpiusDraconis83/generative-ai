@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// RagCorpus status.
 	/// </summary>
-	public partial class CorpusStatus
+	public sealed partial class CorpusStatus
 	{
 		/// <summary>
 		/// Output only. Only when the <c>state</c> field is ERROR.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tuning spec for Partner models.
 	/// </summary>
-	public partial class PartnerModelTuningSpec
+	public sealed partial class PartnerModelTuningSpec
 	{
 		/// <summary>
 		/// Hyperparameters for tuning. The accepted hyper_parameters and their valid range of values will differ depending on the base model.

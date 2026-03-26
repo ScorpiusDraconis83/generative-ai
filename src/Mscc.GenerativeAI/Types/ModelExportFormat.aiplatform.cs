@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Represents export format supported by the Model. All formats export to Google Cloud Storage.
 	/// </summary>
-	public partial class ModelExportFormat
+	public sealed partial class ModelExportFormat
 	{
 		/// <summary>
 		/// Output only. The content of this Model that may be exported.

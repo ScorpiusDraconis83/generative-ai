@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Example-based explainability that returns the nearest neighbors from the provided dataset.
 	/// </summary>
-	public partial class Examples
+	public sealed partial class Examples
 	{
 		/// <summary>
 		/// The Cloud Storage input instances.

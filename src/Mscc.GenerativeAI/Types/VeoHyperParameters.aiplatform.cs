@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Hyperparameters for Veo.
 	/// </summary>
-	public partial class VeoHyperParameters
+	public sealed partial class VeoHyperParameters
 	{
 		/// <summary>
 		/// Optional. Number of complete passes the model makes over the entire training dataset during training.

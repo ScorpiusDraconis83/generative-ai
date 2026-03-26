@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The output of a batch request. This is returned in the <c>BatchGenerateContentResponse</c> or the <c>GenerateContentBatch.output</c> field.
 	/// </summary>
-	public partial class GenerateContentBatchOutput
+	public sealed partial class GenerateContentBatchOutput
 	{
 		/// <summary>
 		/// Output only. The responses to the requests in the batch. Returned when the batch was built using inlined requests. The responses will be in the same order as the input requests.

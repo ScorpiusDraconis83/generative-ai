@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Counts the number of tokens in the <c>prompt</c> sent to a model. Models may tokenize text differently, so each model may return a different <c>token_count</c>.
 	/// </summary>
-	public partial class CountTokensRequest
+	public sealed partial class CountTokensRequest
 	{
 		/// <summary>
 		/// Optional. The input given to the model as a prompt. This field is ignored when <c>generate_content_request</c> is set.

@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A RagFile contains user data for chunking, embedding and indexing.
 	/// </summary>
-	public partial class RagFile
+	public sealed partial class RagFile
 	{
 		/// <summary>
 		/// Output only. Timestamp when this RagFile was created.

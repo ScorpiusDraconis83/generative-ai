@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Retrieval config.
 	/// </summary>
-	public partial class RetrievalConfig
+	public sealed partial class RetrievalConfig
 	{
 
     }

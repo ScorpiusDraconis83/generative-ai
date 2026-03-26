@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for the Vector DB to use for RAG.
 	/// </summary>
-	public partial class RagVectorDbConfig
+	public sealed partial class RagVectorDbConfig
 	{
 		/// <summary>
 		/// Authentication config for the chosen Vector DB.

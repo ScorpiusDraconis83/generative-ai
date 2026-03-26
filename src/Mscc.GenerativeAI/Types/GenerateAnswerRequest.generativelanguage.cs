@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request to generate a grounded answer from the <c>Model</c>.
 	/// </summary>
-	public partial class GenerateAnswerRequest
+	public sealed partial class GenerateAnswerRequest
 	{
 		/// <summary>
 		/// Required. Style in which answers should be returned.

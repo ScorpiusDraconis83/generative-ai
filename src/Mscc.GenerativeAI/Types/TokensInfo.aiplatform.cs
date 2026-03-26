@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tokens info with a list of tokens and the corresponding list of token ids.
 	/// </summary>
-	public partial class TokensInfo
+	public sealed partial class TokensInfo
 	{
 		/// <summary>
 		/// Optional. Optional fields for the role from the corresponding Content.

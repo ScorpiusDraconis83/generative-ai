@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Noise sigma by features. Noise sigma represents the standard deviation of the gaussian kernel that will be used to add noise to interpolated inputs prior to computing gradients.
 	/// </summary>
-	public partial class FeatureNoiseSigma
+	public sealed partial class FeatureNoiseSigma
 	{
 		/// <summary>
 		/// Noise sigma per feature. No noise is added to features that are not set.

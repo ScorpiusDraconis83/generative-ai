@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Noise sigma for a single feature.
 	/// </summary>
-	public partial class FeatureNoiseSigmaNoiseSigmaForFeature
+	public sealed partial class FeatureNoiseSigmaNoiseSigmaForFeature
 	{
 		/// <summary>
 		/// The name of the input feature for which noise sigma is provided. The features are defined in explanation metadata inputs.

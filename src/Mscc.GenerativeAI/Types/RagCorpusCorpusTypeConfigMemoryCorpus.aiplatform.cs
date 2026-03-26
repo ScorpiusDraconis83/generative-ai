@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for the memory corpus.
 	/// </summary>
-	public partial class RagCorpusCorpusTypeConfigMemoryCorpus
+	public sealed partial class RagCorpusCorpusTypeConfigMemoryCorpus
 	{
 		/// <summary>
 		/// The LLM parser to use for the memory corpus.

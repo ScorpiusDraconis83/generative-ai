@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Statistics computed for datasets used for preference optimization.
 	/// </summary>
-	public partial class PreferenceOptimizationDataStats
+	public sealed partial class PreferenceOptimizationDataStats
 	{
 		/// <summary>
 		/// Output only. A partial sample of the indices (starting from 1) of the dropped examples.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The type and ID of the Google Drive resource.
 	/// </summary>
-	public partial class GoogleDriveSourceResourceId
+	public sealed partial class GoogleDriveSourceResourceId
 	{
 		/// <summary>
 		/// Required. The ID of the Google Drive resource.

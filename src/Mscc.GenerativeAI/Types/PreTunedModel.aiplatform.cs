@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A pre-tuned model for continuous tuning.
 	/// </summary>
-	public partial class PreTunedModel
+	public sealed partial class PreTunedModel
 	{
 		/// <summary>
 		/// Output only. The name of the base model this PreTunedModel was tuned from.

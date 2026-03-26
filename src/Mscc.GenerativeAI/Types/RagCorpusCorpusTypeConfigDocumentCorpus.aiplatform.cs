@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for the document corpus.
 	/// </summary>
-	public partial class RagCorpusCorpusTypeConfigDocumentCorpus
+	public sealed partial class RagCorpusCorpusTypeConfigDocumentCorpus
 	{
     }
 }

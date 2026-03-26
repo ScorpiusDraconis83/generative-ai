@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request for <c>CreateFile</c>.
 	/// </summary>
-	public partial class CreateFileRequest
+	public sealed partial class CreateFileRequest
 	{
 		/// <summary>
 		/// Optional. Metadata for the file to create.

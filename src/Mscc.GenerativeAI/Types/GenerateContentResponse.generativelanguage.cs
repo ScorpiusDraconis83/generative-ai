@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response from the model supporting multiple candidate responses. Safety ratings and content filtering are reported for both prompt in <c>GenerateContentResponse.prompt_feedback</c> and for each candidate in <c>finish_reason</c> and in <c>safety_ratings</c>. The API: - Returns either all requested candidates or none of them - Returns no candidates at all only if there was something wrong with the prompt (check <c>prompt_feedback</c>) - Reports feedback on each candidate in <c>finish_reason</c> and <c>safety_ratings</c>.
 	/// </summary>
-	public partial class GenerateContentResponse
+	public sealed partial class GenerateContentResponse
 	{
 		/// <summary>
 		/// Candidate responses from the model.

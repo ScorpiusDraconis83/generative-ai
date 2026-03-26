@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// URI based data for function response.
 	/// </summary>
-	public partial class FunctionResponseFileData
+	public sealed partial class FunctionResponseFileData
 	{
 		/// <summary>
 		/// Optional. Display name of the file data. Used to provide a label or filename to distinguish file datas. This field is only returned in PromptMessage for prompt management. It is currently used in the Gemini GenerateContent calls only when server side tools (code_execution, google_search, and url_context) are enabled.

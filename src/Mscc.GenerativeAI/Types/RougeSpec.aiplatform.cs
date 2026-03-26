@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Spec for rouge score metric - calculates the recall of n-grams in prediction as compared to reference - returns a score ranging between 0 and 1.
 	/// </summary>
-	public partial class RougeSpec
+	public sealed partial class RougeSpec
 	{
 		/// <summary>
 		/// Optional. Supported rouge types are rougen[1-9], rougeL, and rougeLsum.

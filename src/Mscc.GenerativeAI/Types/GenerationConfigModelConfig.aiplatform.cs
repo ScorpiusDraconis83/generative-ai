@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for model selection.
 	/// </summary>
-	public partial class GenerationConfigModelConfig
+	public sealed partial class GenerationConfigModelConfig
 	{
 		/// <summary>
 		/// Required. Feature selection preference.

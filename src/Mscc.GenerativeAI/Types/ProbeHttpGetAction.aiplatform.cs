@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// HttpGetAction describes an action based on HTTP Get requests.
 	/// </summary>
-	public partial class ProbeHttpGetAction
+	public sealed partial class ProbeHttpGetAction
 	{
 		/// <summary>
 		/// Host name to connect to, defaults to the model serving container&apos;s IP. You probably want to set &quot;Host&quot; in httpHeaders instead.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Computer Use tool type.
 	/// </summary>
-	public partial class ComputerUse
+	public sealed partial class ComputerUse
 	{
 		/// <summary>
 		/// Required. The environment being operated.

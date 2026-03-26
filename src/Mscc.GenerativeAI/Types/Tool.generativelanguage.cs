@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tool details that the model may use to generate response. A <c>Tool</c> is a piece of code that enables the system to interact with external systems to perform an action, or set of actions, outside of knowledge and scope of the model. Next ID: 15
 	/// </summary>
-	public partial class Tool
+	public sealed partial class Tool
 	{
 		/// <summary>
 		/// Optional. Enables the model to execute code as part of generation.

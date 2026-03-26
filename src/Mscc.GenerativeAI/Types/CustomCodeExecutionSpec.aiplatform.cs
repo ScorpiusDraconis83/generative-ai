@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Specificies a metric that is populated by evaluating user-defined Python code.
 	/// </summary>
-	public partial class CustomCodeExecutionSpec
+	public sealed partial class CustomCodeExecutionSpec
 	{
 		/// <summary>
 		/// Required. Python function. Expected user to define the following function, e.g.: def evaluate(instance: dict[str, Any]) -&gt; float: Please include this function signature in the code snippet. Instance is the evaluation instance, any fields populated in the instance are available to the function as instance[field_name]. Example: Example input: ``<c> instance= EvaluationInstance( response=EvaluationInstance.InstanceData(text=&quot;The answer is 4.&quot;), reference=EvaluationInstance.InstanceData(text=&quot;4&quot;) ) </c>`<c> Example converted input: </c>`<c> { &apos;response&apos;: {&apos;text&apos;: &apos;The answer is 4.&apos;}, &apos;reference&apos;: {&apos;text&apos;: &apos;4&apos;} } </c>`<c> Example python function: </c>`<c> def evaluate(instance: dict[str, Any]) -&gt; float: if instance&apos;response&apos; == instance&apos;reference&apos;: return 1.0 return 0.0 </c>`` CustomCodeExecutionSpec is also supported in Batch Evaluation (EvalDataset RPC) and Tuning Evaluation. Each line in the input jsonl file will be converted to dict[str, Any] and passed to the evaluation function.

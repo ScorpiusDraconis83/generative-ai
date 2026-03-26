@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Record for a single tuning step.
 	/// </summary>
-	public partial class TuningSnapshot
+	public sealed partial class TuningSnapshot
 	{
 		/// <summary>
 		/// Output only. The timestamp when this metric was computed.

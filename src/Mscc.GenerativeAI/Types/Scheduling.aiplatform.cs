@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// All parameters related to queuing and scheduling of custom jobs.
 	/// </summary>
-	public partial class Scheduling
+	public sealed partial class Scheduling
 	{
 		/// <summary>
 		/// Optional. Indicates if the job should retry for internal errors after the job starts running. If true, overrides <c>Scheduling.restart_job_on_worker_restart</c> to false.

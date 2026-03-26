@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Chunk from context retrieved by the file search tool.
 	/// </summary>
-	public partial class RetrievedContext
+	public sealed partial class RetrievedContext
 	{
 		/// <summary>
 		/// Optional. User-provided metadata about the retrieved context.

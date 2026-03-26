@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The response from the model, including candidate completions.
 	/// </summary>
-	public partial class GenerateTextResponse
+	public sealed partial class GenerateTextResponse
 	{
 		/// <summary>
 		/// Candidate responses from the model.

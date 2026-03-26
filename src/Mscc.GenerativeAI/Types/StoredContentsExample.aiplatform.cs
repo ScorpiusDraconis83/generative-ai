@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A ContentsExample to be used with GenerateContent alongside information required for storage and retrieval with Example Store.
 	/// </summary>
-	public partial class StoredContentsExample
+	public sealed partial class StoredContentsExample
 	{
 		/// <summary>
 		/// Required. The example to be used with GenerateContent.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// An attribution method that computes the Aumann-Shapley value taking advantage of the model&apos;s fully differentiable structure. Refer to this paper for more details: https://arxiv.org/abs/1703.01365
 	/// </summary>
-	public partial class IntegratedGradientsAttribution
+	public sealed partial class IntegratedGradientsAttribution
 	{
 		/// <summary>
 		/// Config for IG with blur baseline. When enabled, a linear path from the maximally blurred image to the input image is created. Using a blurred baseline instead of zero (black image) is motivated by the BlurIG approach explained here: https://arxiv.org/abs/2004.03383

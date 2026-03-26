@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A request to create an ephemeral authentication token.
 	/// </summary>
-	public partial class AuthToken
+	public sealed partial class AuthToken
 	{
 		/// <summary>
 		/// Optional. Input only. Immutable. Configuration specific to <c>BidiGenerateContent</c>.

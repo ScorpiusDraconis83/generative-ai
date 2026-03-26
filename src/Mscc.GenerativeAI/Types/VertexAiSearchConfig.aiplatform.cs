@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for the Vertex AI Search.
 	/// </summary>
-	public partial class VertexAiSearchConfig
+	public sealed partial class VertexAiSearchConfig
 	{
 		/// <summary>
 		/// Vertex AI Search Serving Config resource full name. For example, <c>projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config}</c> or <c>projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/servingConfigs/{serving_config}</c>.

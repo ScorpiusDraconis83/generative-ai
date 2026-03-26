@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for Google Service Account Authentication.
 	/// </summary>
-	public partial class AuthConfigGoogleServiceAccountConfig
+	public sealed partial class AuthConfigGoogleServiceAccountConfig
 	{
 		/// <summary>
 		/// Optional. The service account that the extension execution service runs as. - If the service account is specified, the <c>iam.serviceAccounts.getAccessToken</c> permission should be granted to Vertex AI Extension Service Agent (https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents) on the specified service account. - If not specified, the Vertex AI Extension Service Agent will be used to execute the Extension.

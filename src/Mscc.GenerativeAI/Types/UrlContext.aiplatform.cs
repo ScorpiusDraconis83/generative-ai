@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tool to support URL context.
 	/// </summary>
-	public partial class UrlContext
+	public sealed partial class UrlContext
 	{
     }
 }

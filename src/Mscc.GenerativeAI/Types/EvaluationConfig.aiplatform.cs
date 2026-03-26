@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Evaluation Config for Tuning Job.
 	/// </summary>
-	public partial class EvaluationConfig
+	public sealed partial class EvaluationConfig
 	{
 		/// <summary>
 		/// Optional. Autorater config for evaluation.

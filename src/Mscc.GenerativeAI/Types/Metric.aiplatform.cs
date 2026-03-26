@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The metric used for running evaluations.
 	/// </summary>
-	public partial class Metric
+	public sealed partial class Metric
 	{
 		/// <summary>
 		/// Optional. The aggregation metrics to use.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response from <c>ListDocuments</c> containing a paginated list of <c>Document</c>s. The <c>Document</c>s are sorted by ascending <c>document.create_time</c>.
 	/// </summary>
-	public partial class ListDocumentsResponse
+	public sealed partial class ListDocumentsResponse
 	{
 		/// <summary>
 		/// The returned <c>Document</c>s.

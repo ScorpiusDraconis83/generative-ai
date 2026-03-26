@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Distribution computed over a tuning dataset.
 	/// </summary>
-	public partial class DatasetDistribution
+	public sealed partial class DatasetDistribution
 	{
 		/// <summary>
 		/// Output only. Defines the histogram bucket.

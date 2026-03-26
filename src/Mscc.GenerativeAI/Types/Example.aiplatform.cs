@@ -19,7 +19,7 @@ using System;
 
 namespace Mscc.GenerativeAI.Types
 {
-	public partial class Example
+	public sealed partial class Example
 	{
 
 		/// <summary>

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for user oauth.
 	/// </summary>
-	public partial class AuthConfigOauthConfig
+	public sealed partial class AuthConfigOauthConfig
 	{
 		/// <summary>
 		/// Access token for extension endpoint. Only used to propagate token from [[ExecuteExtensionRequest.runtime_auth_config]] at request time.

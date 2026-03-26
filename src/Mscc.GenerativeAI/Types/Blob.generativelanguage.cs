@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Raw media bytes. Text should not be sent as raw bytes, use the &apos;text&apos; field.
 	/// </summary>
-	public partial class Blob
+	public sealed partial class Blob
 	{
 		/// <summary>
 		/// Raw bytes for media formats.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// User provided filter to limit retrieval based on <c>Chunk</c> or <c>Document</c> level metadata values. Example (genre = drama OR genre = action): key = &quot;document.custom_metadata.genre&quot; conditions = [{string_value = &quot;drama&quot;, operation = EQUAL}, {string_value = &quot;action&quot;, operation = EQUAL}]
 	/// </summary>
-	public partial class MetadataFilter
+	public sealed partial class MetadataFilter
 	{
 		/// <summary>
 		/// Required. The <c>Condition</c>s for the given key that will trigger this filter. Multiple <c>Condition</c>s are joined by logical ORs.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response message for [PredictionService.Predict].
 	/// </summary>
-	public partial class PredictResponse
+	public sealed partial class PredictResponse
 	{
 		/// <summary>
 		/// The outputs of the prediction call.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A list of floats representing the embedding.
 	/// </summary>
-	public partial class Embedding
+	public sealed partial class Embedding
 	{
     }
 }

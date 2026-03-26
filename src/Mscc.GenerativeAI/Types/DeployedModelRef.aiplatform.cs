@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Points to a DeployedModel.
 	/// </summary>
-	public partial class DeployedModelRef
+	public sealed partial class DeployedModelRef
 	{
 		/// <summary>
 		/// Immutable. The ID of the Checkpoint deployed in the DeployedModel.

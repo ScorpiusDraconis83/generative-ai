@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Standard web search for grounding and related configurations.
 	/// </summary>
-	public partial class WebSearch
+	public sealed partial class WebSearch
 	{
     }
 }

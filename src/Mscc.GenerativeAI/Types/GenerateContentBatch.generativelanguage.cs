@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A resource representing a batch of <c>GenerateContent</c> requests.
 	/// </summary>
-	public partial class GenerateContentBatch
+	public sealed partial class GenerateContentBatch
 	{
 		/// <summary>
 		/// Output only. Stats about the batch.

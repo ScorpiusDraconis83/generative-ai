@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Batch request to get embeddings from the model for a list of prompts.
 	/// </summary>
-	public partial class BatchEmbedContentsRequest
+	public sealed partial class BatchEmbedContentsRequest
 	{
 		/// <summary>
 		/// Required. Embed requests for the batch. The model in each of these requests must match the model specified <c>BatchEmbedContentsRequest.model</c>.

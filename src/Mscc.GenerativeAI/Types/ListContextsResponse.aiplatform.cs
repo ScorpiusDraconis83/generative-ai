@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response message for MetadataService.ListContexts.
 	/// </summary>
-	public partial class ListContextsResponse
+	public sealed partial class ListContextsResponse
 	{
 		/// <summary>
 		/// The Contexts retrieved from the MetadataStore.

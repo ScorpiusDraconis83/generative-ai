@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for user OIDC auth.
 	/// </summary>
-	public partial class AuthConfigOidcConfig
+	public sealed partial class AuthConfigOidcConfig
 	{
 		/// <summary>
 		/// OpenID Connect formatted ID token for extension endpoint. Only used to propagate token from [[ExecuteExtensionRequest.runtime_auth_config]] at request time.

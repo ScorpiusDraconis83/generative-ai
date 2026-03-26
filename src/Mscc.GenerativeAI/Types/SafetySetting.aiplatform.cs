@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A safety setting that affects the safety-blocking behavior. A SafetySetting consists of a harm category and a threshold for that category.
 	/// </summary>
-	public partial class SafetySetting
+	public sealed partial class SafetySetting
 	{
 
 		/// <summary>

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Specification for a computation based metric.
 	/// </summary>
-	public partial class ComputationBasedMetricSpec
+	public sealed partial class ComputationBasedMetricSpec
 	{
 		/// <summary>
 		/// Optional. A map of parameters for the metric, e.g. {&quot;rouge_type&quot;: &quot;rougeL&quot;}.

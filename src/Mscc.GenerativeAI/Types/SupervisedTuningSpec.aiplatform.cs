@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tuning Spec for Supervised Tuning for first party models.
 	/// </summary>
-	public partial class SupervisedTuningSpec
+	public sealed partial class SupervisedTuningSpec
 	{
 		/// <summary>
 		/// Optional. Evaluation Config for Tuning Job.

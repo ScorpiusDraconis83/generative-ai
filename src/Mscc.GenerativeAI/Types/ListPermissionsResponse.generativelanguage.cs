@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response from <c>ListPermissions</c> containing a paginated list of permissions.
 	/// </summary>
-	public partial class ListPermissionsResponse
+	public sealed partial class ListPermissionsResponse
 	{
 		/// <summary>
 		/// A token, which can be sent as <c>page_token</c> to retrieve the next page. If this field is omitted, there are no more pages.

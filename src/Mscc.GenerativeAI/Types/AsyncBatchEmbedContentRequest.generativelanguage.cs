@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request for an <c>AsyncBatchEmbedContent</c> operation.
 	/// </summary>
-	public partial class AsyncBatchEmbedContentRequest
+	public sealed partial class AsyncBatchEmbedContentRequest
 	{
 		/// <summary>
 		/// Required. The batch to create.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A file generated on behalf of a user.
 	/// </summary>
-	public partial class GeneratedFile
+	public sealed partial class GeneratedFile
 	{
 		/// <summary>
 		/// Error details if the GeneratedFile ends up in the STATE_FAILED state.

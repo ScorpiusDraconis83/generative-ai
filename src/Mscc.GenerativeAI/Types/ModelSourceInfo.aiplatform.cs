@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Detail description of the source information of the model.
 	/// </summary>
-	public partial class ModelSourceInfo
+	public sealed partial class ModelSourceInfo
 	{
 		/// <summary>
 		/// If this Model is copy of another Model. If true then source_type pertains to the original.

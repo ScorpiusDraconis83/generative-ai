@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Identifier for a <c>Chunk</c> retrieved via Semantic Retriever specified in the <c>GenerateAnswerRequest</c> using <c>SemanticRetrieverConfig</c>.
 	/// </summary>
-	public partial class SemanticRetrieverChunk
+	public sealed partial class SemanticRetrieverChunk
 	{
 		/// <summary>
 		/// Output only. Name of the <c>Chunk</c> containing the attributed text. Example: <c>corpora/123/documents/abc/chunks/xyz</c>

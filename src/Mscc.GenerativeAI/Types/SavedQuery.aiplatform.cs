@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A SavedQuery is a view of the dataset. It references a subset of annotations by problem type and filters.
 	/// </summary>
-	public partial class SavedQuery
+	public sealed partial class SavedQuery
 	{
 		/// <summary>
 		/// Output only. Filters on the Annotations in the dataset.

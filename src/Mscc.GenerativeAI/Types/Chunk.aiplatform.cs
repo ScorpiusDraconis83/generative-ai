@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Container for bytes-encoded data such as video frame, audio sample, or a complete binary/text data.
 	/// </summary>
-	public partial class Chunk
+	public sealed partial class Chunk
 	{
 		/// <summary>
 		/// Optional. Metadata that is associated with the data in the payload.

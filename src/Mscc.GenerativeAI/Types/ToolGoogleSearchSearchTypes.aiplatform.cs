@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Different types of search that can be enabled on the GoogleSearch tool.
 	/// </summary>
-	public partial class ToolGoogleSearchSearchTypes
+	public sealed partial class ToolGoogleSearchSearchTypes
 	{
 		/// <summary>
 		/// Optional. Setting this field enables image search. Image bytes are returned.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configuration for a multi-speaker text-to-speech request.
 	/// </summary>
-	public partial class MultiSpeakerVoiceConfig
+	public sealed partial class MultiSpeakerVoiceConfig
 	{
 
     }

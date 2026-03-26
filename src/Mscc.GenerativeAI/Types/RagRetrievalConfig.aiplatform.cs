@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Specifies the context retrieval config.
 	/// </summary>
-	public partial class RagRetrievalConfig
+	public sealed partial class RagRetrievalConfig
 	{
 		/// <summary>
 		/// Optional. Config for filters.

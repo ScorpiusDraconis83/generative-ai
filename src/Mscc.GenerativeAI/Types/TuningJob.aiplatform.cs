@@ -24,7 +24,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Represents a TuningJob that runs with Google owned models.
 	/// </summary>
-	public partial class TuningJob
+	public sealed partial class TuningJob
 	{
 		/// <summary>
 		/// The base model that is being tuned. See [Supported models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).

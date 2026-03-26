@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Identifier for the source contributing to this attribution.
 	/// </summary>
-	public partial class AttributionSourceId
+	public sealed partial class AttributionSourceId
 	{
 		/// <summary>
 		/// Identifier for an inline passage.

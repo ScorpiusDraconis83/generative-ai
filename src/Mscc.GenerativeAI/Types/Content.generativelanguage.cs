@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The base structured datatype containing multi-part content of a message. A <c>Content</c> includes a <c>role</c> field designating the producer of the <c>Content</c> and a <c>parts</c> field containing multi-part data that contains the content of the message turn.
 	/// </summary>
-	public partial class Content
+	public sealed partial class Content
 	{
     }
 }

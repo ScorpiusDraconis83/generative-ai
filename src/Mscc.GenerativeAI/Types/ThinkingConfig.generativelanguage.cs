@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for thinking features.
 	/// </summary>
-	public partial class ThinkingConfig
+	public sealed partial class ThinkingConfig
 	{
 		/// <summary>
 		/// Indicates whether to include thoughts in the response. If true, thoughts are returned only when available.

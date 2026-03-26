@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The config for the default RAG-managed Vector DB.
 	/// </summary>
-	public partial class RagVectorDbConfigRagManagedDb
+	public sealed partial class RagVectorDbConfigRagManagedDb
 	{
 		/// <summary>
 		/// Performs an ANN search on RagCorpus. Use this if you have a lot of files (&gt; 10K) in your RagCorpus and want to reduce the search latency.

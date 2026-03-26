@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The results from an evaluation run performed by the EvaluationService.
 	/// </summary>
-	public partial class EvaluateDatasetResponse
+	public sealed partial class EvaluateDatasetResponse
 	{
 		/// <summary>
 		/// Output only. Aggregation statistics derived from results of EvaluationService.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Specification for an LLM based metric.
 	/// </summary>
-	public partial class LLMBasedMetricSpec
+	public sealed partial class LLMBasedMetricSpec
 	{
 		/// <summary>
 		/// Optional. Optional additional configuration for the metric.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Options for generating the search key from the conversation history.
 	/// </summary>
-	public partial class StoredContentsExampleSearchKeyGenerationMethod
+	public sealed partial class StoredContentsExampleSearchKeyGenerationMethod
 	{
 		/// <summary>
 		/// Use only the last entry of the conversation history (<c>contents_example.contents</c>) as the search key.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response with CachedContents list.
 	/// </summary>
-	public partial class ListCachedContentsResponse
+	public sealed partial class ListCachedContentsResponse
 	{
 		/// <summary>
 		/// List of cached contents.

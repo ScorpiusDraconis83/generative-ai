@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Statistics computed over a tuning dataset.
 	/// </summary>
-	public partial class DatasetStats
+	public sealed partial class DatasetStats
 	{
 		/// <summary>
 		/// Output only. A partial sample of the indices (starting from 1) of the dropped examples.

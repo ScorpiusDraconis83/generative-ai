@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Google search entry point.
 	/// </summary>
-	public partial class SearchEntryPoint
+	public sealed partial class SearchEntryPoint
 	{
 		/// <summary>
 		/// Optional. Web content snippet that can be embedded in a web page or an app webview.

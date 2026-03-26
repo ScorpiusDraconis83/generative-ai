@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Spec for exact match metric - returns 1 if prediction and reference exactly matches, otherwise 0.
 	/// </summary>
-	public partial class ExactMatchSpec
+	public sealed partial class ExactMatchSpec
 	{
     }
 }

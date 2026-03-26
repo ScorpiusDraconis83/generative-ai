@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The Jira source for the ImportRagFilesRequest.
 	/// </summary>
-	public partial class JiraSource
+	public sealed partial class JiraSource
 	{
 		/// <summary>
 		/// Required. The Jira queries.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response message for [PredictionService.GenerateContent].
 	/// </summary>
-	public partial class GenerateContentResponse
+	public sealed partial class GenerateContentResponse
 	{
 
 		/// <summary>

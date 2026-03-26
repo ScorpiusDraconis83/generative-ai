@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// SlackChannel contains the Slack channel ID and the time range to import.
 	/// </summary>
-	public partial class SlackSourceSlackChannelsSlackChannel
+	public sealed partial class SlackSourceSlackChannelsSlackChannel
 	{
 		/// <summary>
 		/// Required. The Slack channel ID.

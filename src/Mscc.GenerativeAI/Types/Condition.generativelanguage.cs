@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Filter condition applicable to a single key.
 	/// </summary>
-	public partial class Condition
+	public sealed partial class Condition
 	{
 		/// <summary>
 		/// The numeric value to filter the metadata on.

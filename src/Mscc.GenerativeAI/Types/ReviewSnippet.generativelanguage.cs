@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Encapsulates a snippet of a user review that answers a question about the features of a specific place in Google Maps.
 	/// </summary>
-	public partial class ReviewSnippet
+	public sealed partial class ReviewSnippet
 	{
 		/// <summary>
 		/// A link that corresponds to the user review on Google Maps.

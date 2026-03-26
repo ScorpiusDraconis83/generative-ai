@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Spec for bleu score metric - calculates the precision of n-grams in the prediction as compared to reference - returns a score ranging between 0 to 1.
 	/// </summary>
-	public partial class BleuSpec
+	public sealed partial class BleuSpec
 	{
 		/// <summary>
 		/// Optional. Whether to use_effective_order to compute bleu score.

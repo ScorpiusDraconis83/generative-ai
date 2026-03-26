@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// GrpcAction checks the health of a container using a gRPC service.
 	/// </summary>
-	public partial class ProbeGrpcAction
+	public sealed partial class ProbeGrpcAction
 	{
 		/// <summary>
 		/// Port number of the gRPC service. Number must be in the range 1 to 65535.

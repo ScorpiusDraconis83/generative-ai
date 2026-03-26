@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request for <c>ImportFile</c> to import a File API file with a <c>FileSearchStore</c>. LINT.IfChange(ImportFileRequest)
 	/// </summary>
-	public partial class ImportFileRequest
+	public sealed partial class ImportFileRequest
 	{
 		/// <summary>
 		/// Optional. Config for telling the service how to chunk the file. If not provided, the service will use default parameters.

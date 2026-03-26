@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request to get a text embedding from the model.
 	/// </summary>
-	public partial class EmbedTextRequest
+	public sealed partial class EmbedTextRequest
 	{
 		/// <summary>
 		/// Required. The model name to use with the format model=models/{model}.

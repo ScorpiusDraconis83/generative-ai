@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Metadata for a chunk.
 	/// </summary>
-	public partial class Metadata
+	public sealed partial class Metadata
 	{
 		/// <summary>
 		/// Optional. Attributes attached to the data. The keys have semantic conventions and the consumers of the attributes should know how to deserialize the value bytes based on the keys.

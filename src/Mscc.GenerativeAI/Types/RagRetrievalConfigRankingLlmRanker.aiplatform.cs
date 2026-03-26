@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for LlmRanker.
 	/// </summary>
-	public partial class RagRetrievalConfigRankingLlmRanker
+	public sealed partial class RagRetrievalConfigRankingLlmRanker
 	{
 		/// <summary>
 		/// Optional. The model name used for ranking. See [Supported models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference#supported-models).

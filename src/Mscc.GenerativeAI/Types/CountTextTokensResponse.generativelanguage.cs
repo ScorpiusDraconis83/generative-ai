@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A response from <c>CountTextTokens</c>. It returns the model&apos;s <c>token_count</c> for the <c>prompt</c>.
 	/// </summary>
-	public partial class CountTextTokensResponse
+	public sealed partial class CountTextTokensResponse
 	{
 		/// <summary>
 		/// The number of tokens that the <c>model</c> tokenizes the <c>prompt</c> into. Always non-negative.

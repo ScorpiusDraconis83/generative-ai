@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic.
 	/// </summary>
-	public partial class Probe
+	public sealed partial class Probe
 	{
 		/// <summary>
 		/// ExecAction probes the health of a container by executing a command.

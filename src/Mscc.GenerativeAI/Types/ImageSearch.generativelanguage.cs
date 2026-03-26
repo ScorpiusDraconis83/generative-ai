@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Image search for grounding and related configurations.
 	/// </summary>
-	public partial class ImageSearch
+	public sealed partial class ImageSearch
 	{
     }
 }

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// An entry point for displaying Google Search results. A <c>SearchEntryPoint</c> is populated when the grounding source for a model&apos;s response is Google Search. It provides information that you can use to display the search results in your application.
 	/// </summary>
-	public partial class SearchEntryPoint
+	public sealed partial class SearchEntryPoint
 	{
 
     }

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Dataset distribution for Supervised Tuning.
 	/// </summary>
-	public partial class SupervisedTuningDatasetDistribution
+	public sealed partial class SupervisedTuningDatasetDistribution
 	{
 		/// <summary>
 		/// Output only. Sum of a given population of values that are billable.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Auth configuration to run the extension.
 	/// </summary>
-	public partial class AuthConfig
+	public sealed partial class AuthConfig
 	{
 		/// <summary>
 		/// Config for API key auth.

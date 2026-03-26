@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Exact match metric value for an instance.
 	/// </summary>
-	public partial class ExactMatchMetricValue
+	public sealed partial class ExactMatchMetricValue
 	{
 		/// <summary>
 		/// Output only. Exact match score.

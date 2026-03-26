@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A single step of the expected output.
 	/// </summary>
-	public partial class ContentsExampleExpectedContent
+	public sealed partial class ContentsExampleExpectedContent
 	{
 		/// <summary>
 		/// Required. A single step&apos;s content.

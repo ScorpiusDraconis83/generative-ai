@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Details of ModelService.CopyModel operation.
 	/// </summary>
-	public partial class CopyModelOperationMetadata
+	public sealed partial class CopyModelOperationMetadata
 	{
 		/// <summary>
 		/// The common part of the operation metadata.

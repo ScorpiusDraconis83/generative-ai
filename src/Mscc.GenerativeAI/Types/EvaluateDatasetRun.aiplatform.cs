@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Evaluate Dataset Run Result for Tuning Job.
 	/// </summary>
-	public partial class EvaluateDatasetRun
+	public sealed partial class EvaluateDatasetRun
 	{
 		/// <summary>
 		/// Output only. The checkpoint id used in the evaluation run. Only populated when evaluating checkpoints.

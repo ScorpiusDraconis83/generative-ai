@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configurations for hybrid search results ranking.
 	/// </summary>
-	public partial class RagQueryRanking
+	public sealed partial class RagQueryRanking
 	{
 		/// <summary>
 		/// Optional. Alpha value controls the weight between dense and sparse vector search results. The range is [0, 1], while 0 means sparse vector search only and 1 means dense vector search only. The default value is 0.5 which balances sparse and dense vector search equally.

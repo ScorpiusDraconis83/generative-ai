@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Spec for pairwise metric.
 	/// </summary>
-	public partial class PairwiseMetricSpec
+	public sealed partial class PairwiseMetricSpec
 	{
 		/// <summary>
 		/// Optional. The field name of the baseline response.

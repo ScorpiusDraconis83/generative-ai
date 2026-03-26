@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Spec for custom output format configuration.
 	/// </summary>
-	public partial class CustomOutputFormatConfig
+	public sealed partial class CustomOutputFormatConfig
 	{
 		/// <summary>
 		/// Optional. Whether to return raw output.

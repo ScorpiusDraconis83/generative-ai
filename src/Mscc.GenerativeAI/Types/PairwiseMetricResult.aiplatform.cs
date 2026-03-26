@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Spec for pairwise metric result.
 	/// </summary>
-	public partial class PairwiseMetricResult
+	public sealed partial class PairwiseMetricResult
 	{
 		/// <summary>
 		/// Output only. Spec for custom output.

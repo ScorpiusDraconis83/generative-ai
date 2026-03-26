@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Stats about the batch.
 	/// </summary>
-	public partial class EmbedContentBatchStats
+	public sealed partial class EmbedContentBatchStats
 	{
 		/// <summary>
 		/// Output only. The number of requests that failed to be processed.

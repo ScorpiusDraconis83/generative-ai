@@ -24,7 +24,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A fine-tuned model created using ModelService.CreateTunedModel.
 	/// </summary>
-	public partial class TunedModelResponse
+	public sealed partial class TunedModelResponse
 	{
 		/// <summary>
 		/// Immutable. The name of the <c>Model</c> to tune. Example: <c>models/gemini-1.5-flash-001</c>

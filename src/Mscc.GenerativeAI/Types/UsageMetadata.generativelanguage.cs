@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Metadata on the generation request&apos;s token usage.
 	/// </summary>
-	public partial class UsageMetadata
+	public sealed partial class UsageMetadata
 	{
 		/// <summary>
 		/// Output only. List of modalities of the cached content in the request input.

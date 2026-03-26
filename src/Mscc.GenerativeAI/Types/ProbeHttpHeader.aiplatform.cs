@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// HttpHeader describes a custom header to be used in HTTP probes
 	/// </summary>
-	public partial class ProbeHttpHeader
+	public sealed partial class ProbeHttpHeader
 	{
 		/// <summary>
 		/// The header field name. This will be canonicalized upon output, so case-variant names will be understood as the same header.

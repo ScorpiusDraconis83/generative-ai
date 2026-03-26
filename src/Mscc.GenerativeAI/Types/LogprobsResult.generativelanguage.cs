@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Logprobs Result
 	/// </summary>
-	public partial class LogprobsResult
+	public sealed partial class LogprobsResult
 	{
 		/// <summary>
 		/// Length = total number of decoding steps. The chosen candidates may or may not be in top_candidates.

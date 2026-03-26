@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A safety rating for a piece of content. The safety rating contains the harm category and the harm probability level.
 	/// </summary>
-	public partial class SafetyRating
+	public sealed partial class SafetyRating
 	{
 
 		/// <summary>

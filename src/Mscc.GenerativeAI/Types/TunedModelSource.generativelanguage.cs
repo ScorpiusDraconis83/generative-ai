@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tuned model as a source for training a new model.
 	/// </summary>
-	public partial class TunedModelSource
+	public sealed partial class TunedModelSource
 	{
 		/// <summary>
 		/// Output only. The name of the base <c>Model</c> this <c>TunedModel</c> was tuned from. Example: <c>models/gemini-1.5-flash-001</c>

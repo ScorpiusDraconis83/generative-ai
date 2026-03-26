@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The base unit of structured text. A <c>Message</c> includes an <c>author</c> and the <c>content</c> of the <c>Message</c>. The <c>author</c> is used to tag messages when they are fed to the model as text.
 	/// </summary>
-	public partial class Message
+	public sealed partial class Message
 	{
 		/// <summary>
 		/// Optional. The author of this Message. This serves as a key for tagging the content of this Message when it is fed to the model as text. The author can be any alphanumeric string.

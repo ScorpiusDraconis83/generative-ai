@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// ParallelAiSearch tool type. A tool that uses the Parallel.ai search engine for grounding.
 	/// </summary>
-	public partial class ToolParallelAiSearch
+	public sealed partial class ToolParallelAiSearch
 	{
 		/// <summary>
 		/// Optional. The API key for ParallelAiSearch. If an API key is not provided, the system will attempt to verify access by checking for an active Parallel.ai subscription through the Google Cloud Marketplace. See https://docs.parallel.ai/search/search-quickstart for more details.

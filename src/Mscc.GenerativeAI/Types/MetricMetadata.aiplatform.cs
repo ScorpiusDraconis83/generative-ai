@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Metadata about the metric, used for visualization and organization.
 	/// </summary>
-	public partial class MetricMetadata
+	public sealed partial class MetricMetadata
 	{
 		/// <summary>
 		/// Optional. Flexible metadata for user-defined attributes.

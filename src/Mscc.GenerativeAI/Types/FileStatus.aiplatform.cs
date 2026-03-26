@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// RagFile status.
 	/// </summary>
-	public partial class FileStatus
+	public sealed partial class FileStatus
 	{
 		/// <summary>
 		/// Output only. Only when the <c>state</c> field is ERROR.

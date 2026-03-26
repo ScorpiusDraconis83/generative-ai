@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// An individual SharePointSource.
 	/// </summary>
-	public partial class SharePointSourcesSharePointSource
+	public sealed partial class SharePointSourcesSharePointSource
 	{
 		/// <summary>
 		/// The Application ID for the app registered in Microsoft Azure Portal. The application must also be configured with MS Graph permissions &quot;Files.ReadAll&quot;, &quot;Sites.ReadAll&quot; and BrowserSiteLists.Read.All.

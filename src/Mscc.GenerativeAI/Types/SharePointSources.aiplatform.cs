@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The SharePointSources to pass to ImportRagFiles.
 	/// </summary>
-	public partial class SharePointSources
+	public sealed partial class SharePointSources
 	{
 		/// <summary>
 		/// The SharePoint sources.

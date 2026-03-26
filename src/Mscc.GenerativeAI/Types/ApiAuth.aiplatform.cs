@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The generic reusable api auth config. Deprecated. Please use AuthConfig (google/cloud/aiplatform/master/auth.proto) instead.
 	/// </summary>
-	public partial class ApiAuth
+	public sealed partial class ApiAuth
 	{
 		/// <summary>
 		/// The API secret.

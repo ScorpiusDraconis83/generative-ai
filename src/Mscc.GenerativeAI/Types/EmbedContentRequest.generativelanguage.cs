@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request containing the <c>Content</c> for the model to embed.
 	/// </summary>
-	public partial class EmbedContentRequest
+	public sealed partial class EmbedContentRequest
 	{
 		/// <summary>
 		/// Required. The model&apos;s resource name. This serves as an ID for the Model to use. This name should match a model name returned by the <c>ListModels</c> method. Format: <c>models/{model}</c>

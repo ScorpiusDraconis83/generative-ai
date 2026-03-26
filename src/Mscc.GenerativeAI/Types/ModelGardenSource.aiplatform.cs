@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Contains information about the source of the models generated from Model Garden.
 	/// </summary>
-	public partial class ModelGardenSource
+	public sealed partial class ModelGardenSource
 	{
 		/// <summary>
 		/// Required. The model garden source model resource name.

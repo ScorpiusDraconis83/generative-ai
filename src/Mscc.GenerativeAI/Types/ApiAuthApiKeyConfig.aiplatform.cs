@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The API secret.
 	/// </summary>
-	public partial class ApiAuthApiKeyConfig
+	public sealed partial class ApiAuthApiKeyConfig
 	{
 		/// <summary>
 		/// Required. The SecretManager secret version resource name storing API key. e.g. projects/{project}/secrets/{secret}/versions/{version}

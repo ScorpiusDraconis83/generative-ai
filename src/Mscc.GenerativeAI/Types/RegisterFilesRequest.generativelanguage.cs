@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request for <c>RegisterFiles</c>.
 	/// </summary>
-	public partial class RegisterFilesRequest
+	public sealed partial class RegisterFilesRequest
 	{
 		/// <summary>
 		/// Required. The Google Cloud Storage URIs to register. Example: <c>gs://bucket/object</c>.

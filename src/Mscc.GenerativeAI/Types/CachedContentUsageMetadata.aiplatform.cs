@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Metadata on the usage of the cached content.
 	/// </summary>
-	public partial class CachedContentUsageMetadata
+	public sealed partial class CachedContentUsageMetadata
 	{
 
 		/// <summary>

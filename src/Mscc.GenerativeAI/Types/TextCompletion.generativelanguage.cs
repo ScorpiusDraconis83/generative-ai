@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Output text returned from a model.
 	/// </summary>
-	public partial class TextCompletion
+	public sealed partial class TextCompletion
 	{
 		/// <summary>
 		/// Output only. Citation information for model-generated <c>output</c> in this <c>TextCompletion</c>. This field may be populated with attribution information for any text included in the <c>output</c>.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request for <c>UploadToFileSearchStore</c>.
 	/// </summary>
-	public partial class UploadToFileSearchStoreRequest
+	public sealed partial class UploadToFileSearchStoreRequest
 	{
 		/// <summary>
 		/// Optional. Config for telling the service how to chunk the data. If not provided, the service will use default parameters.

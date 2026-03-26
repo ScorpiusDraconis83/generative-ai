@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Message to be sent in the first (and only in the first) <c>BidiGenerateContentClientMessage</c>. Contains configuration that will apply for the duration of the streaming RPC. Clients should wait for a <c>BidiGenerateContentSetupComplete</c> message before sending any additional messages.
 	/// </summary>
-	public partial class BidiGenerateContentSetup
+	public sealed partial class BidiGenerateContentSetup
 	{
 		/// <summary>
 		/// Optional. Configures a context window compression mechanism. If included, the server will automatically reduce the size of the context when it exceeds the configured length.

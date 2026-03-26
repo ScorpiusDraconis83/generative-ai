@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A set of the feedback metadata the prompt specified in <c>GenerateContentRequest.content</c>.
 	/// </summary>
-	public partial class PromptFeedback
+	public sealed partial class PromptFeedback
 	{
 		/// <summary>
 		/// Optional. If set, the prompt was blocked and no candidates are returned. Rephrase the prompt.

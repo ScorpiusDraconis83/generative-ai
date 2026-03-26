@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Hyperparameters for Preference Optimization.
 	/// </summary>
-	public partial class PreferenceOptimizationHyperParameters
+	public sealed partial class PreferenceOptimizationHyperParameters
 	{
 		/// <summary>
 		/// Optional. Adapter size for preference optimization.

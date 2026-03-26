@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Chunk from the web.
 	/// </summary>
-	public partial class Web
+	public sealed partial class Web
 	{
 		/// <summary>
 		/// Output only. Title of the chunk.

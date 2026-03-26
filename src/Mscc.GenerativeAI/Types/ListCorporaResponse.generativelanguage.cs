@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response from <c>ListCorpora</c> containing a paginated list of <c>Corpora</c>. The results are sorted by ascending <c>corpus.create_time</c>.
 	/// </summary>
-	public partial class ListCorporaResponse
+	public sealed partial class ListCorporaResponse
 	{
 		/// <summary>
 		/// The returned corpora.

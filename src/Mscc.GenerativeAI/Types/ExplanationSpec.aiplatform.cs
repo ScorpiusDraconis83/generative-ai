@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Specification of Model explanation.
 	/// </summary>
-	public partial class ExplanationSpec
+	public sealed partial class ExplanationSpec
 	{
 		/// <summary>
 		/// Optional. Metadata describing the Model&apos;s input and output for explanation.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A RagCorpus is a RagFile container and a project can have multiple RagCorpora.
 	/// </summary>
-	public partial class RagCorpus
+	public sealed partial class RagCorpus
 	{
 		/// <summary>
 		/// Output only. RagCorpus state.

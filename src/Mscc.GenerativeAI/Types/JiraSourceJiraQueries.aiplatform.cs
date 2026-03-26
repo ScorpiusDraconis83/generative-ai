@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// JiraQueries contains the Jira queries and corresponding authentication.
 	/// </summary>
-	public partial class JiraSourceJiraQueries
+	public sealed partial class JiraSourceJiraQueries
 	{
 		/// <summary>
 		/// Required. The SecretManager secret version resource name (e.g. projects/{project}/secrets/{secret}/versions/{version}) storing the Jira API key. See [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The Tool configuration containing parameters for specifying <c>Tool</c> use in the request.
 	/// </summary>
-	public partial class ToolConfig
+	public sealed partial class ToolConfig
 	{
 		/// <summary>
 		/// Optional. Function calling config.

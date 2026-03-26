@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The config for the Weaviate.
 	/// </summary>
-	public partial class RagVectorDbConfigWeaviate
+	public sealed partial class RagVectorDbConfigWeaviate
 	{
 		/// <summary>
 		/// The corresponding collection this corpus maps to. This value cannot be changed after it&apos;s set.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A piece of evidence that supports a claim made by the model. This is used to show a citation for a claim made by the model. When grounding is enabled, the model returns a <c>GroundingChunk</c> that contains a reference to the source of the information.
 	/// </summary>
-	public partial class GroundingChunk
+	public sealed partial class GroundingChunk
 	{
 
     }

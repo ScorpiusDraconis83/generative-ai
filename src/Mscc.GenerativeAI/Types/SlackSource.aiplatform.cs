@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The Slack source for the ImportRagFilesRequest.
 	/// </summary>
-	public partial class SlackSource
+	public sealed partial class SlackSource
 	{
 		/// <summary>
 		/// Required. The Slack channels.

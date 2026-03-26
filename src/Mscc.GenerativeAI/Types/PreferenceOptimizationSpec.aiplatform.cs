@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tuning Spec for Preference Optimization.
 	/// </summary>
-	public partial class PreferenceOptimizationSpec
+	public sealed partial class PreferenceOptimizationSpec
 	{
 		/// <summary>
 		/// Optional. If set to true, disable intermediate checkpoints for Preference Optimization and only the last checkpoint will be exported. Otherwise, enable intermediate checkpoints for Preference Optimization. Default is false.

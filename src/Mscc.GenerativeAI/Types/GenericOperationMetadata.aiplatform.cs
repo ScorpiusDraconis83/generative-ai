@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Generic Metadata shared by all operations.
 	/// </summary>
-	public partial class GenericOperationMetadata
+	public sealed partial class GenericOperationMetadata
 	{
 		/// <summary>
 		/// Output only. Time when the operation was created.

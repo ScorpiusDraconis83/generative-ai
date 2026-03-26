@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The spec for a pre-defined metric.
 	/// </summary>
-	public partial class PredefinedMetricSpec
+	public sealed partial class PredefinedMetricSpec
 	{
 		/// <summary>
 		/// Required. The name of a pre-defined metric, such as &quot;instruction_following_v1&quot; or &quot;text_quality_v1&quot;.

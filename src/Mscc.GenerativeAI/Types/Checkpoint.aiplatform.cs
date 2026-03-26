@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Describes the machine learning model version checkpoint.
 	/// </summary>
-	public partial class Checkpoint
+	public sealed partial class Checkpoint
 	{
 		/// <summary>
 		/// The ID of the checkpoint.

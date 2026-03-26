@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config representing a model hosted on Vertex Prediction Endpoint.
 	/// </summary>
-	public partial class RagEmbeddingModelConfigVertexPredictionEndpoint
+	public sealed partial class RagEmbeddingModelConfigVertexPredictionEndpoint
 	{
 		/// <summary>
 		/// Required. The endpoint resource name. Format: <c>projects/{project}/locations/{location}/publishers/{publisher}/models/{model}</c> or <c>projects/{project}/locations/{location}/endpoints/{endpoint}</c>

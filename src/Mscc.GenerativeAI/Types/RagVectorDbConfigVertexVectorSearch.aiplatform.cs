@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The config for the Vertex Vector Search.
 	/// </summary>
-	public partial class RagVectorDbConfigVertexVectorSearch
+	public sealed partial class RagVectorDbConfigVertexVectorSearch
 	{
 		/// <summary>
 		/// The resource name of the Index. Format: <c>projects/{project}/locations/{location}/indexes/{index}</c>

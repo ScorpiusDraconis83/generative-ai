@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Attribution for a source that contributed to an answer.
 	/// </summary>
-	public partial class GroundingAttribution
+	public sealed partial class GroundingAttribution
 	{
 		/// <summary>
 		/// Grounding source content that makes up this attribution.

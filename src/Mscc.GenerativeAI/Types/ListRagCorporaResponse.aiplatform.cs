@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response message for VertexRagDataService.ListRagCorpora.
 	/// </summary>
-	public partial class ListRagCorporaResponse
+	public sealed partial class ListRagCorporaResponse
 	{
 		/// <summary>
 		/// A token to retrieve the next page of results. Pass to ListRagCorporaRequest.page_token to obtain that page.

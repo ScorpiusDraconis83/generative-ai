@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configures the realtime input behavior in <c>BidiGenerateContent</c>.
 	/// </summary>
-	public partial class RealtimeInputConfig
+	public sealed partial class RealtimeInputConfig
 	{
 		/// <summary>
 		/// Optional. Defines what effect activity has.

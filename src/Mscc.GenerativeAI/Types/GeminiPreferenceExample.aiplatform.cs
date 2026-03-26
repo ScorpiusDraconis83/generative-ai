@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Input example for preference optimization.
 	/// </summary>
-	public partial class GeminiPreferenceExample
+	public sealed partial class GeminiPreferenceExample
 	{
 		/// <summary>
 		/// List of completions for a given prompt.

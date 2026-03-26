@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The configuration for the multi-speaker setup.
 	/// </summary>
-	public partial class MultiSpeakerVoiceConfig
+	public sealed partial class MultiSpeakerVoiceConfig
 	{
 		/// <summary>
 		/// Required. All the enabled speaker voices.

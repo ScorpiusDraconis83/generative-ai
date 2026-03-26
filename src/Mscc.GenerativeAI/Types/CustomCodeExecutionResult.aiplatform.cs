@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Result for custom code execution metric.
 	/// </summary>
-	public partial class CustomCodeExecutionResult
+	public sealed partial class CustomCodeExecutionResult
 	{
 		/// <summary>
 		/// Output only. Custom code execution score.

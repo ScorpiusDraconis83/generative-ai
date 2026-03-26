@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Represents token counting info for a single modality.
 	/// </summary>
-	public partial class ModalityTokenCount
+	public sealed partial class ModalityTokenCount
 	{
 		/// <summary>
 		/// The modality associated with this token count.

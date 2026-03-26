@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The requests to be processed in the batch if provided as part of the batch creation request.
 	/// </summary>
-	public partial class InlinedRequests
+	public sealed partial class InlinedRequests
 	{
 		/// <summary>
 		/// Required. The requests to be processed in the batch.

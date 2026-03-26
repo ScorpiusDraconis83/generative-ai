@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A datatype containing media that is part of a <c>FunctionResponse</c> message. A <c>FunctionResponsePart</c> consists of data which has an associated datatype. A <c>FunctionResponsePart</c> can only contain one of the accepted types in <c>FunctionResponsePart.data</c>. A <c>FunctionResponsePart</c> must have a fixed IANA MIME type identifying the type and subtype of the media if the <c>inline_data</c> field is filled with raw bytes.
 	/// </summary>
-	public partial class FunctionResponsePart
+	public sealed partial class FunctionResponsePart
 	{
     }
 }

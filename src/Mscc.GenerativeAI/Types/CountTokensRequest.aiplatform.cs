@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request message for PredictionService.CountTokens.
 	/// </summary>
-	public partial class CountTokensRequest
+	public sealed partial class CountTokensRequest
 	{
 
 		/// <summary>

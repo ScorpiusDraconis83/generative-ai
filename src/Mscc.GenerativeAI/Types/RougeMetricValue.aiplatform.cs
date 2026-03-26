@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Rouge metric value for an instance.
 	/// </summary>
-	public partial class RougeMetricValue
+	public sealed partial class RougeMetricValue
 	{
 		/// <summary>
 		/// Output only. Rouge score.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Parameters to configure explaining for Model&apos;s predictions.
 	/// </summary>
-	public partial class ExplanationParameters
+	public sealed partial class ExplanationParameters
 	{
 		/// <summary>
 		/// Example-based explanations that returns the nearest neighbors from the provided dataset.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A single token and its associated log probability.
 	/// </summary>
-	public partial class LogprobsResultCandidate
+	public sealed partial class LogprobsResultCandidate
 	{
 
     }

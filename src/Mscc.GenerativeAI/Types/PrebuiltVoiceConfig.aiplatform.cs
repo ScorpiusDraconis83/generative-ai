@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configuration for a prebuilt voice.
 	/// </summary>
-	public partial class PrebuiltVoiceConfig
+	public sealed partial class PrebuiltVoiceConfig
 	{
 
     }

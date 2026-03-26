@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Dataset bucket used to create a histogram for the distribution given a population of values.
 	/// </summary>
-	public partial class DatasetDistributionDistributionBucket
+	public sealed partial class DatasetDistributionDistributionBucket
 	{
 		/// <summary>
 		/// Output only. Number of values in the bucket.

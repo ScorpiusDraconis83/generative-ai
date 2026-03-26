@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configuration for image generation. This message allows you to control various aspects of image generation, such as the output format, aspect ratio, and whether the model can generate images of people.
 	/// </summary>
-	public partial class ImageConfig
+	public sealed partial class ImageConfig
 	{
 		/// <summary>
 		/// Optional. The image output format for generated images.

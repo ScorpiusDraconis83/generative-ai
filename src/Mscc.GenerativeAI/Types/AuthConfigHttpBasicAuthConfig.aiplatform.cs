@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for HTTP Basic Authentication.
 	/// </summary>
-	public partial class AuthConfigHttpBasicAuthConfig
+	public sealed partial class AuthConfigHttpBasicAuthConfig
 	{
 		/// <summary>
 		/// Required. The name of the SecretManager secret version resource storing the base64 encoded credentials. Format: <c>projects/{project}/secrets/{secrete}/versions/{version}</c> - If specified, the <c>secretmanager.versions.access</c> permission should be granted to Vertex AI Extension Service Agent (https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents) on the specified resource.

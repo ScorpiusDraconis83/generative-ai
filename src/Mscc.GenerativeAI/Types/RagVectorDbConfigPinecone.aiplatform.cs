@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The config for the Pinecone.
 	/// </summary>
-	public partial class RagVectorDbConfigPinecone
+	public sealed partial class RagVectorDbConfigPinecone
 	{
 		/// <summary>
 		/// Pinecone index name. This value cannot be changed after it&apos;s set.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The configuration for routing the request to a specific model. This can be used to control which model is used for the generation, either automatically or by specifying a model name.
 	/// </summary>
-	public partial class GenerationConfigRoutingConfig
+	public sealed partial class GenerationConfigRoutingConfig
 	{
 		/// <summary>
 		/// In this mode, the model is selected automatically based on the content of the request.

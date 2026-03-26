@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Provides metadata for a video, including the start and end offsets for clipping and the frame rate.
 	/// </summary>
-	public partial class VideoMetadata
+	public sealed partial class VideoMetadata
 	{
 
     }

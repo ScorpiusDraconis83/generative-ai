@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A citation for a piece of generatedcontent.
 	/// </summary>
-	public partial class Citation
+	public sealed partial class Citation
 	{
 		/// <summary>
 		/// Output only. The end index of the citation in the content.

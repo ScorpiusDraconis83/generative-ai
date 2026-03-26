@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Specification for how rubrics should be generated.
 	/// </summary>
-	public partial class RubricGenerationSpec
+	public sealed partial class RubricGenerationSpec
 	{
 		/// <summary>
 		/// Configuration for the model used in rubric generation. Configs including sampling count and base model can be specified here. Flipping is not supported for rubric generation.

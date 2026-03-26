@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A single example of a conversation with the model.
 	/// </summary>
-	public partial class ContentsExample
+	public sealed partial class ContentsExample
 	{
 		/// <summary>
 		/// Required. The content of the conversation with the model that resulted in the expected output.

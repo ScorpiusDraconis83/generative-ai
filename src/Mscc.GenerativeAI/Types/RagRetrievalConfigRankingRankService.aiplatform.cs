@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for Rank Service.
 	/// </summary>
-	public partial class RagRetrievalConfigRankingRankService
+	public sealed partial class RagRetrievalConfigRankingRankService
 	{
 		/// <summary>
 		/// Optional. The model name of the rank service. Format: <c>semantic-ranker-512@latest</c>

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for the embedding model to use for RAG.
 	/// </summary>
-	public partial class RagEmbeddingModelConfig
+	public sealed partial class RagEmbeddingModelConfig
 	{
 		/// <summary>
 		/// Configuration for hybrid search.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Chunk from image search.
 	/// </summary>
-	public sealed partial class Image
+	public partial class Image
 	{
 		/// <summary>
 		/// The root domain of the web page that the image is from, e.g. &quot;example.com&quot;.

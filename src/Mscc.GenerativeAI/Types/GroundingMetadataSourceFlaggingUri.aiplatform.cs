@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A URI that can be used to flag a place or review for inappropriate content. This is populated only when the grounding source is Google Maps.
 	/// </summary>
-	public partial class GroundingMetadataSourceFlaggingUri
+	public sealed partial class GroundingMetadataSourceFlaggingUri
 	{
 		/// <summary>
 		/// The URI that can be used to flag the content.

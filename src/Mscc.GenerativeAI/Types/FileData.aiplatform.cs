@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// URI-based data. A FileData message contains a URI pointing to data of a specific media type. It is used to represent images, audio, and video stored in Google Cloud Storage.
 	/// </summary>
-	public partial class FileData
+	public sealed partial class FileData
 	{
 
 		/// <summary>

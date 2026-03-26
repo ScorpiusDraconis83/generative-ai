@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request to generate a text completion response from the model.
 	/// </summary>
-	public partial class GenerateTextRequest
+	public sealed partial class GenerateTextRequest
 	{
 		/// <summary>
 		/// Optional. Number of generated responses to return. This value must be between [1, 8], inclusive. If unset, this will default to 1.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The response to a <c>BatchEmbedContentsRequest</c>.
 	/// </summary>
-	public partial class BatchEmbedContentsResponse
+	public sealed partial class BatchEmbedContentsResponse
 	{
 		/// <summary>
 		/// Output only. The embeddings for each request, in the same order as provided in the batch request.

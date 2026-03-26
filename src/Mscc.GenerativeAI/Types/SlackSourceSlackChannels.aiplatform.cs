@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// SlackChannels contains the Slack channels and corresponding access token.
 	/// </summary>
-	public partial class SlackSourceSlackChannels
+	public sealed partial class SlackSourceSlackChannels
 	{
 		/// <summary>
 		/// Required. The SecretManager secret version resource name (e.g. projects/{project}/secrets/{secret}/versions/{version}) storing the Slack channel access token that has access to the slack channel IDs. See: https://api.slack.com/tutorials/tracks/getting-a-token.

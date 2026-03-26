@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tuning Spec for Distillation.
 	/// </summary>
-	public partial class DistillationSpec
+	public sealed partial class DistillationSpec
 	{
 		/// <summary>
 		/// The base teacher model that is being distilled. See [Supported models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).

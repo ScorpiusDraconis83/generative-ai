@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Raw media bytes for function response. Text should not be sent as raw bytes, use the &apos;text&apos; field.
 	/// </summary>
-	public partial class FunctionResponseBlob
+	public sealed partial class FunctionResponseBlob
 	{
 
 		/// <summary>

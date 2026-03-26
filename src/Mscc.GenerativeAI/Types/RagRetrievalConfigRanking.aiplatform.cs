@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for ranking and reranking.
 	/// </summary>
-	public partial class RagRetrievalConfigRanking
+	public sealed partial class RagRetrievalConfigRanking
 	{
 		/// <summary>
 		/// Optional. Config for LlmRanker.

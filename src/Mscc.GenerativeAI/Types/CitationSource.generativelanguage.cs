@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A citation to a source for a portion of a specific response.
 	/// </summary>
-	public partial class CitationSource
+	public sealed partial class CitationSource
 	{
 		/// <summary>
 		/// Optional. End of the attributed segment, exclusive.

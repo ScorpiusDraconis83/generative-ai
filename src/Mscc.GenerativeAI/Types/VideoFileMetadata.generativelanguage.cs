@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Metadata for a video <c>File</c>.
 	/// </summary>
-	public partial class VideoFileMetadata
+	public sealed partial class VideoFileMetadata
 	{
 		/// <summary>
 		/// Duration of the video.

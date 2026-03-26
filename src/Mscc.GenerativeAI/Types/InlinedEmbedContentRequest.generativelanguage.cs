@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The request to be processed in the batch.
 	/// </summary>
-	public partial class InlinedEmbedContentRequest
+	public sealed partial class InlinedEmbedContentRequest
 	{
 		/// <summary>
 		/// Optional. The metadata to be associated with the request.

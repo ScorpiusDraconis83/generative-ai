@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// An input/output example used to instruct the Model. It demonstrates how the model should respond or format its response.
 	/// </summary>
-	public partial class Example
+	public sealed partial class Example
 	{
 		/// <summary>
 		/// Required. An example of an input <c>Message</c> from the user.

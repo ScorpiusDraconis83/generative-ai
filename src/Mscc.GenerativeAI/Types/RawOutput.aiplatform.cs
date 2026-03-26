@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Raw output.
 	/// </summary>
-	public partial class RawOutput
+	public sealed partial class RawOutput
 	{
 		/// <summary>
 		/// Output only. Raw output string.

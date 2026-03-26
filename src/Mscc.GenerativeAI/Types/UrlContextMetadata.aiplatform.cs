@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Metadata returned when the model uses the <c>url_context</c> tool to get information from a user-provided URL.
 	/// </summary>
-	public partial class UrlContextMetadata
+	public sealed partial class UrlContextMetadata
 	{
 
     }

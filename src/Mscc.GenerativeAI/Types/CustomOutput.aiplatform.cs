@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Spec for custom output.
 	/// </summary>
-	public partial class CustomOutput
+	public sealed partial class CustomOutput
 	{
 		/// <summary>
 		/// Output only. List of raw output strings.

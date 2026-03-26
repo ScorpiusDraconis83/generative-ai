@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Batch request to get a text embedding from the model.
 	/// </summary>
-	public partial class BatchEmbedTextRequest
+	public sealed partial class BatchEmbedTextRequest
 	{
 		/// <summary>
 		/// Optional. Embed requests for the batch. Only one of <c>texts</c> or <c>requests</c> can be set.

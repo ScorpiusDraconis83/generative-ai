@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response for <c>RegisterFiles</c>.
 	/// </summary>
-	public partial class RegisterFilesResponse
+	public sealed partial class RegisterFilesResponse
 	{
 		/// <summary>
 		/// The registered files to be used when calling GenerateContent.

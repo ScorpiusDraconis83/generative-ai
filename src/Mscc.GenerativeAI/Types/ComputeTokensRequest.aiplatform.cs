@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request message for ComputeTokens RPC call.
 	/// </summary>
-	public partial class ComputeTokensRequest
+	public sealed partial class ComputeTokensRequest
 	{
 		/// <summary>
 		/// Optional. Input content.

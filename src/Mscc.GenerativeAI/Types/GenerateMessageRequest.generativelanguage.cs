@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request to generate a message response from the model.
 	/// </summary>
-	public partial class GenerateMessageRequest
+	public sealed partial class GenerateMessageRequest
 	{
 		/// <summary>
 		/// Optional. The number of generated response messages to return. This value must be between <c>[1, 8]</c>, inclusive. If unset, this will default to <c>1</c>.

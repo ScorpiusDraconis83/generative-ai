@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Function calling config.
 	/// </summary>
-	public partial class FunctionCallingConfig
+	public sealed partial class FunctionCallingConfig
 	{
 
 		/// <summary>

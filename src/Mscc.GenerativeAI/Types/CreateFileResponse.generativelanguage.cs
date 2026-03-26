@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response for <c>CreateFile</c>.
 	/// </summary>
-	public partial class CreateFileResponse
+	public sealed partial class CreateFileResponse
 	{
 		/// <summary>
 		/// Metadata for the created file.

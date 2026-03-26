@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The aggregation result for a single metric.
 	/// </summary>
-	public partial class AggregationResult
+	public sealed partial class AggregationResult
 	{
 		/// <summary>
 		/// Aggregation metric.

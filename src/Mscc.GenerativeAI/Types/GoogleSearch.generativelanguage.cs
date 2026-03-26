@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// GoogleSearch tool type. Tool to support Google Search in Model. Powered by Google.
 	/// </summary>
-	public partial class GoogleSearch
+	public sealed partial class GoogleSearch
 	{
 		/// <summary>
 		/// Optional. The set of search types to enable. If not set, web search is enabled by default.

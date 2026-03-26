@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A datatype containing data that is part of a multi-part <c>TuningContent</c> message. This is a subset of the Part used for model inference, with limited type support. A <c>Part</c> consists of data which has an associated datatype. A <c>Part</c> can only contain one of the accepted types in <c>Part.data</c>.
 	/// </summary>
-	public partial class TuningPart
+	public sealed partial class TuningPart
 	{
 		/// <summary>
 		/// Inline text.

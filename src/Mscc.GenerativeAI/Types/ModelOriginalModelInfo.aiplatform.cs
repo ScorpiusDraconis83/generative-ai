@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Contains information about the original Model if this Model is a copy.
 	/// </summary>
-	public partial class ModelOriginalModelInfo
+	public sealed partial class ModelOriginalModelInfo
 	{
 		/// <summary>
 		/// Output only. The resource name of the Model this Model is a copy of, including the revision. Format: <c>projects/{project}/locations/{location}/models/{model_id}@{version_id}</c>

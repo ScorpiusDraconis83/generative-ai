@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tuning Spec for Veo Model Tuning.
 	/// </summary>
-	public partial class VeoTuningSpec
+	public sealed partial class VeoTuningSpec
 	{
 		/// <summary>
 		/// Optional. Hyperparameters for Veo.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Bleu metric value for an instance.
 	/// </summary>
-	public partial class BleuMetricValue
+	public sealed partial class BleuMetricValue
 	{
 		/// <summary>
 		/// Output only. Bleu score.

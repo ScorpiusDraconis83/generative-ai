@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Content that has been preprocessed and can be used in subsequent request to GenerativeService. Cached content can be only used with model it was created for.
 	/// </summary>
-	public partial class CachedContent
+	public sealed partial class CachedContent
 	{
 		/// <summary>
 		/// Optional. Input only. Immutable. The content to cache.

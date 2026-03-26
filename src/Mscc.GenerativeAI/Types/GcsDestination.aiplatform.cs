@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The Google Cloud Storage location where the output is to be written to.
 	/// </summary>
-	public partial class GcsDestination
+	public sealed partial class GcsDestination
 	{
 		/// <summary>
 		/// Required. Google Cloud Storage URI to output directory. If the uri doesn&apos;t end with &apos;/&apos;, a &apos;/&apos; will be automatically appended. The directory is created if it doesn&apos;t exist.

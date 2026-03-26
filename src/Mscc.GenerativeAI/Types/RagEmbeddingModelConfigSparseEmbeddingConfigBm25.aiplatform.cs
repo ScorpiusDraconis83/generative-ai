@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Message for BM25 parameters.
 	/// </summary>
-	public partial class RagEmbeddingModelConfigSparseEmbeddingConfigBm25
+	public sealed partial class RagEmbeddingModelConfigSparseEmbeddingConfigBm25
 	{
 		/// <summary>
 		/// Optional. The parameter to control document length normalization. It determines how much the document length affects the final score. b is in the range of [0, 1]. The default value is 0.75.

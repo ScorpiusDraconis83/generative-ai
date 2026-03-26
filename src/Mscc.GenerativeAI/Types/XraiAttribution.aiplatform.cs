@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// An explanation method that redistributes Integrated Gradients attributions to segmented regions, taking advantage of the model&apos;s fully differentiable structure. Refer to this paper for more details: https://arxiv.org/abs/1906.02825 Supported only by image Models.
 	/// </summary>
-	public partial class XraiAttribution
+	public sealed partial class XraiAttribution
 	{
 		/// <summary>
 		/// Config for XRAI with blur baseline. When enabled, a linear path from the maximally blurred image to the input image is created. Using a blurred baseline instead of zero (black image) is motivated by the BlurIG approach explained here: https://arxiv.org/abs/2004.03383

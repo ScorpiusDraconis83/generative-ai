@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Represents a network port in a container.
 	/// </summary>
-	public partial class Port
+	public sealed partial class Port
 	{
 		/// <summary>
 		/// The number of the port to expose on the pod&apos;s IP address. Must be a valid port number, between 1 and 65535 inclusive.

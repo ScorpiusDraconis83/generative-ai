@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Deprecated: Use <c>GenerateContentRequest.processing_options</c> instead. Metadata describes the input video content.
 	/// </summary>
-	public partial class VideoMetadata
+	public sealed partial class VideoMetadata
 	{
 		/// <summary>
 		/// Optional. The end offset of the video.

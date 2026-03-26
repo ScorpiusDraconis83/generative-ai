@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for image generation features.
 	/// </summary>
-	public partial class ImageConfig
+	public sealed partial class ImageConfig
 	{
     }
 }

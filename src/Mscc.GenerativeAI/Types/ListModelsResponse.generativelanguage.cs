@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response from <c>ListModel</c> containing a paginated list of Models.
 	/// </summary>
-	public partial class ListModelsResponse
+	public sealed partial class ListModelsResponse
 	{
 		/// <summary>
 		/// The returned Models.

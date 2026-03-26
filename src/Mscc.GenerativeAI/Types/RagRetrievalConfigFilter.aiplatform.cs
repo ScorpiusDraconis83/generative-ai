@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for filters.
 	/// </summary>
-	public partial class RagRetrievalConfigFilter
+	public sealed partial class RagRetrievalConfigFilter
 	{
 		/// <summary>
 		/// Optional. String for metadata filtering.

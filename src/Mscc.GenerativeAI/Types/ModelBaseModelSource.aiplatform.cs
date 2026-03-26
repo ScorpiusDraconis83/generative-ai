@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// User input field to specify the base model source. Currently it only supports specifing the Model Garden models and Genie models.
 	/// </summary>
-	public partial class ModelBaseModelSource
+	public sealed partial class ModelBaseModelSource
 	{
 		/// <summary>
 		/// Information about the base model of Genie models.

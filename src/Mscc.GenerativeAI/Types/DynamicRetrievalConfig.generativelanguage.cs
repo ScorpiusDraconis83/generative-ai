@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Describes the options to customize dynamic retrieval.
 	/// </summary>
-	public partial class DynamicRetrievalConfig
+	public sealed partial class DynamicRetrievalConfig
 	{
 		/// <summary>
 		/// The threshold to be used in dynamic retrieval. If not set, a system default value is used.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Spec for pointwise metric.
 	/// </summary>
-	public partial class PointwiseMetricSpec
+	public sealed partial class PointwiseMetricSpec
 	{
 		/// <summary>
 		/// Optional. CustomOutputFormatConfig allows customization of metric output. By default, metrics return a score and explanation. When this config is set, the default output is replaced with either: - The raw output string. - A parsed output based on a user-defined schema. If a custom format is chosen, the <c>score</c> and <c>explanation</c> fields in the corresponding metric result will be empty.

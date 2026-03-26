@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The input content is encapsulated and uploaded in the request.
 	/// </summary>
-	public partial class DirectUploadSource
+	public sealed partial class DirectUploadSource
 	{
     }
 }

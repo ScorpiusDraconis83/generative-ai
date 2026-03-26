@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The FileSearch tool that retrieves knowledge from Semantic Retrieval corpora. Files are imported to Semantic Retrieval corpora using the ImportFile API.
 	/// </summary>
-	public partial class FileSearch
+	public sealed partial class FileSearch
 	{
 		/// <summary>
 		/// Required. The names of the file_search_stores to retrieve from. Example: <c>fileSearchStores/my-file-search-store-123</c>

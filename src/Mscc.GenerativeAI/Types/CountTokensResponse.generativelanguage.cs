@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A response from <c>CountTokens</c>. It returns the model&apos;s <c>token_count</c> for the <c>prompt</c>.
 	/// </summary>
-	public partial class CountTokensResponse
+	public sealed partial class CountTokensResponse
 	{
 		/// <summary>
 		/// Output only. List of modalities that were processed in the cached content.

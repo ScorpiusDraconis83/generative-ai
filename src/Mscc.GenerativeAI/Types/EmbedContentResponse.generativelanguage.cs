@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The response to an <c>EmbedContentRequest</c>.
 	/// </summary>
-	public partial class EmbedContentResponse
+	public sealed partial class EmbedContentResponse
 	{
 		/// <summary>
 		/// Output only. The embedding generated from the input content.

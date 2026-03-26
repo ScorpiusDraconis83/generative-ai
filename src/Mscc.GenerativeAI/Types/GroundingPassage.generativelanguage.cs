@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Passage included inline with a grounding configuration.
 	/// </summary>
-	public partial class GroundingPassage
+	public sealed partial class GroundingPassage
 	{
 		/// <summary>
 		/// Content of the passage.

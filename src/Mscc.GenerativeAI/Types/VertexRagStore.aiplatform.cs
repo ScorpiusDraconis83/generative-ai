@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Retrieve from Vertex RAG Store for grounding.
 	/// </summary>
-	public partial class VertexRagStore
+	public sealed partial class VertexRagStore
 	{
 		/// <summary>
 		/// Optional. Deprecated. Please use rag_resources instead.

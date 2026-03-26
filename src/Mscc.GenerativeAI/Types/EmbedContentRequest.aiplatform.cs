@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request message for PredictionService.EmbedContent.
 	/// </summary>
-	public partial class EmbedContentRequest
+	public sealed partial class EmbedContentRequest
 	{
 
 		/// <summary>

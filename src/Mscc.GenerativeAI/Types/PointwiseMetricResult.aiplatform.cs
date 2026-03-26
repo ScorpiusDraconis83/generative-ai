@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Spec for pointwise metric result.
 	/// </summary>
-	public partial class PointwiseMetricResult
+	public sealed partial class PointwiseMetricResult
 	{
 		/// <summary>
 		/// Output only. Spec for custom output.

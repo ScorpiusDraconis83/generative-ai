@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Defines a retrieval tool that model can call to access external knowledge.
 	/// </summary>
-	public partial class Retrieval
+	public sealed partial class Retrieval
 	{
 		/// <summary>
 		/// Optional. Deprecated. This option is no longer supported.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A predicted <c>FunctionCall</c> returned from the model that contains a string representing the <c>FunctionDeclaration.name</c> with the arguments and their values.
 	/// </summary>
-	public partial class FunctionCall
+	public sealed partial class FunctionCall
 	{
 		/// <summary>
 		/// Optional. The function parameters and values in JSON object format.

@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The status of the underlying model. This is used to indicate the stage of the underlying model and the retirement time if applicable.
 	/// </summary>
-	public partial class ModelStatus
+	public sealed partial class ModelStatus
 	{
 		/// <summary>
 		/// A message explaining the model status.

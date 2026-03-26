@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The definition of the Rag resource.
 	/// </summary>
-	public partial class VertexRagStoreRagResource
+	public sealed partial class VertexRagStoreRagResource
 	{
 		/// <summary>
 		/// Optional. RagCorpora resource name. Format: <c>projects/{project}/locations/{location}/ragCorpora/{rag_corpus}</c>

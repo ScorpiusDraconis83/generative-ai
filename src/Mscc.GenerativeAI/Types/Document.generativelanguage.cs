@@ -24,7 +24,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A <c>Document</c> is a collection of <c>Chunk</c>s.
 	/// </summary>
-	public partial class Document
+	public sealed partial class Document
 	{
 		/// <summary>
 		/// Output only. The Timestamp of when the <c>Document</c> was created.

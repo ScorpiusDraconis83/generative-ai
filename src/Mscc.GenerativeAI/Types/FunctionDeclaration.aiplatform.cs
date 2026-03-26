@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Structured representation of a function declaration as defined by the [OpenAPI 3.0 specification](https://spec.openapis.org/oas/v3.0.3). Included in this declaration are the function name, description, parameters and response type. This FunctionDeclaration is a representation of a block of code that can be used as a <c>Tool</c> by the model and executed by the client.
 	/// </summary>
-	public partial class FunctionDeclaration
+	public sealed partial class FunctionDeclaration
 	{
 
     }

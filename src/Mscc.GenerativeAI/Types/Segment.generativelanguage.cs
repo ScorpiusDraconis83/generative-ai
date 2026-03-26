@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Segment of the content.
 	/// </summary>
-	public partial class Segment
+	public sealed partial class Segment
 	{
 		/// <summary>
 		/// End index in the given Part, measured in bytes. Offset from the start of the Part, exclusive, starting at zero.

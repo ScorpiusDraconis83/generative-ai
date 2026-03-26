@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A repeated list of passages.
 	/// </summary>
-	public partial class GroundingPassages
+	public sealed partial class GroundingPassages
 	{
 		/// <summary>
 		/// List of passages.

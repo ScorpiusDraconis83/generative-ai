@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The Google Cloud Storage location for the input content.
 	/// </summary>
-	public partial class GcsSource
+	public sealed partial class GcsSource
 	{
 		/// <summary>
 		/// Required. Google Cloud Storage URI(-s) to the input file(s). May contain wildcards. For more information on wildcards, see https://cloud.google.com/storage/docs/wildcards.

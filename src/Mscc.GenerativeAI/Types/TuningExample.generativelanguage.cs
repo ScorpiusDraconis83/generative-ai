@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A single example for tuning.
 	/// </summary>
-	public partial class TuningExample
+	public sealed partial class TuningExample
 	{
 		/// <summary>
 		/// Required. The expected model output.

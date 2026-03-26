@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A content blob. A Blob contains data of a specific media type. It is used to represent images, audio, and video.
 	/// </summary>
-	public partial class Blob
+	public sealed partial class Blob
 	{
 
 		/// <summary>

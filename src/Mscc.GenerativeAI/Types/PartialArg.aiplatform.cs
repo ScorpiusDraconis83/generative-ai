@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Partial argument value of the function call.
 	/// </summary>
-	public partial class PartialArg
+	public sealed partial class PartialArg
 	{
 		/// <summary>
 		/// Optional. Represents a boolean value.

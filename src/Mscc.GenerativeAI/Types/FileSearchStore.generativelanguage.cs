@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A <c>FileSearchStore</c> is a collection of <c>Document</c>s.
 	/// </summary>
-	public partial class FileSearchStore
+	public sealed partial class FileSearchStore
 	{
 		/// <summary>
 		/// Output only. The number of documents in the <c>FileSearchStore</c> that are active and ready for retrieval.

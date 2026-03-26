@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tool to search public web data, powered by Vertex AI Search and Sec4 compliance.
 	/// </summary>
-	public partial class EnterpriseWebSearch
+	public sealed partial class EnterpriseWebSearch
 	{
 		/// <summary>
 		/// Optional. Sites with confidence level chosen &amp; above this value will be blocked from the search results.

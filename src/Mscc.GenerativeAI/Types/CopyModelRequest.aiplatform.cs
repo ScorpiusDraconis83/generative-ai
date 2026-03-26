@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request message for ModelService.CopyModel.
 	/// </summary>
-	public partial class CopyModelRequest
+	public sealed partial class CopyModelRequest
 	{
 		/// <summary>
 		/// Customer-managed encryption key options. If this is set, then the Model copy will be encrypted with the provided encryption key.

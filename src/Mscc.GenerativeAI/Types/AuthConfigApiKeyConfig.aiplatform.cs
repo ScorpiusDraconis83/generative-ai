@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for authentication with API key.
 	/// </summary>
-	public partial class AuthConfigApiKeyConfig
+	public sealed partial class AuthConfigApiKeyConfig
 	{
 		/// <summary>
 		/// Optional. The name of the SecretManager secret version resource storing the API key. Format: <c>projects/{project}/secrets/{secrete}/versions/{version}</c> - If both <c>api_key_secret</c> and <c>api_key_string</c> are specified, this field takes precedence over <c>api_key_string</c>. - If specified, the <c>secretmanager.versions.access</c> permission should be granted to Vertex AI Extension Service Agent (https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents) on the specified resource.

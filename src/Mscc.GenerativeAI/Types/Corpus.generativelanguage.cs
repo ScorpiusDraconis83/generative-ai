@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A <c>Corpus</c> is a collection of <c>Document</c>s. A project can create up to 10 corpora.
 	/// </summary>
-	public partial class Corpus
+	public sealed partial class Corpus
 	{
 		/// <summary>
 		/// Output only. The Timestamp of when the <c>Corpus</c> was created.

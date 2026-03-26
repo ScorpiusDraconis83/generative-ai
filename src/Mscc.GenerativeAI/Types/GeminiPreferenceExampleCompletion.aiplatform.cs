@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Completion and its preference score.
 	/// </summary>
-	public partial class GeminiPreferenceExampleCompletion
+	public sealed partial class GeminiPreferenceExampleCompletion
 	{
 		/// <summary>
 		/// Single turn completion for the given prompt.

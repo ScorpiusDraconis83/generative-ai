@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Safety setting, affecting the safety-blocking behavior. Passing a safety setting for a category changes the allowed probability that content is blocked.
 	/// </summary>
-	public partial class SafetySetting
+	public sealed partial class SafetySetting
 	{
 		/// <summary>
 		/// Required. The category for this setting.

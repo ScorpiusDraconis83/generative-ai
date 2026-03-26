@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tuning tasks that create tuned models.
 	/// </summary>
-	public partial class TuningTask
+	public sealed partial class TuningTask
 	{
 		/// <summary>
 		/// Output only. The timestamp when tuning this model completed.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Identifier for a part within a <c>GroundingPassage</c>.
 	/// </summary>
-	public partial class GroundingPassageId
+	public sealed partial class GroundingPassageId
 	{
 		/// <summary>
 		/// Output only. Index of the part within the <c>GenerateAnswerRequest</c>&apos;s <c>GroundingPassage.content</c>.

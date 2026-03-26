@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The search parameters to use for SIMPLE_SEARCH spec.
 	/// </summary>
-	public partial class ExternalApiSimpleSearchParams
+	public sealed partial class ExternalApiSimpleSearchParams
 	{
     }
 }

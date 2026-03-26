@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Contains information about the source of the models generated from Generative AI Studio.
 	/// </summary>
-	public partial class GenieSource
+	public sealed partial class GenieSource
 	{
 		/// <summary>
 		/// Required. The public base model URI.

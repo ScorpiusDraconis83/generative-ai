@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request for a <c>BatchGenerateContent</c> operation.
 	/// </summary>
-	public partial class BatchGenerateContentRequest
+	public sealed partial class BatchGenerateContentRequest
 	{
 		/// <summary>
 		/// Required. The batch to create.

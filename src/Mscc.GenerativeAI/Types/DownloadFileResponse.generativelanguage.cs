@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response for <c>DownloadFile</c>.
 	/// </summary>
-	public partial class DownloadFileResponse
+	public sealed partial class DownloadFileResponse
 	{
     }
 }

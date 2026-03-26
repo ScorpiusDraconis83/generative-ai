@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Define data stores within engine to filter on in a search call and configurations for those data stores. For more information, see https://cloud.google.com/generative-ai-app-builder/docs/reference/rpc/google.cloud.discoveryengine.v1#datastorespec
 	/// </summary>
-	public partial class VertexAISearchDataStoreSpec
+	public sealed partial class VertexAISearchDataStoreSpec
 	{
 		/// <summary>
 		/// Full resource name of DataStore, such as Format: <c>projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}</c>

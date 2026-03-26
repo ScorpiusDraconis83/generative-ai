@@ -18,7 +18,7 @@
 
 namespace Mscc.GenerativeAI.Types
 {
-	public partial class CustomLongRunningOperation
+	public sealed partial class CustomLongRunningOperation
 	{
 		/// <summary>
 		/// The error result of the operation in case of failure or cancellation.

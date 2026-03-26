@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for evaluation output.
 	/// </summary>
-	public partial class OutputConfig
+	public sealed partial class OutputConfig
 	{
 		/// <summary>
 		/// Cloud storage destination for evaluation output.

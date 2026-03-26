@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// TcpSocketAction probes the health of a container by opening a TCP socket connection.
 	/// </summary>
-	public partial class ProbeTcpSocketAction
+	public sealed partial class ProbeTcpSocketAction
 	{
 		/// <summary>
 		/// Optional: Host name to connect to, defaults to the model serving container&apos;s IP.

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configuration for retrieving grounding content from a <c>Corpus</c> or <c>Document</c> created using the Semantic Retriever API.
 	/// </summary>
-	public partial class SemanticRetrieverConfig
+	public sealed partial class SemanticRetrieverConfig
 	{
 		/// <summary>
 		/// Optional. Maximum number of relevant <c>Chunk</c>s to retrieve.

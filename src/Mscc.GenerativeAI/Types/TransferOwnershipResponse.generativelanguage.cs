@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response from <c>TransferOwnership</c>.
 	/// </summary>
-	public partial class TransferOwnershipResponse
+	public sealed partial class TransferOwnershipResponse
 	{
     }
 }

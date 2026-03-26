@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A MCPServer is a server that can be called by the model to perform actions. It is a server that implements the MCP protocol. Next ID: 5
 	/// </summary>
-	public partial class McpServer
+	public sealed partial class McpServer
 	{
 		/// <summary>
 		/// The name of the MCPServer.

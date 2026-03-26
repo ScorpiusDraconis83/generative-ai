@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Hyperparameters for SFT.
 	/// </summary>
-	public partial class SupervisedHyperParameters
+	public sealed partial class SupervisedHyperParameters
 	{
 		/// <summary>
 		/// Optional. Adapter size for tuning.

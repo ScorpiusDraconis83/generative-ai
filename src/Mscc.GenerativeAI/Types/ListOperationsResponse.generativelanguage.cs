@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The response message for Operations.ListOperations.
 	/// </summary>
-	public partial class ListOperationsResponse
+	public sealed partial class ListOperationsResponse
 	{
 		/// <summary>
 		/// The standard List next-page token.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configuration for a single speaker in a multi-speaker setup.
 	/// </summary>
-	public partial class SpeakerVoiceConfig
+	public sealed partial class SpeakerVoiceConfig
 	{
 
     }

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// TunedModelCheckpoint for the Tuned Model of a Tuning Job.
 	/// </summary>
-	public partial class TunedModelCheckpoint
+	public sealed partial class TunedModelCheckpoint
 	{
 		/// <summary>
 		/// The ID of the checkpoint.

@@ -23,7 +23,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Usage metadata about the content generation request and response. This message provides a detailed breakdown of token usage and other relevant metrics.
 	/// </summary>
-	public partial class GenerateContentResponseUsageMetadata
+	public sealed partial class GenerateContentResponseUsageMetadata
 	{
 		/// <summary>
 		/// Output only. A detailed breakdown of the token count for each modality in the cached content.

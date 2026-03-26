@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configuration for speech generation.
 	/// </summary>
-	public partial class SpeechConfig
+	public sealed partial class SpeechConfig
 	{
 
     }

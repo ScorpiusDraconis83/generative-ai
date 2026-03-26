@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configuration for a white space chunking algorithm [white space delimited].
 	/// </summary>
-	public partial class WhiteSpaceConfig
+	public sealed partial class WhiteSpaceConfig
 	{
 		/// <summary>
 		/// Maximum number of overlapping tokens between two adjacent chunks.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The dataset used for evaluation.
 	/// </summary>
-	public partial class EvaluationDataset
+	public sealed partial class EvaluationDataset
 	{
 		/// <summary>
 		/// BigQuery source holds the dataset.

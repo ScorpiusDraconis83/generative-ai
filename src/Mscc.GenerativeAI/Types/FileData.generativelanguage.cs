@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// URI based data.
 	/// </summary>
-	public partial class FileData
+	public sealed partial class FileData
 	{
 		/// <summary>
 		/// Required. URI.

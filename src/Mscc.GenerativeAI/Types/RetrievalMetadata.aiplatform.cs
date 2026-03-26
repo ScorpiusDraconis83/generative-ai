@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Metadata related to the retrieval grounding source. This is part of the <c>GroundingMetadata</c> returned when grounding is enabled.
 	/// </summary>
-	public partial class RetrievalMetadata
+	public sealed partial class RetrievalMetadata
 	{
 
     }

@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Content filter results for a prompt sent in the request. Note: This is sent only in the first stream chunk and only if no candidates were generated due to content violations.
 	/// </summary>
-	public partial class GenerateContentResponsePromptFeedback
+	public sealed partial class GenerateContentResponsePromptFeedback
 	{
 		/// <summary>
 		/// Output only. The reason why the prompt was blocked.

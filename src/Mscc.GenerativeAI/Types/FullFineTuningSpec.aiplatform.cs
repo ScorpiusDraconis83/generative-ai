@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tuning Spec for Full Fine Tuning.
 	/// </summary>
-	public partial class FullFineTuningSpec
+	public sealed partial class FullFineTuningSpec
 	{
 		/// <summary>
 		/// Optional. Hyperparameters for Full Fine Tuning.

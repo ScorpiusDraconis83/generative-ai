@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Represents where the chunk starts and ends in the document.
 	/// </summary>
-	public partial class RagChunkPageSpan
+	public sealed partial class RagChunkPageSpan
 	{
 		/// <summary>
 		/// Page where chunk starts in the document. Inclusive. 1-indexed.

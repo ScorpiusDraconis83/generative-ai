@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for KNN search.
 	/// </summary>
-	public partial class RagVectorDbConfigRagManagedDbKNN
+	public sealed partial class RagVectorDbConfigRagManagedDbKNN
 	{
     }
 }

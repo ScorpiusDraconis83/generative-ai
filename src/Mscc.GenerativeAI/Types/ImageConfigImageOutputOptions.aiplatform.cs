@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The image output format for generated images.
 	/// </summary>
-	public partial class ImageConfigImageOutputOptions
+	public sealed partial class ImageConfigImageOutputOptions
 	{
 		/// <summary>
 		/// Optional. The compression quality of the output image.

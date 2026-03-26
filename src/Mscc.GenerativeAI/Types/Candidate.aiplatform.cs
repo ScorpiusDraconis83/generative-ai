@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A response candidate generated from the model.
 	/// </summary>
-	public partial class Candidate
+	public sealed partial class Candidate
 	{
 
     }

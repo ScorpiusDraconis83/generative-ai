@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Hyperparameters for Distillation.
 	/// </summary>
-	public partial class DistillationHyperParameters
+	public sealed partial class DistillationHyperParameters
 	{
 		/// <summary>
 		/// Optional. Adapter size for distillation.

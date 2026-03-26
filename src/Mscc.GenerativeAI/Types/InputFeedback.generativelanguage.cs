@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Feedback related to the input data used to answer the question, as opposed to the model-generated response to the question.
 	/// </summary>
-	public partial class InputFeedback
+	public sealed partial class InputFeedback
 	{
 		/// <summary>
 		/// Optional. If set, the input was blocked and no candidates are returned. Rephrase the input.

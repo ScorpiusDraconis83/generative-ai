@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Result of executing the ExecutableCode. Generated only when the <c>CodeExecution</c> tool is used.
 	/// </summary>
-	public partial class CodeExecutionResult
+	public sealed partial class CodeExecutionResult
 	{
 
     }

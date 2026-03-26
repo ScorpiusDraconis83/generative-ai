@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A transport that can stream HTTP requests and responses. Next ID: 6
 	/// </summary>
-	public partial class StreamableHttpTransport
+	public sealed partial class StreamableHttpTransport
 	{
 		/// <summary>
 		/// Optional: Fields for authentication headers, timeouts, etc., if needed.

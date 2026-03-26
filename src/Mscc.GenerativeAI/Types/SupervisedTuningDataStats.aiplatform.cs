@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tuning data statistics for Supervised Tuning.
 	/// </summary>
-	public partial class SupervisedTuningDataStats
+	public sealed partial class SupervisedTuningDataStats
 	{
 		/// <summary>
 		/// Output only. For each index in <c>truncated_example_indices</c>, the user-facing reason why the example was dropped.

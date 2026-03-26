@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Information about the sources that support the content of a response. When grounding is enabled, the model returns citations for claims in the response. This object contains the retrieved sources.
 	/// </summary>
-	public partial class GroundingMetadata
+	public sealed partial class GroundingMetadata
 	{
 
 		/// <summary>

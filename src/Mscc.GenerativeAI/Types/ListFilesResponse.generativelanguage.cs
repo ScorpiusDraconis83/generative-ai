@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response for <c>ListFiles</c>.
 	/// </summary>
-	public partial class ListFilesResponse
+	public sealed partial class ListFilesResponse
 	{
 		/// <summary>
 		/// The list of <c>File</c>s.

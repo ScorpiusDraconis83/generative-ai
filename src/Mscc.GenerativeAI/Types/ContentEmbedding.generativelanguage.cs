@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A list of floats representing an embedding.
 	/// </summary>
-	public partial class ContentEmbedding
+	public sealed partial class ContentEmbedding
 	{
 		/// <summary>
 		/// This field stores the soft tokens tensor frame shape (e.g. [1, 1, 256, 2048]).

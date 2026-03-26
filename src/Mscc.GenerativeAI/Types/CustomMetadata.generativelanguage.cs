@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// User provided metadata stored as key-value pairs.
 	/// </summary>
-	public partial class CustomMetadata
+	public sealed partial class CustomMetadata
 	{
 		/// <summary>
 		/// Required. The key of the metadata to store.

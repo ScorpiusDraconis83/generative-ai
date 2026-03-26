@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Context of the a single url retrieval.
 	/// </summary>
-	public partial class UrlMetadata
+	public sealed partial class UrlMetadata
 	{
 		/// <summary>
 		/// Retrieved url by the tool.

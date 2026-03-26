@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A collection of supporting references for a segment or part of the model&apos;s response.
 	/// </summary>
-	public partial class GroundingSupport
+	public sealed partial class GroundingSupport
 	{
 
     }

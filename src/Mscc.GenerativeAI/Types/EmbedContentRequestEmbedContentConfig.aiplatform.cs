@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configurations for the EmbedContent API.
 	/// </summary>
-	public partial class EmbedContentRequestEmbedContentConfig
+	public sealed partial class EmbedContentRequestEmbedContentConfig
 	{
 		/// <summary>
 		/// Optional. Whether to extract audio from video content.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A grounding chunk from Google Maps. A Maps chunk corresponds to a single place.
 	/// </summary>
-	public partial class Maps
+	public sealed partial class Maps
 	{
 		/// <summary>
 		/// Sources that provide answers about the features of a given place in Google Maps.

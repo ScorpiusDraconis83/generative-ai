@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The config for the Vertex Feature Store.
 	/// </summary>
-	public partial class RagVectorDbConfigVertexFeatureStore
+	public sealed partial class RagVectorDbConfigVertexFeatureStore
 	{
 		/// <summary>
 		/// The resource name of the FeatureView. Format: <c>projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}</c>

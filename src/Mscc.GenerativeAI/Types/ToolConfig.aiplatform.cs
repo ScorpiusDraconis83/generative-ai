@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tool config. This config is shared for all tools provided in the request.
 	/// </summary>
-	public partial class ToolConfig
+	public sealed partial class ToolConfig
 	{
 
     }

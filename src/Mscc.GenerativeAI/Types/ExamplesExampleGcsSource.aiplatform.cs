@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The Cloud Storage input instances.
 	/// </summary>
-	public partial class ExamplesExampleGcsSource
+	public sealed partial class ExamplesExampleGcsSource
 	{
 		/// <summary>
 		/// The format in which instances are given, if not specified, assume it&apos;s JSONL format. Currently only JSONL format is supported.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Specifies the LLM parsing for RagFiles.
 	/// </summary>
-	public partial class RagFileParsingConfigLlmParser
+	public sealed partial class RagFileParsingConfigLlmParser
 	{
 		/// <summary>
 		/// The prompt to use for parsing. If not specified, a default prompt will be used.

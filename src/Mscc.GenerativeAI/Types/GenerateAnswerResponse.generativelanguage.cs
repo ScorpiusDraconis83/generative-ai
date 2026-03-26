@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response from the model for a grounded answer.
 	/// </summary>
-	public partial class GenerateAnswerResponse
+	public sealed partial class GenerateAnswerResponse
 	{
 		/// <summary>
 		/// Candidate answer from the model. Note: The model *always* attempts to provide a grounded answer, even when the answer is unlikely to be answerable from the given passages. In that case, a low-quality or ungrounded answer may be provided, along with a low <c>answerable_probability</c>.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configures the input to the batch request.
 	/// </summary>
-	public partial class InputEmbedContentConfig
+	public sealed partial class InputEmbedContentConfig
 	{
 		/// <summary>
 		/// The name of the <c>File</c> containing the input requests.

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A resource used in LLM queries for users to explicitly specify what to cache and how to cache.
 	/// </summary>
-	public partial class CachedContent
+	public sealed partial class CachedContent
 	{
 
 		/// <summary>

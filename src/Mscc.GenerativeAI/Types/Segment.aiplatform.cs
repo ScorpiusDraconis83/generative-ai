@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A segment of the content.
 	/// </summary>
-	public partial class Segment
+	public sealed partial class Segment
 	{
 
     }

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Request message for PredictionService.Predict.
 	/// </summary>
-	public partial class PredictRequest
+	public sealed partial class PredictRequest
 	{
 
 		/// <summary>

@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A query to retrieve relevant contexts.
 	/// </summary>
-	public partial class RagQuery
+	public sealed partial class RagQuery
 	{
 		/// <summary>
 		/// Optional. The retrieval config for the query.

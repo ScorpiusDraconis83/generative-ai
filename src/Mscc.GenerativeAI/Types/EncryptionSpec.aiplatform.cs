@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	/// </summary>
-	public partial class EncryptionSpec
+	public sealed partial class EncryptionSpec
 	{
 		/// <summary>
 		/// Required. Resource name of the Cloud KMS key used to protect the resource. The Cloud KMS key must be in the same region as the resource. It must have the format <c>projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}</c>.

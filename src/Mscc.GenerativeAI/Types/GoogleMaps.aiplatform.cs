@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Tool to retrieve public maps data for grounding, powered by Google.
 	/// </summary>
-	public partial class GoogleMaps
+	public sealed partial class GoogleMaps
 	{
 
     }

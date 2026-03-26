@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The output of a batch request. This is returned in the <c>AsyncBatchEmbedContentResponse</c> or the <c>EmbedContentBatch.output</c> field.
 	/// </summary>
-	public partial class EmbedContentBatchOutput
+	public sealed partial class EmbedContentBatchOutput
 	{
 		/// <summary>
 		/// Output only. The responses to the requests in the batch. Returned when the batch was built using inlined requests. The responses will be in the same order as the input requests.

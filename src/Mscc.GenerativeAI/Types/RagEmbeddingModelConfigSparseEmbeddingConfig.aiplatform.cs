@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Configuration for sparse emebdding generation.
 	/// </summary>
-	public partial class RagEmbeddingModelConfigSparseEmbeddingConfig
+	public sealed partial class RagEmbeddingModelConfigSparseEmbeddingConfig
 	{
 		/// <summary>
 		/// Use BM25 scoring algorithm.

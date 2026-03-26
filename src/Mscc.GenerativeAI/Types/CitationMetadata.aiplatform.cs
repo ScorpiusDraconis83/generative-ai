@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// A collection of citations that apply to a piece of generated content.
 	/// </summary>
-	public partial class CitationMetadata
+	public sealed partial class CitationMetadata
 	{
 
 		/// <summary>

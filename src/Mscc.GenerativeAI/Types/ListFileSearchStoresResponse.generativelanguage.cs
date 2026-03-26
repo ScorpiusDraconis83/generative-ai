@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response from <c>ListFileSearchStores</c> containing a paginated list of <c>FileSearchStores</c>. The results are sorted by ascending <c>file_search_store.create_time</c>.
 	/// </summary>
-	public partial class ListFileSearchStoresResponse
+	public sealed partial class ListFileSearchStoresResponse
 	{
 		/// <summary>
 		/// The returned rag_stores.

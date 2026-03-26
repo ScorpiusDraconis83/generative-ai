@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The <c>Schema</c> object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. Represents a select subset of an [OpenAPI 3.0 schema object](https://spec.openapis.org/oas/v3.0.3#schema).
 	/// </summary>
-	public partial class Schema
+	public sealed partial class Schema
 	{
 		/// <summary>
 		/// Optional. The value should be validated against any (one or more) of the subschemas in the list.

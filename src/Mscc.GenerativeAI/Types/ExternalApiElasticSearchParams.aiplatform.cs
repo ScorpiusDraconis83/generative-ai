@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// The search parameters to use for the ELASTIC_SEARCH spec.
 	/// </summary>
-	public partial class ExternalApiElasticSearchParams
+	public sealed partial class ExternalApiElasticSearchParams
 	{
 		/// <summary>
 		/// The ElasticSearch index to use.

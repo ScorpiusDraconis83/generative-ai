@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Collection of sources that provide answers about the features of a given place in Google Maps. Each PlaceAnswerSources message corresponds to a specific place in Google Maps. The Google Maps tool used these sources in order to answer questions about features of the place (e.g: &quot;does Bar Foo have Wifi&quot; or &quot;is Foo Bar wheelchair accessible?&quot;). Currently we only support review snippets as sources.
 	/// </summary>
-	public partial class PlaceAnswerSources
+	public sealed partial class PlaceAnswerSources
 	{
 		/// <summary>
 		/// Snippets of reviews that are used to generate answers about the features of a given place in Google Maps.

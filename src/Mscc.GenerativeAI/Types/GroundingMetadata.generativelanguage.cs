@@ -22,7 +22,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Metadata returned to client when grounding is enabled.
 	/// </summary>
-	public partial class GroundingMetadata
+	public sealed partial class GroundingMetadata
 	{
 		/// <summary>
 		/// Optional. Resource name of the Google Maps widget context token that can be used with the PlacesContextElement widget in order to render contextual data. Only populated in the case that grounding with Google Maps is enabled.

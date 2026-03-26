@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Response message for ModelService.ListModels
 	/// </summary>
-	public partial class ListModelsResponse
+	public sealed partial class ListModelsResponse
 	{
 
     }

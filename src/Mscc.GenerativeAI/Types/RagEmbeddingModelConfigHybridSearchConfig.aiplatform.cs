@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Config for hybrid search.
 	/// </summary>
-	public partial class RagEmbeddingModelConfigHybridSearchConfig
+	public sealed partial class RagEmbeddingModelConfigHybridSearchConfig
 	{
 		/// <summary>
 		/// Required. The Vertex AI Prediction Endpoint that hosts the embedding model for dense embedding generations.

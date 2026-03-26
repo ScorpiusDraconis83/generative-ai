@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Statistics for distillation prompt dataset. These statistics do not include the responses sampled from the teacher model.
 	/// </summary>
-	public partial class DistillationDataStats
+	public sealed partial class DistillationDataStats
 	{
 		/// <summary>
 		/// Output only. Statistics computed for the training dataset.

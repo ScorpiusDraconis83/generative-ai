@@ -21,7 +21,7 @@ namespace Mscc.GenerativeAI.Types
 	/// <summary>
 	/// Describes the info for output of EvaluationService.
 	/// </summary>
-	public partial class OutputInfo
+	public sealed partial class OutputInfo
 	{
 		/// <summary>
 		/// Output only. The full path of the Cloud Storage directory created, into which the evaluation results and aggregation results are written.
