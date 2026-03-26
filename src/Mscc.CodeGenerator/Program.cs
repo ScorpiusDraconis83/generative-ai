@@ -768,19 +768,19 @@ namespace Mscc.CodeGenerator
 			foreach (var line in lines)
 			{
 				var trimmed = line.Trim();
-				if (trimmed.StartsWith("/// <summary>", StringComparison.InvariantCultureIgnoreCase))
+				if (trimmed.StartsWith("/// <summary>", StringComparison.OrdinalIgnoreCase))
 				{
 					inSummary = true;
 					continue;
 				}
 
-				if (trimmed.StartsWith("/// </summary>", StringComparison.InvariantCultureIgnoreCase))
+				if (trimmed.StartsWith("/// </summary>", StringComparison.OrdinalIgnoreCase))
 				{
 					inSummary = false;
 					continue;
 				}
 
-				if (inSummary && trimmed.StartsWith("///", StringComparison.InvariantCultureIgnoreCase))
+				if (inSummary && trimmed.StartsWith("///", StringComparison.OrdinalIgnoreCase))
 				{
 					currentDescription = UnescapeXml(trimmed.Substring(3).Trim());
 					continue;
