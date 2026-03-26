@@ -60,9 +60,11 @@ namespace Mscc.GenerativeAI.Microsoft
 				c.Parts ??= [];
 				c.Parts.Clear();
 
-				c.Role = message.Role == mea.ChatRole.Assistant ? Role.Model :
-					message.Role == mea.ChatRole.Tool ? Role.Function :
-					Role.User;
+				c.Role = message.Role == mea.ChatRole.Assistant 
+					? Role.Model 
+					: message.Role == mea.ChatRole.Tool 
+						? Role.Function 
+						: Role.User;
 
 				foreach (var content in message.Contents)
 				{
