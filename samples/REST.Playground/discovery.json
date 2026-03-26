@@ -2246,7 +2246,7 @@
       }
     }
   },
-  "revision": "20260226",
+  "revision": "20260325",
   "rootUrl": "https://generativelanguage.googleapis.com/",
   "schemas": {
     "AsyncBatchEmbedContentRequest": {
@@ -2484,6 +2484,10 @@
         "generationConfig": {
           "$ref": "GenerationConfig",
           "description": "Optional. Generation config. The following fields are not supported: - `response_logprobs` - `response_mime_type` - `logprobs` - `response_schema` - `response_json_schema` - `stop_sequence` - `skip_response_cache` - `routing_config` - `audio_timestamp`"
+        },
+        "historyConfig": {
+          "$ref": "HistoryConfig",
+          "description": "Optional. Configures the exchange of history between the client and the server."
         },
         "inputAudioTranscription": {
           "$ref": "AudioTranscriptionConfig",
@@ -2799,6 +2803,10 @@
       "description": "Result of executing the `ExecutableCode`. Generated only when the `CodeExecution` tool is used.",
       "id": "CodeExecutionResult",
       "properties": {
+        "id": {
+          "description": "Optional. The identifier of the `ExecutableCode` part this result is for. Only populated if the corresponding `ExecutableCode` has an id.",
+          "type": "string"
+        },
         "outcome": {
           "description": "Required. Outcome of the code execution.",
           "enum": [
@@ -3541,6 +3549,10 @@
           "description": "Required. The code to be executed.",
           "type": "string"
         },
+        "id": {
+          "description": "Optional. Unique identifier of the `ExecutableCode` part. The server returns the `CodeExecutionResult` with the matching `id`.",
+          "type": "string"
+        },
         "language": {
           "description": "Required. Programming language of the `code`.",
           "enum": [
@@ -3766,7 +3778,7 @@
           "type": "string"
         },
         "name": {
-          "description": "Required. The name of the function to call. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.",
+          "description": "Required. The name of the function to call. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 128.",
           "type": "string"
         }
       },
@@ -3827,7 +3839,7 @@
           "type": "string"
         },
         "name": {
-          "description": "Required. The name of the function. Must be a-z, A-Z, 0-9, or contain underscores, colons, dots, and dashes, with a maximum length of 64.",
+          "description": "Required. The name of the function. Must be a-z, A-Z, 0-9, or contain underscores, colons, dots, and dashes, with a maximum length of 128.",
           "type": "string"
         },
         "parameters": {
@@ -3858,7 +3870,7 @@
           "type": "string"
         },
         "name": {
-          "description": "Required. The name of the function to call. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.",
+          "description": "Required. The name of the function to call. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 128.",
           "type": "string"
         },
         "parts": {
@@ -4125,6 +4137,26 @@
           },
           "type": "array"
         },
+        "serviceTier": {
+          "description": "Optional. The service tier of the request.",
+          "enum": [
+            "unspecified",
+            "standard",
+            "flex",
+            "priority"
+          ],
+          "enumDescriptions": [
+            "Default service tier, which is standard.",
+            "Standard service tier.",
+            "Flex service tier.",
+            "Priority service tier."
+          ],
+          "type": "string"
+        },
+        "store": {
+          "description": "Optional. Configures the logging behavior for a given request. If set, it takes precedence over the project-level logging config.",
+          "type": "boolean"
+        },
         "systemInstruction": {
           "$ref": "Content",
           "description": "Optional. Developer set [system instruction(s)](https://ai.google.dev/gemini-api/docs/system-instructions). Currently, text only."
@@ -4385,7 +4417,7 @@
           "description": "Optional. Config for image generation. An error will be returned if this field is set for models that don't support these config options."
         },
         "logprobs": {
-          "description": "Optional. Only valid if response_logprobs=True. This sets the number of top logprobs to return at each decoding step in the Candidate.logprobs_result. The number must be in the range of [0, 20].",
+          "description": "Optional. Only valid if response_logprobs=True. This sets the number of top logprobs, including the chosen candidate, to return at each decoding step in the Candidate.logprobs_result. The number must be in the range of [0, 20].",
           "format": "int32",
           "type": "integer"
         },
@@ -4508,6 +4540,15 @@
           },
           "type": "array"
         },
+        "renderedParts": {
+          "description": "Output only. Indices into the `parts` field of the candidate's content. These indices specify which rendered parts are associated with this support source.",
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "readOnly": true,
+          "type": "array"
+        },
         "segment": {
           "$ref": "GoogleAiGenerativelanguageV1alphaSegment",
           "description": "Segment of the content this support belongs to."
@@ -4617,6 +4658,44 @@
       },
       "type": "object"
     },
+    "GroundingChunkCustomMetadata": {
+      "description": "User provided metadata about the GroundingFact.",
+      "id": "GroundingChunkCustomMetadata",
+      "properties": {
+        "key": {
+          "description": "The key of the metadata.",
+          "type": "string"
+        },
+        "numericValue": {
+          "description": "Optional. The numeric value of the metadata. The expected range for this value depends on the specific `key` used.",
+          "format": "float",
+          "type": "number"
+        },
+        "stringListValue": {
+          "$ref": "GroundingChunkStringList",
+          "description": "Optional. A list of string values for the metadata."
+        },
+        "stringValue": {
+          "description": "Optional. The string value of the metadata.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GroundingChunkStringList": {
+      "description": "A list of string values.",
+      "id": "GroundingChunkStringList",
+      "properties": {
+        "values": {
+          "description": "The string values of the list.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "GroundingMetadata": {
       "description": "Metadata returned to client when grounding is enabled.",
       "id": "GroundingMetadata",
@@ -4707,6 +4786,17 @@
             "$ref": "GroundingPassage"
           },
           "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "HistoryConfig": {
+      "description": "History configuration. This message is included in the session configuration as `BidiGenerateContentSetup.history_config`. Configures the exchange of history messages.",
+      "id": "HistoryConfig",
+      "properties": {
+        "initialHistoryInClientContent": {
+          "description": "Optional. If true, after sending `setup_complete`, the server will wait and at first process `client_content` messages until `turn_complete` is `true`. This initial history will not trigger a model call and may end with role `MODEL`. After `turn_complete` is `true`, the client can start the realtime conversation via `realtime_input`.",
+          "type": "boolean"
         }
       },
       "type": "object"
@@ -5635,6 +5725,14 @@
           "format": "byte",
           "type": "string"
         },
+        "toolCall": {
+          "$ref": "ToolCall",
+          "description": "Server-side tool call. This field is populated when the model predicts a tool invocation that should be executed on the server. The client is expected to echo this message back to the API."
+        },
+        "toolResponse": {
+          "$ref": "ToolResponse",
+          "description": "The output from a server-side `ToolCall` execution. This field is populated by the client with the results of executing the corresponding `ToolCall`."
+        },
         "videoMetadata": {
           "$ref": "VideoMetadata",
           "description": "Optional. Video metadata. The metadata should only be specified while the video data is presented in inline_data or file_data."
@@ -5837,12 +5935,14 @@
           "enum": [
             "TURN_COVERAGE_UNSPECIFIED",
             "TURN_INCLUDES_ONLY_ACTIVITY",
-            "TURN_INCLUDES_ALL_INPUT"
+            "TURN_INCLUDES_ALL_INPUT",
+            "TURN_INCLUDES_AUDIO_ACTIVITY_AND_ALL_VIDEO"
           ],
           "enumDescriptions": [
-            "If unspecified, the default behavior is `TURN_INCLUDES_ONLY_ACTIVITY`.",
-            "The users turn only includes activity since the last turn, excluding inactivity (e.g. silence on the audio stream). This is the default behavior.",
-            "The users turn includes all realtime input since the last turn, including inactivity (e.g. silence on the audio stream)."
+            "If unspecified, a default behavior is selected based on the model. E.g., for Gemini 2.5, the default is `TURN_INCLUDES_ONLY_ACTIVITY`, while for Gemini 3.1 and onwards, it's `TURN_INCLUDES_AUDIO_ACTIVITY_AND_ALL_VIDEO`.",
+            "Includes activity since the last turn, excluding inactivity (e.g. silence on the audio stream).",
+            "Includes all realtime input since the last turn, including inactivity (e.g. silence on the audio stream).",
+            "Includes audio activity and all video since the last turn. With automatic activity detection, audio activity means speech and excludes silence."
           ],
           "type": "string"
         }
@@ -5908,6 +6008,13 @@
       "description": "Chunk from context retrieved by the file search tool.",
       "id": "RetrievedContext",
       "properties": {
+        "customMetadata": {
+          "description": "Optional. User-provided metadata about the retrieved context.",
+          "items": {
+            "$ref": "GroundingChunkCustomMetadata"
+          },
+          "type": "array"
+        },
         "fileSearchStore": {
           "description": "Optional. Name of the `FileSearchStore` containing the document. Example: `fileSearchStores/123`",
           "type": "string"
@@ -6269,11 +6376,11 @@
       "properties": {
         "imageSearch": {
           "$ref": "ImageSearch",
-          "description": "Optional. Setting this field enables image search. Image bytes are returned."
+          "description": "Optional. Enables image search. Image bytes are returned."
         },
         "webSearch": {
           "$ref": "WebSearch",
-          "description": "Optional. Setting this field enables web search. Only text results are returned."
+          "description": "Optional. Enables web search. Only text results are returned."
         }
       },
       "type": "object"
@@ -6575,6 +6682,45 @@
       },
       "type": "object"
     },
+    "ToolCall": {
+      "description": "A predicted server-side `ToolCall` returned from the model. This message contains information about a tool that the model wants to invoke. The client is NOT expected to execute this `ToolCall`. Instead, the client should pass this `ToolCall` back to the API in a subsequent turn within a `Content` message, along with the corresponding `ToolResponse`.",
+      "id": "ToolCall",
+      "properties": {
+        "args": {
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any"
+          },
+          "description": "Optional. The tool call arguments. Example: {\"arg1\" : \"value1\", \"arg2\" : \"value2\" , ...}",
+          "type": "object"
+        },
+        "id": {
+          "description": "Optional. Unique identifier of the tool call. The server returns the tool response with the matching `id`.",
+          "type": "string"
+        },
+        "toolType": {
+          "description": "Required. The type of tool that was called.",
+          "enum": [
+            "TOOL_TYPE_UNSPECIFIED",
+            "GOOGLE_SEARCH_WEB",
+            "GOOGLE_SEARCH_IMAGE",
+            "URL_CONTEXT",
+            "GOOGLE_MAPS",
+            "FILE_SEARCH"
+          ],
+          "enumDescriptions": [
+            "Unspecified tool type.",
+            "Google search tool, maps to Tool.google_search.search_types.web_search.",
+            "Image search tool, maps to Tool.google_search.search_types.image_search.",
+            "URL context tool, maps to Tool.url_context.",
+            "Google maps tool, maps to Tool.google_maps.",
+            "File search tool, maps to Tool.file_search."
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "ToolConfig": {
       "description": "The Tool configuration containing parameters for specifying `Tool` use in the request.",
       "id": "ToolConfig",
@@ -6583,9 +6729,52 @@
           "$ref": "FunctionCallingConfig",
           "description": "Optional. Function calling config."
         },
+        "includeServerSideToolInvocations": {
+          "description": "Optional. If true, the API response will include the server-side tool calls and responses within the `Content` message. This allows clients to observe the server's tool interactions.",
+          "type": "boolean"
+        },
         "retrievalConfig": {
           "$ref": "RetrievalConfig",
           "description": "Optional. Retrieval config."
+        }
+      },
+      "type": "object"
+    },
+    "ToolResponse": {
+      "description": "The output from a server-side `ToolCall` execution. This message contains the results of a tool invocation that was initiated by a `ToolCall` from the model. The client should pass this `ToolResponse` back to the API in a subsequent turn within a `Content` message, along with the corresponding `ToolCall`.",
+      "id": "ToolResponse",
+      "properties": {
+        "id": {
+          "description": "Optional. The identifier of the tool call this response is for.",
+          "type": "string"
+        },
+        "response": {
+          "additionalProperties": {
+            "description": "Properties of the object.",
+            "type": "any"
+          },
+          "description": "Optional. The tool response.",
+          "type": "object"
+        },
+        "toolType": {
+          "description": "Required. The type of tool that was called, matching the `tool_type` in the corresponding `ToolCall`.",
+          "enum": [
+            "TOOL_TYPE_UNSPECIFIED",
+            "GOOGLE_SEARCH_WEB",
+            "GOOGLE_SEARCH_IMAGE",
+            "URL_CONTEXT",
+            "GOOGLE_MAPS",
+            "FILE_SEARCH"
+          ],
+          "enumDescriptions": [
+            "Unspecified tool type.",
+            "Google search tool, maps to Tool.google_search.search_types.web_search.",
+            "Image search tool, maps to Tool.google_search.search_types.image_search.",
+            "URL context tool, maps to Tool.url_context.",
+            "Google maps tool, maps to Tool.google_maps.",
+            "File search tool, maps to Tool.file_search."
+          ],
+          "type": "string"
         }
       },
       "type": "object"
