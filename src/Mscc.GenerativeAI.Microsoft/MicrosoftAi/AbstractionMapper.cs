@@ -829,7 +829,7 @@ namespace Mscc.GenerativeAI.Microsoft
 		private static mea.CodeInterpreterToolCallContent ToCodeInterpreterToolCallContent(
 			ExecutableCode executableCode)
 		{
-			var content = new mea.CodeInterpreterToolCallContent()
+			var content = new mea.CodeInterpreterToolCallContent(executableCode.Id)
 			{
 				Inputs = new List<mea.AIContent>()
 				{
@@ -852,7 +852,7 @@ namespace Mscc.GenerativeAI.Microsoft
 		private static mea.CodeInterpreterToolResultContent ToCodeInterpreterToolResultContent(
 			CodeExecutionResult codeExecutionResult)
 		{
-			var content = new mea.CodeInterpreterToolResultContent()
+			var content = new mea.CodeInterpreterToolResultContent(codeExecutionResult.Id)
 			{
 				Outputs = new List<mea.AIContent>()
 				{
