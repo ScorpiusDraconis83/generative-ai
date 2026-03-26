@@ -117,7 +117,9 @@ namespace Mscc.CodeGenerator
 			{ "GoogleAiGenerativelanguagev1betaGroundingSupport", "GroundingSupport" },
 			{ "GoogleAiGenerativelanguageV1betaGroundingSupport", "GroundingSupport" },
 			{ "GoogleAiGroundingSupport", "GroundingSupport" },
+			{ "GoogleAiV1alphaGroundingSupport", "GroundingSupport" },
 			{ "GoogleAiSegment", "Segment" },
+			{ "GoogleAiV1alphaSegment", "Segment" },
 			{ "Method", "HarmBlockMethod" },
 			{ "Model", "ModelResponse" },
 			{ "Probability", "HarmProbability" },
@@ -127,6 +129,8 @@ namespace Mscc.CodeGenerator
 			{ "Severity", "HarmSeverity" },
 			{ "SupervisedTuningSpec.TuningMode", "TuningMode" },
 			{ "Threshold", "HarmBlockThreshold" },
+			{ "ToolCall.ToolType", "ToolType" },
+			{ "ToolResponse.ToolType", "ToolType" },
 			{ "TunedModel", "TunedModelResponse" },
 			{ "List<File>", "List<FileResource>" },
 			{ "List<Model>", "List<ModelResponse>" },
@@ -160,6 +164,7 @@ namespace Mscc.CodeGenerator
 			"Schema.Type",
 			"TaskType",
 			"ThinkingLevel",
+			"ToolType",
 			"TuningMode",
 			"UrlRetrievalStatus"
 		};
@@ -337,7 +342,7 @@ namespace Mscc.CodeGenerator
 				sb.AppendLine(CultureInfo.InvariantCulture, $"\t/// </summary>");
 			}
 
-			sb.AppendLine(CultureInfo.InvariantCulture, $"\tpublic partial class {className}");
+			sb.AppendLine(CultureInfo.InvariantCulture, $"\tpublic sealed partial class {className}");
 			sb.AppendLine("	{");
 
 			var existingProperties = GetExistingProperties(outputDirectory, className);
@@ -469,7 +474,7 @@ namespace Mscc.CodeGenerator
 
 			GenerateEnum(sb, enumName, members, "\t");
 
-			sb.Append("}");
+			sb.Append('}');
 
 			PrefixOutput(sb);
 			File.WriteAllText(Path.Combine(outputDirectory, $"{enumName}.cs"), sb.ToString());
@@ -696,7 +701,7 @@ namespace Mscc.CodeGenerator
 			if (s.Length == 1)
 				return s.ToUpperInvariant();
 
-			var pascalCase = s.Substring(0, 1).ToUpperInvariant() + s.Substring(1);
+			var pascalCase = string.Concat(s.Substring(0, 1).ToUpperInvariant(), s.AsSpan(1));
 			if (containingClassName == null && enumMember)
 				pascalCase = s.Substring(0, 1).ToUpperInvariant() + s.Substring(1).ToLowerInvariant();
 			if (s.IndexOfAny(['_', '-']) != -1)
