@@ -135,6 +135,10 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public TuningDataStats? TuningDataStats { get; set; }
 		/// <summary>
+		/// Output only. Tuning Job metadata.
+		/// </summary>
+		public TuningJobMetadata? TuningJobMetadata { get; set; }
+		/// <summary>
 		/// Output only. The detail state of the tuning job (while the overall <c>JobState</c> is running).
 		/// </summary>
 		public TuningJobStateType? TuningJobState { get; set; }
