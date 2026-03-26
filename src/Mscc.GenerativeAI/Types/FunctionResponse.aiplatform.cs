@@ -19,7 +19,7 @@
 namespace Mscc.GenerativeAI.Types
 {
 	/// <summary>
-	/// The result output from a [FunctionCall] that contains a string representing the [FunctionDeclaration.name] and a structured JSON object containing any output from the function is used as context to the model. This should contain the result of a [FunctionCall] made based on model prediction.
+	/// The result output from a FunctionCall that contains a string representing the FunctionDeclaration.name and a structured JSON object containing any output from the function is used as context to the model. This should contain the result of a <c>FunctionCall</c> made based on model prediction.
 	/// </summary>
 	public partial class FunctionResponse
 	{

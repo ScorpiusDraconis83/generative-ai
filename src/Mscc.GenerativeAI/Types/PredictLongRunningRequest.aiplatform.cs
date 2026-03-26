@@ -24,5 +24,9 @@ namespace Mscc.GenerativeAI.Types
 	public partial class PredictLongRunningRequest
 	{
 
+		/// <summary>
+		/// Optional. The labels with user-defined metadata for the request. It is used for billing and reporting only. Label keys and values can be no longer than 63 characters (Unicode codepoints) and can only contain lowercase letters, numeric characters, underscores, and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter.
+		/// </summary>
+		public object? Labels { get; set; }
     }
 }

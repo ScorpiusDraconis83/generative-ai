@@ -50,6 +50,10 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public LLMBasedMetricSpec? LlmBasedMetricSpec { get; set; }
 		/// <summary>
+		/// Optional. Metadata about the metric, used for visualization and organization.
+		/// </summary>
+		public MetricMetadata? Metadata { get; set; }
+		/// <summary>
 		/// Spec for pairwise metric.
 		/// </summary>
 		public PairwiseMetricSpec? PairwiseMetricSpec { get; set; }

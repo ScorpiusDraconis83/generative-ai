@@ -19,14 +19,17 @@
 namespace Mscc.GenerativeAI.Types
 {
 	/// <summary>
-	/// Function calling config.
+	/// Different types of search that can be enabled on the GoogleSearch tool.
 	/// </summary>
-	public partial class FunctionCallingConfig
+	public partial class ToolGoogleSearchSearchTypes
 	{
-
 		/// <summary>
-		/// Optional. When set to true, arguments of a single function call will be streamed out in multiple parts/contents/responses. Partial parameter results will be returned in the <c>FunctionCall.partial_args</c> field.
+		/// Optional. Setting this field enables image search. Image bytes are returned.
 		/// </summary>
-		public bool? StreamFunctionCallArguments { get; set; }
+		public ToolGoogleSearchImageSearch? ImageSearch { get; set; }
+		/// <summary>
+		/// Optional. Setting this field enables web search. Only text results are returned.
+		/// </summary>
+		public ToolGoogleSearchWebSearch? WebSearch { get; set; }
     }
 }

@@ -40,7 +40,7 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public string? EvaluationRun { get; set; }
 		/// <summary>
-		/// Output only. The operation ID of the evaluation run. Format: <c>projects/{project}/locations/{location}/operations/{operation_id}</c>.
+		/// Output only. Deprecated: The updated architecture uses evaluation_run instead.
 		/// </summary>
 		public string? OperationName { get; set; }
     }

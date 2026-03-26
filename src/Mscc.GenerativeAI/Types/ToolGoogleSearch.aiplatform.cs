@@ -32,5 +32,9 @@ namespace Mscc.GenerativeAI.Types
 		/// Optional. List of domains to be excluded from the search results. The default limit is 2000 domains. Example: [&quot;amazon.com&quot;, &quot;facebook.com&quot;].
 		/// </summary>
 		public List<string>? ExcludeDomains { get; set; }
+		/// <summary>
+		/// Optional. The set of search types to enable. If not set, web search is enabled by default.
+		/// </summary>
+		public ToolGoogleSearchSearchTypes? SearchTypes { get; set; }
     }
 }

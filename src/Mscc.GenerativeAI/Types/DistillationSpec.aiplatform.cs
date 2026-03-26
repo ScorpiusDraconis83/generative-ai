@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+using System.Text.Json.Serialization;
 
 // *** AUTO-GENERATED FILE - DO NOT EDIT MANUALLY *** //
 
@@ -48,8 +49,29 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public string? TunedTeacherModelSource { get; set; }
 		/// <summary>
+		/// Optional. Specifies the tuning mode for distillation (sft part). This feature is only available for open source models.
+		/// </summary>
+		public DistillationSpecTuningModeType? TuningMode { get; set; }
+		/// <summary>
 		/// Optional. Cloud Storage path to file containing validation dataset for tuning. The dataset must be formatted as a JSONL file.
 		/// </summary>
 		public string? ValidationDatasetUri { get; set; }
+
+		[JsonConverter(typeof(JsonStringEnumConverter<DistillationSpecTuningModeType>))]
+		public enum DistillationSpecTuningModeType
+		{
+			/// <summary>
+			/// Tuning mode is unspecified.
+			/// </summary>
+			TuningModeUnspecified,
+			/// <summary>
+			/// Full fine-tuning mode.
+			/// </summary>
+			TuningModeFull,
+			/// <summary>
+			/// PEFT adapter tuning mode.
+			/// </summary>
+			TuningModePeftAdapter,
+		}
     }
 }

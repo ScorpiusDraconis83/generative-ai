@@ -29,7 +29,7 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public bool? Truncated { get; set; }
 		/// <summary>
-		/// Metadata about the response(s).
+		/// Usage metadata about the response(s).
 		/// </summary>
 		public UsageMetadata? UsageMetadata { get; set; }
     }

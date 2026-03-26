@@ -25,8 +25,12 @@ namespace Mscc.GenerativeAI.Types
 	{
 
 		/// <summary>
-		/// Optional. Whether to silently truncate the input content if it&apos;s longer than the maximum sequence length.
+		/// Optional. Deprecated: Please use EmbedContentConfig.auto_truncate instead. Whether to silently truncate the input content if it&apos;s longer than the maximum sequence length.
 		/// </summary>
 		public bool? AutoTruncate { get; set; }
+		/// <summary>
+		/// Optional. Configuration for the EmbedContent request.
+		/// </summary>
+		public EmbedContentRequestEmbedContentConfig? EmbedContentConfig { get; set; }
     }
 }

@@ -13,36 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System.Collections.Generic;
 
 // *** AUTO-GENERATED FILE - DO NOT EDIT MANUALLY *** //
 
 namespace Mscc.GenerativeAI.Types
 {
 	/// <summary>
-	/// Evaluation Config for Tuning Job.
+	/// Metadata about the metric, used for visualization and organization.
 	/// </summary>
-	public partial class EvaluationConfig
+	public partial class MetricMetadata
 	{
 		/// <summary>
-		/// Optional. Autorater config for evaluation.
+		/// Optional. Flexible metadata for user-defined attributes.
 		/// </summary>
-		public AutoraterConfig? AutoraterConfig { get; set; }
+		public object? OtherMetadata { get; set; }
 		/// <summary>
-		/// Optional. Specifications for custom dataset-level aggregations.
+		/// Optional. The range of possible scores for this metric, used for plotting.
 		/// </summary>
-		public List<DatasetCustomMetric>? DatasetCustomMetrics { get; set; }
+		public MetricMetadataScoreRange? ScoreRange { get; set; }
 		/// <summary>
-		/// Optional. Configuration options for inference generation and outputs. If not set, default generation parameters are used.
+		/// Optional. The user-friendly name for the metric. If not set for a registered metric, it will default to the metric&apos;s display name.
 		/// </summary>
-		public GenerationConfig? InferenceGenerationConfig { get; set; }
-		/// <summary>
-		/// Required. The metrics used for evaluation.
-		/// </summary>
-		public List<Metric>? Metrics { get; set; }
-		/// <summary>
-		/// Required. Config for evaluation output.
-		/// </summary>
-		public OutputConfig? OutputConfig { get; set; }
+		public string? Title { get; set; }
     }
 }

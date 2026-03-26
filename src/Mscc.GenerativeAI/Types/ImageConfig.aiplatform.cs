@@ -32,6 +32,10 @@ namespace Mscc.GenerativeAI.Types
 		/// Optional. Controls whether the model can generate people.
 		/// </summary>
 		public PersonGenerationType? PersonGeneration { get; set; }
+		/// <summary>
+		/// Optional. Controls whether prominent people (celebrities) generation is allowed. If used with personGeneration, personGeneration enum would take precedence. For instance, if ALLOW_NONE is set, all person generation would be blocked. If this field is unspecified, the default behavior is to allow prominent people.
+		/// </summary>
+		public ProminentPeopleType? ProminentPeople { get; set; }
 
 		[JsonConverter(typeof(JsonStringEnumConverter<PersonGenerationType>))]
 		public enum PersonGenerationType
@@ -52,6 +56,23 @@ namespace Mscc.GenerativeAI.Types
 			/// Prevents the model from generating images of people.
 			/// </summary>
 			AllowNone,
+		}
+
+		[JsonConverter(typeof(JsonStringEnumConverter<ProminentPeopleType>))]
+		public enum ProminentPeopleType
+		{
+			/// <summary>
+			/// Unspecified value. The model will proceed with the default behavior, which is to allow generation of prominent people.
+			/// </summary>
+			ProminentPeopleUnspecified,
+			/// <summary>
+			/// Allows the model to generate images of prominent people.
+			/// </summary>
+			AllowProminentPeople,
+			/// <summary>
+			/// Prevents the model from generating images of prominent people.
+			/// </summary>
+			BlockProminentPeople,
 		}
     }
 }

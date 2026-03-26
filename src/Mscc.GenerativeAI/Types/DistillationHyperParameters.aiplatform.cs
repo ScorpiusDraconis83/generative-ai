@@ -28,9 +28,17 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public AdapterSize? AdapterSize { get; set; }
 		/// <summary>
+		/// Optional. Batch size for tuning. This feature is only available for open source models.
+		/// </summary>
+		public long? BatchSize { get; set; }
+		/// <summary>
 		/// Optional. Number of complete passes the model makes over the entire training dataset during training.
 		/// </summary>
 		public long? EpochCount { get; set; }
+		/// <summary>
+		/// Optional. Specifies the learning rate for tuning. Mutually exclusive with <c>learning_rate_multiplier</c>. This feature is only available for open source models.
+		/// </summary>
+		public double? LearningRate { get; set; }
 		/// <summary>
 		/// Optional. Multiplier for adjusting the default learning rate.
 		/// </summary>
