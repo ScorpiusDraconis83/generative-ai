@@ -19,17 +19,25 @@
 namespace Mscc.GenerativeAI.Types
 {
 	/// <summary>
-	/// Different types of search that can be enabled on the GoogleSearch tool.
+	/// The range of possible scores for this metric, used for plotting.
 	/// </summary>
-	public sealed partial class ToolGoogleSearchSearchTypes
+	public sealed partial class MetricMetadataScoreRange
 	{
 		/// <summary>
-		/// Optional. Setting this field enables image search. Image bytes are returned.
+		/// Optional. The description of the score explaining the directionality etc.
 		/// </summary>
-		public ToolGoogleSearchImageSearch? ImageSearch { get; set; }
+		public string? Description { get; set; }
 		/// <summary>
-		/// Optional. Setting this field enables web search. Only text results are returned.
+		/// Required. The maximum value of the score range (inclusive).
 		/// </summary>
-		public ToolGoogleSearchWebSearch? WebSearch { get; set; }
+		public double? Max { get; set; }
+		/// <summary>
+		/// Required. The minimum value of the score range (inclusive).
+		/// </summary>
+		public double? Min { get; set; }
+		/// <summary>
+		/// Optional. The distance between discrete steps in the range. If unset, the range is assumed to be continuous.
+		/// </summary>
+		public double? Step { get; set; }
     }
 }

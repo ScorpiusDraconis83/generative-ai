@@ -35,6 +35,6 @@ namespace Mscc.GenerativeAI.Types
 		/// <summary>
 		/// Optional. The set of search types to enable. If not set, web search is enabled by default.
 		/// </summary>
-		public ToolGoogleSearchSearchTypes? SearchTypes { get; set; }
+		public SearchTypes? SearchTypes { get; set; }
     }
 }
