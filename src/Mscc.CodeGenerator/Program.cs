@@ -107,6 +107,18 @@ namespace Mscc.CodeGenerator
 			"TuningContent.Role"
 		};
 
+		private readonly HashSet<string> _unsealedClasses = new()
+		{
+			"GenerateContentRequest",
+			"GenerationConfig",
+			"Hyperparameters",
+			"Image",
+			"ModelResponse",
+			"Operation",
+			"Part",
+			"ToolCodeExecution"
+		};
+
 		private readonly Dictionary<string, string> _typeReplacements = new Dictionary<string, string>
 		{
 			{ "Behavior", "BehaviorType" },
@@ -342,7 +354,8 @@ namespace Mscc.CodeGenerator
 				sb.AppendLine(CultureInfo.InvariantCulture, $"\t/// </summary>");
 			}
 
-			sb.AppendLine(CultureInfo.InvariantCulture, $"\tpublic sealed partial class {className}");
+			var sealedModifier = _unsealedClasses.Contains(className) ? "" : "sealed ";
+			sb.AppendLine(CultureInfo.InvariantCulture, $"\tpublic {sealedModifier}partial class {className}");
 			sb.AppendLine("	{");
 
 			var existingProperties = GetExistingProperties(outputDirectory, className);
