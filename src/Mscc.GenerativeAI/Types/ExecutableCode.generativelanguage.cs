@@ -29,6 +29,10 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public string? Code { get; set; }
 		/// <summary>
+		/// Optional. Unique identifier of the <c>ExecutableCode</c> part. The server returns the <c>CodeExecutionResult</c> with the matching <c>id</c>.
+		/// </summary>
+		public string? Id { get; set; }
+		/// <summary>
 		/// Required. Programming language of the <c>code</c>.
 		/// </summary>
 		public LanguageType? Language { get; set; }

@@ -32,6 +32,10 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public GenerationConfig? GenerationConfig { get; set; }
 		/// <summary>
+		/// Optional. Configures the exchange of history between the client and the server.
+		/// </summary>
+		public HistoryConfig? HistoryConfig { get; set; }
+		/// <summary>
 		/// Optional. If set, enables transcription of voice input. The transcription aligns with the input audio language, if configured.
 		/// </summary>
 		public AudioTranscriptionConfig? InputAudioTranscription { get; set; }

@@ -13,36 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 // *** AUTO-GENERATED FILE - DO NOT EDIT MANUALLY *** //
 
 namespace Mscc.GenerativeAI.Types
 {
-	/// <summary>
-	/// Chunk from context retrieved by the file search tool.
-	/// </summary>
-	public partial class RetrievedContext
+
+	[JsonConverter(typeof(JsonStringEnumConverter<ToolType>))]
+	public enum ToolType
 	{
 		/// <summary>
-		/// Optional. User-provided metadata about the retrieved context.
+		/// Unspecified tool type.
 		/// </summary>
-		public List<GroundingChunkCustomMetadata>? CustomMetadata { get; set; }
+		ToolTypeUnspecified,
 		/// <summary>
-		/// Optional. Name of the <c>FileSearchStore</c> containing the document. Example: <c>fileSearchStores/123</c>
+		/// Google search tool, maps to Tool.google_search.search_types.web_search.
 		/// </summary>
-		public string? FileSearchStore { get; set; }
+		GoogleSearchWeb,
 		/// <summary>
-		/// Optional. Text of the chunk.
+		/// Image search tool, maps to Tool.google_search.search_types.image_search.
 		/// </summary>
-		public string? Text { get; set; }
+		GoogleSearchImage,
 		/// <summary>
-		/// Optional. Title of the document.
+		/// URL context tool, maps to Tool.url_context.
 		/// </summary>
-		public string? Title { get; set; }
+		UrlContext,
 		/// <summary>
-		/// Optional. URI reference of the semantic retrieval document.
+		/// Google maps tool, maps to Tool.google_maps.
 		/// </summary>
-		public string? Uri { get; set; }
-    }
+		GoogleMaps,
+		/// <summary>
+		/// File search tool, maps to Tool.file_search.
+		/// </summary>
+		FileSearch,
+	}
 }

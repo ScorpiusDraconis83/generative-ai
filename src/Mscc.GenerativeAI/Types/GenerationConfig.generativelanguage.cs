@@ -46,7 +46,7 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public ImageConfig? ImageConfig { get; set; }
 		/// <summary>
-		/// Optional. Only valid if response_logprobs=True. This sets the number of top logprobs to return at each decoding step in the Candidate.logprobs_result. The number must be in the range of [0, 20].
+		/// Optional. Only valid if response_logprobs=True. This sets the number of top logprobs, including the chosen candidate, to return at each decoding step in the Candidate.logprobs_result. The number must be in the range of [0, 20].
 		/// </summary>
 		public int? Logprobs { get; set; }
 		/// <summary>

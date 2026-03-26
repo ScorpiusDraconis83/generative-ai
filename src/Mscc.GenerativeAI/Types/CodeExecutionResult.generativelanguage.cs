@@ -24,6 +24,10 @@ namespace Mscc.GenerativeAI.Types
 	public partial class CodeExecutionResult
 	{
 		/// <summary>
+		/// Optional. The identifier of the <c>ExecutableCode</c> part this result is for. Only populated if the corresponding <c>ExecutableCode</c> has an id.
+		/// </summary>
+		public string? Id { get; set; }
+		/// <summary>
 		/// Required. Outcome of the code execution.
 		/// </summary>
 		public Outcome? Outcome { get; set; }

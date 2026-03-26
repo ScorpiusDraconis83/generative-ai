@@ -19,21 +19,13 @@
 namespace Mscc.GenerativeAI.Types
 {
 	/// <summary>
-	/// The Tool configuration containing parameters for specifying <c>Tool</c> use in the request.
+	/// History configuration. This message is included in the session configuration as <c>BidiGenerateContentSetup.history_config</c>. Configures the exchange of history messages.
 	/// </summary>
-	public partial class ToolConfig
+	public sealed partial class HistoryConfig
 	{
 		/// <summary>
-		/// Optional. Function calling config.
+		/// Optional. If true, after sending <c>setup_complete</c>, the server will wait and at first process <c>client_content</c> messages until <c>turn_complete</c> is <c>true</c>. This initial history will not trigger a model call and may end with role <c>MODEL</c>. After <c>turn_complete</c> is <c>true</c>, the client can start the realtime conversation via <c>realtime_input</c>.
 		/// </summary>
-		public FunctionCallingConfig? FunctionCallingConfig { get; set; }
-		/// <summary>
-		/// Optional. If true, the API response will include the server-side tool calls and responses within the <c>Content</c> message. This allows clients to observe the server&apos;s tool interactions.
-		/// </summary>
-		public bool? IncludeServerSideToolInvocations { get; set; }
-		/// <summary>
-		/// Optional. Retrieval config.
-		/// </summary>
-		public RetrievalConfig? RetrievalConfig { get; set; }
+		public bool? InitialHistoryInClientContent { get; set; }
     }
 }

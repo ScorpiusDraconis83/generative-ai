@@ -33,7 +33,7 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public string? Description { get; set; }
 		/// <summary>
-		/// Required. The name of the function. Must be a-z, A-Z, 0-9, or contain underscores, colons, dots, and dashes, with a maximum length of 64.
+		/// Required. The name of the function. Must be a-z, A-Z, 0-9, or contain underscores, colons, dots, and dashes, with a maximum length of 128.
 		/// </summary>
 		public string? Name { get; set; }
 		/// <summary>

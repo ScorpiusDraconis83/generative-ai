@@ -33,6 +33,10 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public List<int>? GroundingChunkIndices { get; set; }
 		/// <summary>
+		/// Output only. Indices into the <c>parts</c> field of the candidate&apos;s content. These indices specify which rendered parts are associated with this support source.
+		/// </summary>
+		public List<int>? RenderedParts { get; set; }
+		/// <summary>
 		/// Segment of the content this support belongs to.
 		/// </summary>
 		public Segment? Segment { get; set; }

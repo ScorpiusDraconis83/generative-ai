@@ -58,17 +58,21 @@ namespace Mscc.GenerativeAI.Types
 		public enum TurnCoverageType
 		{
 			/// <summary>
-			/// If unspecified, the default behavior is `TURN_INCLUDES_ONLY_ACTIVITY`.
+			/// If unspecified, a default behavior is selected based on the model. E.g., for Gemini 2.5, the default is `TURN_INCLUDES_ONLY_ACTIVITY`, while for Gemini 3.1 and onwards, it&apos;s `TURN_INCLUDES_AUDIO_ACTIVITY_AND_ALL_VIDEO`.
 			/// </summary>
 			TurnCoverageUnspecified,
 			/// <summary>
-			/// The users turn only includes activity since the last turn, excluding inactivity (e.g. silence on the audio stream). This is the default behavior.
+			/// Includes activity since the last turn, excluding inactivity (e.g. silence on the audio stream).
 			/// </summary>
 			TurnIncludesOnlyActivity,
 			/// <summary>
-			/// The users turn includes all realtime input since the last turn, including inactivity (e.g. silence on the audio stream).
+			/// Includes all realtime input since the last turn, including inactivity (e.g. silence on the audio stream).
 			/// </summary>
 			TurnIncludesAllInput,
+			/// <summary>
+			/// Includes audio activity and all video since the last turn. With automatic activity detection, audio activity means speech and excludes silence.
+			/// </summary>
+			TurnIncludesAudioActivityAndAllVideo,
 		}
     }
 }

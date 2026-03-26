@@ -60,6 +60,14 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public byte[]? ThoughtSignature { get; set; }
 		/// <summary>
+		/// Server-side tool call. This field is populated when the model predicts a tool invocation that should be executed on the server. The client is expected to echo this message back to the API.
+		/// </summary>
+		public ToolCall? ToolCall { get; set; }
+		/// <summary>
+		/// The output from a server-side <c>ToolCall</c> execution. This field is populated by the client with the results of executing the corresponding <c>ToolCall</c>.
+		/// </summary>
+		public ToolResponse? ToolResponse { get; set; }
+		/// <summary>
 		/// Optional. Video metadata. The metadata should only be specified while the video data is presented in inline_data or file_data.
 		/// </summary>
 		public VideoMetadata? VideoMetadata { get; set; }

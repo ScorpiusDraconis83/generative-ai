@@ -13,36 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System.Collections.Generic;
 
 // *** AUTO-GENERATED FILE - DO NOT EDIT MANUALLY *** //
 
 namespace Mscc.GenerativeAI.Types
 {
 	/// <summary>
-	/// Chunk from context retrieved by the file search tool.
+	/// A predicted server-side <c>ToolCall</c> returned from the model. This message contains information about a tool that the model wants to invoke. The client is NOT expected to execute this <c>ToolCall</c>. Instead, the client should pass this <c>ToolCall</c> back to the API in a subsequent turn within a <c>Content</c> message, along with the corresponding <c>ToolResponse</c>.
 	/// </summary>
-	public partial class RetrievedContext
+	public sealed partial class ToolCall
 	{
 		/// <summary>
-		/// Optional. User-provided metadata about the retrieved context.
+		/// Optional. The tool call arguments. Example: {&quot;arg1&quot; : &quot;value1&quot;, &quot;arg2&quot; : &quot;value2&quot; , ...}
 		/// </summary>
-		public List<GroundingChunkCustomMetadata>? CustomMetadata { get; set; }
+		public object? Args { get; set; }
 		/// <summary>
-		/// Optional. Name of the <c>FileSearchStore</c> containing the document. Example: <c>fileSearchStores/123</c>
+		/// Optional. Unique identifier of the tool call. The server returns the tool response with the matching <c>id</c>.
 		/// </summary>
-		public string? FileSearchStore { get; set; }
+		public string? Id { get; set; }
 		/// <summary>
-		/// Optional. Text of the chunk.
+		/// Required. The type of tool that was called.
 		/// </summary>
-		public string? Text { get; set; }
-		/// <summary>
-		/// Optional. Title of the document.
-		/// </summary>
-		public string? Title { get; set; }
-		/// <summary>
-		/// Optional. URI reference of the semantic retrieval document.
-		/// </summary>
-		public string? Uri { get; set; }
+		public ToolType? ToolType { get; set; }
     }
 }

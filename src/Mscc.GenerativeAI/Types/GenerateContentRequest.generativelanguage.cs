@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 // *** AUTO-GENERATED FILE - DO NOT EDIT MANUALLY *** //
 
@@ -45,6 +46,14 @@ namespace Mscc.GenerativeAI.Types
 		/// </summary>
 		public List<SafetySetting>? SafetySettings { get; set; }
 		/// <summary>
+		/// Optional. The service tier of the request.
+		/// </summary>
+		public ServiceTierType? ServiceTier { get; set; }
+		/// <summary>
+		/// Optional. Configures the logging behavior for a given request. If set, it takes precedence over the project-level logging config.
+		/// </summary>
+		public bool? Store { get; set; }
+		/// <summary>
 		/// Optional. Developer set [system instruction(s)](https://ai.google.dev/gemini-api/docs/system-instructions). Currently, text only.
 		/// </summary>
 		public Content? SystemInstruction { get; set; }
@@ -56,5 +65,26 @@ namespace Mscc.GenerativeAI.Types
 		/// Optional. A list of <c>Tools</c> the <c>Model</c> may use to generate the next response. A <c>Tool</c> is a piece of code that enables the system to interact with external systems to perform an action, or set of actions, outside of knowledge and scope of the <c>Model</c>. Supported <c>Tool</c>s are <c>Function</c> and <c>code_execution</c>. Refer to the [Function calling](https://ai.google.dev/gemini-api/docs/function-calling) and the [Code execution](https://ai.google.dev/gemini-api/docs/code-execution) guides to learn more.
 		/// </summary>
 		public Tools? Tools { get; set; }
+
+		[JsonConverter(typeof(JsonStringEnumConverter<ServiceTierType>))]
+		public enum ServiceTierType
+		{
+			/// <summary>
+			/// Default service tier, which is standard.
+			/// </summary>
+			Unspecified,
+			/// <summary>
+			/// Standard service tier.
+			/// </summary>
+			Standard,
+			/// <summary>
+			/// Flex service tier.
+			/// </summary>
+			Flex,
+			/// <summary>
+			/// Priority service tier.
+			/// </summary>
+			Priority,
+		}
     }
 }

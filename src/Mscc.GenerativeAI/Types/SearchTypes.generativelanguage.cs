@@ -24,11 +24,11 @@ namespace Mscc.GenerativeAI.Types
 	public partial class SearchTypes
 	{
 		/// <summary>
-		/// Optional. Setting this field enables image search. Image bytes are returned.
+		/// Optional. Enables image search. Image bytes are returned.
 		/// </summary>
 		public ImageSearch? ImageSearch { get; set; }
 		/// <summary>
-		/// Optional. Setting this field enables web search. Only text results are returned.
+		/// Optional. Enables web search. Only text results are returned.
 		/// </summary>
 		public WebSearch? WebSearch { get; set; }
     }

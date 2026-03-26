@@ -13,36 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System.Collections.Generic;
 
 // *** AUTO-GENERATED FILE - DO NOT EDIT MANUALLY *** //
 
 namespace Mscc.GenerativeAI.Types
 {
 	/// <summary>
-	/// Chunk from context retrieved by the file search tool.
+	/// Chunk from image search.
 	/// </summary>
-	public partial class RetrievedContext
+	public sealed partial class Image
 	{
 		/// <summary>
-		/// Optional. User-provided metadata about the retrieved context.
+		/// The root domain of the web page that the image is from, e.g. &quot;example.com&quot;.
 		/// </summary>
-		public List<GroundingChunkCustomMetadata>? CustomMetadata { get; set; }
+		public string? Domain { get; set; }
 		/// <summary>
-		/// Optional. Name of the <c>FileSearchStore</c> containing the document. Example: <c>fileSearchStores/123</c>
+		/// The image asset URL.
 		/// </summary>
-		public string? FileSearchStore { get; set; }
+		public string? ImageUri { get; set; }
 		/// <summary>
-		/// Optional. Text of the chunk.
+		/// The web page URI for attribution.
 		/// </summary>
-		public string? Text { get; set; }
+		public string? SourceUri { get; set; }
 		/// <summary>
-		/// Optional. Title of the document.
+		/// The title of the web page that the image is from.
 		/// </summary>
 		public string? Title { get; set; }
-		/// <summary>
-		/// Optional. URI reference of the semantic retrieval document.
-		/// </summary>
-		public string? Uri { get; set; }
     }
 }
