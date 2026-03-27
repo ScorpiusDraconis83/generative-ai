@@ -31,6 +31,23 @@ namespace Mscc.GenerativeAI
             // Add any other sensitive header names here
         };
 
+        private static readonly JsonSerializerOptions SCredentialOptions = CreateCredentialOptions();
+
+        private static JsonSerializerOptions CreateCredentialOptions()
+        {
+            var options = new JsonSerializerOptions(JsonSerializerDefaults.Web)
+            {
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+                PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
+                DictionaryKeyPolicy = JsonNamingPolicy.CamelCase,
+                NumberHandling = JsonNumberHandling.AllowReadingFromString,
+                PropertyNameCaseInsensitive = true,
+            };
+            options.Converters.Add(new FlexibleEnumConverterFactory());
+            options.Converters.Add(new DateTimeFormatJsonConverter());
+            return options;
+        }
+
 #if NET472_OR_GREATER || NETSTANDARD2_0
         private static readonly Version _httpVersion = HttpVersion.Version11;
         private static readonly HttpClient Client = new HttpClient(new HttpClientHandler
@@ -401,19 +418,8 @@ namespace Mscc.GenerativeAI
             Credentials? credentials = null;
             if (File.Exists(credentialsFile))
             {
-                var options = new JsonSerializerOptions(JsonSerializerDefaults.Web)
-                {
-                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-                    PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
-                    DictionaryKeyPolicy = JsonNamingPolicy.CamelCase,
-                    NumberHandling = JsonNumberHandling.AllowReadingFromString,
-                    PropertyNameCaseInsensitive = true,
-                };
-                options.Converters.Add(new FlexibleEnumConverterFactory());
-                options.Converters.Add(new DateTimeFormatJsonConverter());
-
                 using var stream = new FileStream(credentialsFile, FileMode.Open, FileAccess.Read);
-                credentials = JsonSerializer.Deserialize<Credentials>(stream, options);
+                credentials = JsonSerializer.Deserialize<Credentials>(stream, SCredentialOptions);
             }
 
             return credentials;
