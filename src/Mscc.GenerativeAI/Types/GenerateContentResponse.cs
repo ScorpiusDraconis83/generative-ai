@@ -46,11 +46,19 @@ namespace Mscc.GenerativeAI.Types
                     return string.Empty;
                 if (Candidates?.Count > 1) Logger.LogMultipleCandidates(Candidates!.Count);
 
-                return string.Join(Environment.NewLine,
-                    Candidates?.FirstOrDefault()?.Content?.Parts
-                        .Where(p => p.Thought is null or false)
-                        .Select(x => x.Text)
-                        .ToArray()!);
+                var parts = Candidates?.FirstOrDefault()?.Content?.Parts;
+                if (parts is null) return string.Empty;
+
+                var sb = new System.Text.StringBuilder();
+                foreach (var part in parts)
+                {
+                    if (part.Thought is null or false)
+                    {
+                        if (sb.Length > 0) sb.Append(Environment.NewLine);
+                        sb.Append(part.Text);
+                    }
+                }
+                return sb.ToString();
             }
         }
 
@@ -58,10 +66,25 @@ namespace Mscc.GenerativeAI.Types
         /// A convenience property to get the function calls.
         /// </summary>
         [JsonIgnore]
-        public List<FunctionCall>? FunctionCalls => Candidates?.FirstOrDefault()?.Content?.Parts
-            .Where(p => p.FunctionCall is not null)
-            .Select(p => p.FunctionCall)
-            .ToList();
+        public List<FunctionCall>? FunctionCalls
+        {
+            get
+            {
+                var parts = Candidates?.FirstOrDefault()?.Content?.Parts;
+                if (parts is null) return null;
+
+                List<FunctionCall>? result = null;
+                foreach (var part in parts)
+                {
+                    if (part.FunctionCall is not null)
+                    {
+                        result ??= new List<FunctionCall>();
+                        result.Add(part.FunctionCall);
+                    }
+                }
+                return result;
+            }
+        }
 
         /// <summary>
         /// A convenience property to get the responded audio information of first candidate.
@@ -102,11 +125,19 @@ namespace Mscc.GenerativeAI.Types
                     return string.Empty;
                 if (Candidates?.Count > 1) Logger.LogMultipleCandidates(Candidates!.Count);
 
-                return string.Join(Environment.NewLine,
-                    Candidates?.FirstOrDefault()?.Content?.Parts
-                        .Where(p => p.Thought == true)
-                        .Select(x => x.Text)
-                        .ToArray()!);
+                var parts = Candidates?.FirstOrDefault()?.Content?.Parts;
+                if (parts is null) return string.Empty;
+
+                var sb = new System.Text.StringBuilder();
+                foreach (var part in parts)
+                {
+                    if (part.Thought == true)
+                    {
+                        if (sb.Length > 0) sb.Append(Environment.NewLine);
+                        sb.Append(part.Text);
+                    }
+                }
+                return sb.ToString();
             }
         }
 
