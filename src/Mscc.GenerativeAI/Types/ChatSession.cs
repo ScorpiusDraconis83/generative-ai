@@ -126,7 +126,6 @@ namespace Mscc.GenerativeAI.Types
 
             var parts = response.Candidates?.FirstOrDefault()?.Content?.Parts
                 .Where(p => p.Thought is null or false)
-                .Select(x => x)
                 .ToList() ?? [new() { Text = String.Empty }];
 
             _lastReceived = new() { Role = Role.Model, Parts = parts };
@@ -254,7 +253,6 @@ namespace Mscc.GenerativeAI.Types
 
             parts = response.Candidates?.FirstOrDefault()?.Content?.Parts
                 .Where(p => p.Thought is null or false)
-                .Select(x => x)
                 .ToList() ?? [new() { Text = String.Empty }];
 
             _lastReceived = new() { Role = Role.Model, Parts = parts };

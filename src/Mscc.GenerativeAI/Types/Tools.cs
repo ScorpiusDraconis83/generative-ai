@@ -204,8 +204,7 @@ namespace Mscc.GenerativeAI.Types
         public bool RemoveFunction(string name)
         {
             var functions = this
-                .Where(t => t.FunctionDeclarations is not null)
-                .Select(t => t);
+                .Where(t => t.FunctionDeclarations is not null);
             foreach (var item in functions)
             {
                 var function = item.FunctionDeclarations!.FirstOrDefault(f => f.Name == name);
@@ -226,8 +225,7 @@ namespace Mscc.GenerativeAI.Types
         public bool RemoveFunction(Delegate callback)
         {
             var functions = this
-                .Where(t => t.FunctionDeclarations is not null)
-                .Select(t => t);
+                .Where(t => t.FunctionDeclarations is not null);
             foreach (var item in functions)
             {
                 var function = item.FunctionDeclarations!.FirstOrDefault(f => f.Callback == callback);
@@ -246,8 +244,7 @@ namespace Mscc.GenerativeAI.Types
         public void ClearFunctions()
         {
             var functions = this
-                .Where(t => t.FunctionDeclarations is not null)
-                .Select(t => t);
+                .Where(t => t.FunctionDeclarations is not null);
             foreach (var item in functions)
             {
                 item.FunctionDeclarations!.Clear();
