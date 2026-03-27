@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Mscc.GenerativeAI.Types
 {
-    internal class LongJsonConverter : JsonConverter<long>
+    internal sealed class LongJsonConverter : JsonConverter<long>
     {
         public override long Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

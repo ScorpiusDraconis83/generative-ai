@@ -1,11 +1,10 @@
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Globalization;
 
 namespace Mscc.GenerativeAI.Types
 {
-    internal class NullableLongJsonConverter : JsonConverter<long?>
+    internal sealed class NullableLongJsonConverter : JsonConverter<long?>
     {
         public override long? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

@@ -1,11 +1,10 @@
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Globalization;
 
 namespace Mscc.GenerativeAI.Types
 {
-    internal class NullableDoubleJsonConverter : JsonConverter<double?>
+    internal sealed class NullableDoubleJsonConverter : JsonConverter<double?>
     {
         public override double? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

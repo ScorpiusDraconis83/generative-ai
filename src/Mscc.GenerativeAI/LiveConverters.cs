@@ -2,7 +2,7 @@ using System.Text.Json.Nodes;
 
 namespace Mscc.GenerativeAI
 {
-    internal class LiveConverters
+    internal sealed class LiveConverters
     {
         public JsonNode LiveConnectParametersToVertex(JsonNode parameterNode)
         {
