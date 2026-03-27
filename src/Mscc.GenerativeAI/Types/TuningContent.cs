@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace Mscc.GenerativeAI.Types
 {

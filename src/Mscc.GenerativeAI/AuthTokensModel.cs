@@ -1,7 +1,5 @@
 using Microsoft.Extensions.Logging;
-using Mscc.GenerativeAI.Types;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace Mscc.GenerativeAI
 {

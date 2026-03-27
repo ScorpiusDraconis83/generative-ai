@@ -1,9 +1,9 @@
-﻿using Shouldly;
-using Json.Schema.Generation;
+﻿using Json.Schema.Generation;
 using Microsoft.Extensions.Logging;
 using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Types;
 using Neovolve.Logging.Xunit;
+using Shouldly;
 using System;
 using System.Collections;
 using System.Collections.Generic;

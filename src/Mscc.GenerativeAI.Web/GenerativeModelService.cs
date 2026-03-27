@@ -1,5 +1,5 @@
-﻿using System.Net.Http;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
+using System.Net.Http;
 
 namespace Mscc.GenerativeAI.Web
 {

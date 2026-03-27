@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Shouldly;
-using Mscc.GenerativeAI;
+﻿using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Types;
+using Shouldly;
 using System;
+using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 

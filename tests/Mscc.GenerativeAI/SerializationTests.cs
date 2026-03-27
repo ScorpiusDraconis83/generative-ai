@@ -1,13 +1,12 @@
-using System;
+using Mscc.GenerativeAI;
+using Mscc.GenerativeAI.Types;
+using Shouldly;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using Mscc.GenerativeAI;
-using Mscc.GenerativeAI.Types;
-using Shouldly;
 using Xunit;
 
 namespace Test.Mscc.GenerativeAI

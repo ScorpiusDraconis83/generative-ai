@@ -1,11 +1,8 @@
-using Shouldly;
-using Microsoft.Extensions.AI;
-using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Microsoft;
 using Mscc.GenerativeAI.Types;
+using Shouldly;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Text;
 using Xunit;

@@ -1,16 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
 using Moq;
 using Moq.Protected;
 using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Types;
 using Shouldly;
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace Test.Mscc.GenerativeAI

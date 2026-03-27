@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Shouldly;
 using Microsoft.Extensions.Logging;
 using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Types;
 using Neovolve.Logging.Xunit;
+using Shouldly;
+using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 

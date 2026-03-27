@@ -1,9 +1,8 @@
 using Mscc.GenerativeAI.Types;
 using System;
-using System.Collections.Generic;
+using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Drawing;
 using mea = Microsoft.Extensions.AI;
 
 namespace Mscc.GenerativeAI.Microsoft

@@ -15,12 +15,12 @@
  */
 
 using System;
-using System.Text.Json.Serialization;
-using System.Threading;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.Json.Serialization;
+using System.Threading;
 
 namespace Mscc.GenerativeAI.Types
 {

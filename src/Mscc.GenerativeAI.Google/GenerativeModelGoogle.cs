@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Google.Apis.Util.Store;
+using Mscc.GenerativeAI.Types;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading;
-using gauth = Google.Apis.Auth.OAuth2;
-using Google.Apis.Util.Store;
-using Mscc.GenerativeAI.Types;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+using System.Threading.Tasks;
+using gauth = Google.Apis.Auth.OAuth2;
 
 namespace Mscc.GenerativeAI.Google
 {

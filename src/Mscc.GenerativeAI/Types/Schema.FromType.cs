@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Json.Schema;
+using Json.Schema.Generation;
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using Json.Schema;
-using Json.Schema.Generation;
-using System.Reflection;
 
 namespace Mscc.GenerativeAI.Types
 {

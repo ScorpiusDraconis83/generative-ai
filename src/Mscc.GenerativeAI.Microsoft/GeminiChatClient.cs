@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using mea = Microsoft.Extensions.AI;
-using System.Runtime.CompilerServices;
 
 namespace Mscc.GenerativeAI.Microsoft;
 

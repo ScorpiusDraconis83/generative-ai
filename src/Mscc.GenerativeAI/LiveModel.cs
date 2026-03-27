@@ -1,7 +1,6 @@
 using Microsoft.Extensions.Logging;
 using Mscc.GenerativeAI.Types;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.WebSockets;
 using System.Text;

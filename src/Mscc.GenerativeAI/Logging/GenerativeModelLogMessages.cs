@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-using System;
-using System.Net.Http;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Net.Http;
 
 namespace Mscc.GenerativeAI.Types
 {

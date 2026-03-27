@@ -1,11 +1,9 @@
+using Microsoft.Extensions.Logging;
+using Mscc.GenerativeAI.Types;
 using System;
-using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
-using Mscc.GenerativeAI.Types;
-using System.Text;
 
 namespace Mscc.GenerativeAI
 {

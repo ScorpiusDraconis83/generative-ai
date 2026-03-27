@@ -1,7 +1,7 @@
-using System.Threading.Tasks;
-using Shouldly;
 using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Types;
+using Shouldly;
+using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
