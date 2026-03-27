@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Mscc.GenerativeAI
 {
-    internal static class ConverterExtensions
+    internal static partial class ConverterExtensions
     {
  /// <summary>
         /// Converts a given string to snake case.
@@ -466,7 +466,12 @@ namespace Mscc.GenerativeAI
             return string.Join(newVal, temp);
         }
 
-        private static readonly Regex WhiteSpaceRegex = new(@"\s+");
+#if NET7_0_OR_GREATER
+        [System.Text.RegularExpressions.GeneratedRegex(@"\s+")]
+        private static partial Regex WhiteSpaceRegex();
+#else
+        private static readonly Regex WhiteSpaceRegex = new(@"\s+", RegexOptions.Compiled);
+#endif
 
         /// <summary>
         /// Replace all whitespace in a string
@@ -477,7 +482,11 @@ namespace Mscc.GenerativeAI
         /// <returns>string</returns>
         public static string ReplaceWhitespace(this string input, string replacement)
         {
+#if NET7_0_OR_GREATER
+            return WhiteSpaceRegex().Replace(input, replacement);
+#else
             return WhiteSpaceRegex.Replace(input, replacement);
+#endif
         }
 
 
