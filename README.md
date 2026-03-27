@@ -408,7 +408,7 @@ _ = await model.UploadMedia(filePath, displayName);
 // Create the prompt with references to File API resources.
 var request = new GenerateContentRequest(prompt);
 var files = await model.ListFiles();
-foreach (var file in files.Where(x => x.MimeType.StartsWith("image/")))
+foreach (var file in files.Where(x => x.MimeType.StartsWith("image/", StringComparison.OrdinalIgnoreCase)))
 {
     Console.WriteLine($"File: {file.Name}");
     request.AddMedia(file);

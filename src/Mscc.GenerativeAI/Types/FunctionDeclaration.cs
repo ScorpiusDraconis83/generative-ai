@@ -123,7 +123,7 @@ namespace Mscc.GenerativeAI.Types
             // Lambdas/anonymous/closures are typically compiler-generated and/or have angle-bracket names
             if (method.IsDefined(typeof(CompilerGeneratedAttribute), inherit: true))
                 return true;
-            if (method.Name.StartsWith("<") && method.Name.Contains(">"))
+            if (method.Name.StartsWith("<", StringComparison.OrdinalIgnoreCase) && method.Name.Contains(">", StringComparison.OrdinalIgnoreCase))
                 return true;
             Type? declaringType = method.DeclaringType;
             if (declaringType != null && declaringType.IsDefined(typeof(CompilerGeneratedAttribute), inherit: true))

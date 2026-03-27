@@ -125,7 +125,7 @@ namespace Mscc.GenerativeAI
         private string getSetupMessage(string model, LiveConnectConfig config)
         {
             var transformedModel = Transformers.TModel(this, model);
-            if (IsVertexAI && transformedModel != null && transformedModel.StartsWith("publishers/"))
+            if (IsVertexAI && transformedModel != null && transformedModel.StartsWith("publishers/", StringComparison.OrdinalIgnoreCase))
             {
                 transformedModel = string.Format(
                     "projects/{0}/locations/{1}/{2}",

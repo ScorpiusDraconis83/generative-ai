@@ -488,7 +488,7 @@ namespace Mscc.GenerativeAI
 
             model ??= _model;
             model = model.SanitizeModelName();
-            if (!string.IsNullOrEmpty(_apiKey) && model.StartsWith("tunedModel", StringComparison.InvariantCultureIgnoreCase))
+            if (!string.IsNullOrEmpty(_apiKey) && model.StartsWith("tunedModel", StringComparison.OrdinalIgnoreCase))
             {
                 throw new NotSupportedException("Accessing tuned models via API key is not provided. Setup OAuth for your project.");
             }
@@ -573,7 +573,7 @@ namespace Mscc.GenerativeAI
             this.GuardSupported();
 
             model = model.SanitizeModelName();
-            if (!string.IsNullOrEmpty(_apiKey) && model.StartsWith("tunedModel", StringComparison.InvariantCultureIgnoreCase))
+            if (!string.IsNullOrEmpty(_apiKey) && model.StartsWith("tunedModel", StringComparison.OrdinalIgnoreCase))
             {
                 throw new NotSupportedException("Accessing tuned models via API key is not provided. Setup OAuth for your project.");
             }
@@ -611,7 +611,7 @@ namespace Mscc.GenerativeAI
             this.GuardSupported();
 
             model = model.SanitizeModelName();
-            if (!string.IsNullOrEmpty(_apiKey) && model.StartsWith("tunedModel", StringComparison.InvariantCultureIgnoreCase))
+            if (!string.IsNullOrEmpty(_apiKey) && model.StartsWith("tunedModel", StringComparison.OrdinalIgnoreCase))
             {
                 throw new NotSupportedException("Accessing tuned models via API key is not provided. Setup OAuth for your project.");
             }
@@ -659,7 +659,7 @@ namespace Mscc.GenerativeAI
             this.GuardSupported();
 
             model = model.SanitizeModelName();
-            if (!string.IsNullOrEmpty(_apiKey) && model.StartsWith("tunedModel", StringComparison.InvariantCultureIgnoreCase))
+            if (!string.IsNullOrEmpty(_apiKey) && model.StartsWith("tunedModel", StringComparison.OrdinalIgnoreCase))
             {
                 throw new NotSupportedException("Accessing tuned models via API key is not provided. Setup OAuth for your project.");
             }

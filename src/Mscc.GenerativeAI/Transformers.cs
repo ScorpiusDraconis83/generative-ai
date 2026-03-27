@@ -7,7 +7,7 @@ namespace Mscc.GenerativeAI
         public static string? TModel(BaseModel apiClient, string model)
         {
             if (string.IsNullOrEmpty(model)) return model;
-            if (model.StartsWith("models/")) return model;
+            if (model.StartsWith("models/", StringComparison.OrdinalIgnoreCase)) return model;
             return $"models/{model}";
         }
     }

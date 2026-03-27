@@ -195,7 +195,7 @@ namespace Test.Mscc.GenerativeAI
             var googleAI = new GoogleAI(accessToken: fixture.AccessToken);
             var model = googleAI.GenerativeModel();
             var expected = modelName;
-            if (!expected.Contains("/"))
+            if (!expected.Contains("/", StringComparison.OrdinalIgnoreCase))
                 expected = $"models/{expected}";
 
             // Act

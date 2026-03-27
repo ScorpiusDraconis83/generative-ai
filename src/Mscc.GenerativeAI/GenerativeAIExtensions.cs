@@ -98,7 +98,7 @@ namespace Mscc.GenerativeAI
                 "audio/wav", "audio/mp3", "audio/mpeg", "audio/aiff", "audio/aac", "audio/ogg", "audio/flac"
             ];
 
-            if (!allowedMimeTypes.Contains(mimeType.ToLowerInvariant()))
+            if (!allowedMimeTypes.Contains(mimeType, StringComparer.OrdinalIgnoreCase))
                 throw new NotSupportedException($"The mime type `{mimeType}` is not supported by the API.");
         }
 
@@ -382,7 +382,9 @@ namespace Mscc.GenerativeAI
         /// <exception cref="ArgumentException">Thrown when <see cref="value"/> contains invalid characters.</exception>
         internal static void GuardInvalidStringsInName(this string value)
         {
-            if (value.Contains("..") || value.Contains("?") || value.Contains("&"))
+            if (value.Contains("..", StringComparison.OrdinalIgnoreCase) 
+                || value.Contains("?", StringComparison.OrdinalIgnoreCase) 
+                || value.Contains("&", StringComparison.OrdinalIgnoreCase))
             {
                 throw new ArgumentException($"invalid characters in name `{value}`.");
             }
@@ -534,12 +536,12 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(value)) return value;
             GuardInvalidStringsInName(value);
 
-            if (value.StartsWith("tuned", StringComparison.InvariantCultureIgnoreCase))
+            if (value.StartsWith("tuned", StringComparison.OrdinalIgnoreCase))
             {
                 return value;
             }
 
-            if (!value.StartsWith("model", StringComparison.InvariantCultureIgnoreCase))
+            if (!value.StartsWith("model", StringComparison.OrdinalIgnoreCase))
             {
                 return $"models/{value}";
             }
@@ -557,7 +559,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(value)) return value;
             GuardInvalidStringsInName(value);
 
-            if (!value.StartsWith("file", StringComparison.InvariantCultureIgnoreCase))
+            if (!value.StartsWith("file", StringComparison.OrdinalIgnoreCase))
             {
                 return $"files/{value}";
             }
@@ -575,7 +577,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(value)) return value;
             GuardInvalidStringsInName(value);
 
-            if (!value.StartsWith("generatedFile", StringComparison.InvariantCultureIgnoreCase))
+            if (!value.StartsWith("generatedFile", StringComparison.OrdinalIgnoreCase))
             {
                 return $"generatedFiles/{value}";
             }
@@ -593,7 +595,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(value)) return value;
             GuardInvalidStringsInName(value);
 
-            if (!value.StartsWith("cachedContent", StringComparison.InvariantCultureIgnoreCase))
+            if (!value.StartsWith("cachedContent", StringComparison.OrdinalIgnoreCase))
             {
                 return $"cachedContents/{value}";
             }
@@ -611,7 +613,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(value)) return value;
             GuardInvalidStringsInName(value);
 
-            if (!value.StartsWith("batch", StringComparison.InvariantCultureIgnoreCase))
+            if (!value.StartsWith("batch", StringComparison.OrdinalIgnoreCase))
             {
                 return $"batches/{value}";
             }
@@ -629,7 +631,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(value)) return value;
             GuardInvalidStringsInName(value);
 
-            if (!value.StartsWith("tuningJob", StringComparison.InvariantCultureIgnoreCase))
+            if (!value.StartsWith("tuningJob", StringComparison.OrdinalIgnoreCase))
             {
                 return $"tuningJobs/{value}";
             }
@@ -647,7 +649,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(value)) return value;
             GuardInvalidStringsInName(value);
 
-            if (value.StartsWith("endpoint", StringComparison.InvariantCultureIgnoreCase))
+            if (value.StartsWith("endpoint", StringComparison.OrdinalIgnoreCase))
             {
                 return value;
             }
@@ -665,7 +667,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(value)) return value;
             GuardInvalidStringsInName(value);
 
-            if (!value.StartsWith("fileSearchStore", StringComparison.InvariantCultureIgnoreCase))
+            if (!value.StartsWith("fileSearchStore", StringComparison.OrdinalIgnoreCase))
             {
                 return $"fileSearchStores/{value}";
             }
@@ -683,7 +685,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(value)) return value;
             GuardInvalidStringsInName(value);
 
-            if (!value.StartsWith("corpora", StringComparison.InvariantCultureIgnoreCase))
+            if (!value.StartsWith("corpora", StringComparison.OrdinalIgnoreCase))
             {
                 return $"corpora/{value}";
             }
@@ -701,7 +703,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(value)) return value;
             GuardInvalidStringsInName(value);
 
-            if (!value.StartsWith("document", StringComparison.InvariantCultureIgnoreCase))
+            if (!value.StartsWith("document", StringComparison.OrdinalIgnoreCase))
             {
                 return $"documents/{value}";
             }
@@ -1066,7 +1068,7 @@ namespace Mscc.GenerativeAI
         {
             if (uri == null) throw new ArgumentNullException(nameof(uri));
 
-            var extension = Path.GetExtension(uri).ToLower();
+            var extension = Path.GetExtension(uri).ToLowerInvariant();
             if (extension.StartsWith(".", StringComparison.OrdinalIgnoreCase))
                 extension = extension.Substring(1);
 

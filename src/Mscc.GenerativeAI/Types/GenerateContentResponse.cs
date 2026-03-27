@@ -73,7 +73,7 @@ namespace Mscc.GenerativeAI.Types
 	        {
 		        var part = Candidates?.FirstOrDefault()?
 			        .Content?.Parts?
-			        .FirstOrDefault(p => p.InlineData?.MimeType?.StartsWith("audio/") == true);
+			        .FirstOrDefault(p => p.InlineData?.MimeType?.StartsWith("audio/", StringComparison.OrdinalIgnoreCase) == true);
 
 		        if (part?.InlineData?.Data is { } data)
 		        {

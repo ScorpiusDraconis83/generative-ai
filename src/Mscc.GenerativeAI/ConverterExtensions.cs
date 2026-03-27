@@ -1,5 +1,4 @@
 using System;
-using System.Data;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -23,7 +22,7 @@ namespace Mscc.GenerativeAI
             // Create a new instance of StringBuilder to store the output string with an estimated capacity
             // Nullable UnicodeCategory variable to keep track of the previous category
             StringBuilder builder = new(text.Length + Math.Min(2, text.Length / 5));
-            UnicodeCategory? previousCategory = default;
+            UnicodeCategory? previousCategory = null;
 
             // Iterate over each character in the input string
             for (int currentIndex = 0; currentIndex < text.Length; currentIndex++)
@@ -61,7 +60,7 @@ namespace Mscc.GenerativeAI
                         }
 
                         // Convert the current character to lowercase
-                        currentChar = char.ToLower(currentChar, CultureInfo.InvariantCulture);
+                        currentChar = char.ToLowerInvariant(currentChar);
                         break;
 
                     // If the current character is a lowercase letter or decimal digit
@@ -114,11 +113,11 @@ namespace Mscc.GenerativeAI
 
             if (text.IsAllUpper())
             {
-                text = text.ToLower(); // if the text is all uppercase, convert it to lowercase
+                text = text.ToLowerInvariant(); // if the text is all uppercase, convert it to lowercase
             }
 
             // Check if the leading underscore should be preserved
-            bool addLeadingUnderscore = preserveLeadingUnderscore && text.StartsWith("_");
+            bool addLeadingUnderscore = preserveLeadingUnderscore && text.StartsWith("_", StringComparison.OrdinalIgnoreCase);
 
             // Create a new instance of StringBuilder to store the output string
             StringBuilder result = new(text.Length);
@@ -350,13 +349,13 @@ namespace Mscc.GenerativeAI
                 // and set the newWord flag to false
                 else if (newWord)
                 {
-                    sb.Append(char.ToUpper(c));
+                    sb.Append(char.ToUpperInvariant(c));
                     newWord = false;
                 }
                 // If we are not at the start of a new word, append the lowercase version of the character
                 else
                 {
-                    sb.Append(char.ToLower(c));
+                    sb.Append(char.ToLowerInvariant(c));
                 }
             }
 
@@ -391,12 +390,12 @@ namespace Mscc.GenerativeAI
                 }
                 else if (newWord)
                 {
-                    builder.Append(Rune.ToUpper(rune, CultureInfo.InvariantCulture));
+                    builder.Append(Rune.ToUpperInvariant(rune));
                     newWord = false;
                 }
                 else
                 {
-                    builder.Append(Rune.ToLower(rune, CultureInfo.InvariantCulture));
+                    builder.Append(Rune.ToLowerInvariant(rune));
                 }
             }
 
@@ -517,7 +516,7 @@ namespace Mscc.GenerativeAI
         /// <returns>string</returns>
         public static string SnakeCaseToCamelCase(this string text)
         {
-            return Regex.Replace(text, "_[a-z]", m => m.ToString().TrimStart('_').ToUpper()).FirstCharToLowerCase();
+            return Regex.Replace(text, "_[a-z]", m => m.ToString().TrimStart('_').ToUpperInvariant()).FirstCharToLowerCase();
         }
 
         /// <summary>
@@ -531,7 +530,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(text) || char.IsLower(text[0]))
                 return text;
 
-            return char.ToLower(text[0]) + text.Substring(1);
+            return char.ToLowerInvariant(text[0]) + text.Substring(1);
         }
 
         /// <summary>
@@ -544,7 +543,7 @@ namespace Mscc.GenerativeAI
             if (string.IsNullOrEmpty(text) || char.IsUpper(text[0]))
                 return text;
 
-            return char.ToUpper(text[0]) + text.Substring(1);
+            return char.ToUpperInvariant(text[0]) + text.Substring(1);
         }
     }
 }

@@ -231,7 +231,7 @@ namespace Test.Mscc.GenerativeAI
             // Arrange
             var model = new GenerativeModel { AccessToken = _fixture.AccessToken };
             var expected = modelName;
-            if (!expected.Contains("/"))
+            if (!expected.Contains("/", StringComparison.OrdinalIgnoreCase))
                 expected = $"{expected.SanitizeModelName()}";
 
             // Act
@@ -890,7 +890,7 @@ namespace Test.Mscc.GenerativeAI
             var _generativeModel = _googleAi.GenerativeModel(model: Model.Gemini25FlashImage);
             var effectiveImage = Path.Combine(Environment.CurrentDirectory, "payload", filename);
             var imageBytes = await File.ReadAllBytesAsync(effectiveImage);
-            var mimeType = Path.GetExtension(effectiveImage).ToLower() switch
+            var mimeType = Path.GetExtension(effectiveImage).ToLowerInvariant() switch
             {
                 ".jpg" or ".jpeg" => "image/jpeg",
                 ".png" => "image/png",
@@ -2031,7 +2031,7 @@ namespace Test.Mscc.GenerativeAI
 
         protected string SearchEvent(string name)
         {
-            return name.ToLower() switch
+            return name.ToLowerInvariant() switch
             {
                 "player move" => "on move",
                 _ => "not found"
@@ -3554,7 +3554,7 @@ namespace Test.Mscc.GenerativeAI
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest(prompt);
             var files = await ((GoogleAI)genAi).ListFiles();
-            var file = files.Files.Where(x => x.MimeType.StartsWith("image/")).FirstOrDefault();
+            var file = files.Files.Where(x => x.MimeType.StartsWith("image/", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
             _output.WriteLine($"File: {file.Name}\tName: '{file.DisplayName}'");
             request.AddMedia(file);
 
@@ -3580,7 +3580,7 @@ namespace Test.Mscc.GenerativeAI
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest(prompt);
             var files = await ((GoogleAI)genAi).ListFiles();
-            foreach (var file in files.Files.Where(x => x.MimeType.StartsWith("image/")))
+            foreach (var file in files.Files.Where(x => x.MimeType.StartsWith("image/", StringComparison.OrdinalIgnoreCase)))
             {
                 _output.WriteLine($"File: {file.Name}\tName: '{file.DisplayName}'");
                 request.AddMedia(file);
@@ -3608,7 +3608,7 @@ namespace Test.Mscc.GenerativeAI
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest(prompt);
             var files = await ((GoogleAI)genAi).ListFiles();
-            foreach (var file in files.Files.Where(x => x.MimeType.StartsWith("audio/")))
+            foreach (var file in files.Files.Where(x => x.MimeType.StartsWith("audio/", StringComparison.OrdinalIgnoreCase)))
             {
                 _output.WriteLine($"File: {file.Name}\tName: '{file.DisplayName}'");
                 request.AddMedia(file);
@@ -3676,7 +3676,7 @@ Do not make up any information that is not part of the audio and do not be verbo
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest(prompt);
             var files = await ((GoogleAI)genAi).ListFiles();
-            var file = files.Files.Where(x => x.MimeType.StartsWith("audio/")).FirstOrDefault();
+            var file = files.Files.Where(x => x.MimeType.StartsWith("audio/", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
             _output.WriteLine($"File: {file.Name}\tName: '{file.DisplayName}'");
             request.AddMedia(file);
 
@@ -3703,7 +3703,7 @@ Do not make up any information that is not part of the audio and do not be verbo
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest(prompt);
             var files = await ((GoogleAI)genAi).ListFiles();
-            var file = files.Files.Where(x => x.MimeType.StartsWith("application/pdf")).FirstOrDefault();
+            var file = files.Files.Where(x => x.MimeType.StartsWith("application/pdf", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
             _output.WriteLine($"File: {file.Name}\tName: '{file.DisplayName}'");
             request.AddMedia(file);
 
@@ -3732,7 +3732,7 @@ Do not make up any information that is not part of the audio and do not be verbo
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest(prompt);
             var files = await ((GoogleAI)genAi).ListFiles();
-            var file = files.Files.Where(x => x.MimeType.StartsWith(mimetype)).FirstOrDefault();
+            var file = files.Files.Where(x => x.MimeType.StartsWith(mimetype, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
             _output.WriteLine($"File: {file.Name}\tName: '{file.DisplayName}'");
             request.AddMedia(file);
 
@@ -3760,7 +3760,7 @@ Use speaker A, speaker B, etc. to identify the speakers.
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest(prompt);
             var files = await ((GoogleAI)genAi).ListFiles();
-            var file = files.Files.Where(x => x.MimeType.StartsWith("audio/")).FirstOrDefault();
+            var file = files.Files.Where(x => x.MimeType.StartsWith("audio/", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
             _output.WriteLine($"File: {file.Name}\tName: '{file.DisplayName}'");
             request.AddMedia(file);
 
@@ -3795,7 +3795,7 @@ Use speaker A, speaker B, etc. to identify the speakers.
             model.UseServerSentEventsFormat = true;
             var request = new GenerateContentRequest(prompt);
             var files = await ((GoogleAI)genAi).ListFiles();
-            var file = files.Files.Where(x => x.MimeType.StartsWith("audio/")).FirstOrDefault();
+            var file = files.Files.Where(x => x.MimeType.StartsWith("audio/", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
             _output.WriteLine($"File: {file.Name}\tName: '{file.DisplayName}'");
             request.AddMedia(file);
 
@@ -3822,7 +3822,7 @@ Use speaker A, speaker B, etc. to identify the speakers.
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest(prompt);
             var files = await ((GoogleAI)genAi).ListFiles();
-            foreach (var file in files.Files.Where(x => x.MimeType.StartsWith("video/")))
+            foreach (var file in files.Files.Where(x => x.MimeType.StartsWith("video/", StringComparison.OrdinalIgnoreCase)))
             {
                 _output.WriteLine($"File: {file.Name}\tName: '{file.DisplayName}'");
                 request.AddMedia(file);
@@ -3873,7 +3873,7 @@ Use speaker A, speaker B, etc. to identify the speakers.
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest(prompt);
             var files = await ((GoogleAI)genAi).ListFiles();
-            foreach (var file in files.Files.Where(x => x.MimeType.StartsWith("video/")))
+            foreach (var file in files.Files.Where(x => x.MimeType.StartsWith("video/", StringComparison.OrdinalIgnoreCase)))
             {
                 _output.WriteLine($"File: {file.Name}\tName: '{file.DisplayName}'");
                 request.AddMedia(file);
@@ -4053,7 +4053,7 @@ Answer:";
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest { Contents = new List<Content>() };
             var files = await ((GoogleAI)genAi).ListFiles();
-            foreach (var file in files.Files.Where(x => x.MimeType.StartsWith("audio/")))
+            foreach (var file in files.Files.Where(x => x.MimeType.StartsWith("audio/", StringComparison.OrdinalIgnoreCase)))
             {
                 _output.WriteLine($"File: {file.Name}");
                 request.Contents.Add(new Content
@@ -4080,7 +4080,7 @@ Answer:";
             var model = _googleAi.GenerativeModel(_model);
             var request = new GenerateContentRequest { Contents = new List<Content>() };
             var files = await ((GoogleAI)genAi).ListFiles();
-            var file = files.Files.Where(x => x.MimeType.StartsWith("audio/")).FirstOrDefault();
+            var file = files.Files.Where(x => x.MimeType.StartsWith("audio/", StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
 
             // Act
             var response = await model.CountTokens(file);
@@ -4300,7 +4300,7 @@ Answer:";
         {
             // Arrange
             var files = await _googleAi.ListFiles();
-            var file = files.Files.FirstOrDefault(x => x.MimeType.StartsWith("text/"));
+            var file = files.Files.FirstOrDefault(x => x.MimeType.StartsWith("text/", StringComparison.OrdinalIgnoreCase));
             var model = _googleAi.FileSearchStoresModel();
             var operations = _googleAi.OperationsModel();
             var listResponse = await model.List();

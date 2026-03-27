@@ -1,13 +1,14 @@
 using Microsoft.Extensions.Logging;
-using System.Net;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 using Moq;
 using Moq.Protected;
 using Mscc.GenerativeAI;
 using Mscc.GenerativeAI.Types;
 using Neovolve.Logging.Xunit;
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -68,7 +69,7 @@ namespace Test.Mscc.GenerativeAI
                 .Setup<Task<HttpResponseMessage>>("SendAsync", ItExpr.IsAny<HttpRequestMessage>(), ItExpr.IsAny<CancellationToken>())
                 .Callback<HttpRequestMessage, CancellationToken>((req, ct) =>
                 {
-                    if (req.RequestUri.ToString().Contains("localhost:8888"))
+                    if (req.RequestUri.ToString().Contains("localhost:8888", StringComparison.OrdinalIgnoreCase))
                     {
                         requestReceivedByProxy = true;
                     }

@@ -411,7 +411,7 @@ namespace Test.Mscc.GenerativeAI
 			// Arrange
 			var files = await client.Files.ListFiles();
 			var file = files.Files
-				.FirstOrDefault(x => x.MimeType.StartsWith(mimeType));
+				.FirstOrDefault(x => x.MimeType.StartsWith(mimeType, StringComparison.OrdinalIgnoreCase));
 
 			// Act
 			var interaction = await client.Interactions.Create(

@@ -91,7 +91,7 @@ namespace Mscc.GenerativeAI.Types
         {
 	        get
 	        {
-		        if (InlineData?.MimeType?.StartsWith("audio/") == true 
+		        if (InlineData?.MimeType?.StartsWith("audio/", StringComparison.OrdinalIgnoreCase) == true 
 		            && !string.IsNullOrEmpty(InlineData.Data))
 		        {
 			        return Convert.FromBase64String(InlineData.Data);

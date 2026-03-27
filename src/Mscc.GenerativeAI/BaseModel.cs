@@ -332,7 +332,7 @@ namespace Mscc.GenerativeAI
             {
                 url = Regex.Replace(url, @"\{(?<name>.*?)\}",
                     match => replacements.TryGetValue(match.Groups["name"].Value, out var value) ? value : "");
-            } while (url.Contains("{"));
+            } while (url.Contains("{", StringComparison.OrdinalIgnoreCase));
 
             return url;
 
