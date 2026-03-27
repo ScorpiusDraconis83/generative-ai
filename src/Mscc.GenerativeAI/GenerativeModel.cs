@@ -1308,7 +1308,11 @@ namespace Mscc.GenerativeAI
                         continue;
 
                     var item = JsonSerializer.Deserialize<GenerateContentResponse>(
+#if NET7_0_OR_GREATER
+                        data.AsSpan("data:".Length).Trim(), ReadOptions);
+#else
                         data.Substring("data:".Length).Trim(), ReadOptions);
+#endif
                     if (cancellationToken.IsCancellationRequested)
                         yield break;
                     yield return item;
