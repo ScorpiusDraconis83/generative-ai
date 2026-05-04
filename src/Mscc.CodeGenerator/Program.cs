@@ -17,7 +17,16 @@ namespace Mscc.CodeGenerator
 				return;
 			}
 
-			string schemaFilePath = args[0];
+			string unsafePath = args[0];
+			string schemaFilePath = Path.GetFullPath(unsafePath);
+			string basePath = Directory.GetCurrentDirectory();
+
+			if (!schemaFilePath.StartsWith(basePath, StringComparison.OrdinalIgnoreCase))
+			{
+				Console.WriteLine($"Error: Input file path '{unsafePath}' is outside the current working directory.");
+				return;
+			}
+			
 			if (!File.Exists(schemaFilePath))
 			{
 				Console.WriteLine($"File not found: {schemaFilePath}");
