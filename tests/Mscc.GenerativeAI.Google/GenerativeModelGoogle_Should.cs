@@ -15,22 +15,22 @@ namespace Test.Mscc.GenerativeAI.Google
         private readonly string _model = Model.Gemini25Pro;
 
         [Fact]
-        public void Initiate()
+        public async Task Initiate()
         {
             // Arrange
             // Act
-            var vertex = new GenerativeModelGoogle();
+            var vertex = await GenerativeModelGoogle.CreateAsync();
 
             // Assert
             vertex.ShouldNotBeNull();
         }
 
         [Fact]
-        public void Initiate_Static_OAuth()
+        public async Task Initiate_Static_OAuth()
         {
             // Arrange
             // Act
-            GenerativeModelGoogle vertex = GenerativeModelGoogle.CreateInstance();
+            GenerativeModelGoogle vertex = await GenerativeModelGoogle.CreateAsync();
 
             // Assert
             vertex.ShouldNotBeNull();
@@ -50,15 +50,13 @@ namespace Test.Mscc.GenerativeAI.Google
         }
 
         [Fact]
-        public void Initiate_With_OAuth()
+        public async Task Initiate_With_OAuth()
         {
             // Arrange
             // Act
-            var vertex = new GenerativeModelGoogle()
-            {
-                ProjectId = fixture.ProjectId, 
-                Region = fixture.Region
-            };
+            var vertex = await GenerativeModelGoogle.CreateAsync();
+            vertex.ProjectId = fixture.ProjectId;
+            vertex.Region = fixture.Region;
 
             // Assert
             vertex.ShouldNotBeNull();
@@ -77,17 +75,15 @@ namespace Test.Mscc.GenerativeAI.Google
         }
 
         [Fact]
-        public void Initiate_Default_Model()
+        public async Task Initiate_Default_Model()
         {
             // Arrange
-            var vertex = new GenerativeModelGoogle()
-            {
-                ProjectId = fixture.ProjectId, 
-                Region = fixture.Region
-            };
+            var vertex = await GenerativeModelGoogle.CreateAsync();
+            vertex.ProjectId = fixture.ProjectId;
+            vertex.Region = fixture.Region;
             
             // Act
-            var model = vertex.CreateModel();
+            var model = await vertex.CreateModelAsync();
 
             // Assert
             model.ShouldNotBeNull();
@@ -97,17 +93,15 @@ namespace Test.Mscc.GenerativeAI.Google
         [Theory]
         [InlineData(Model.Gemini25Pro)]
         [InlineData(Model.Gemini20Pro)]
-        public void Initiate_Model(string expected)
+        public async Task Initiate_Model(string expected)
         {
             // Arrange
-            var vertex = new GenerativeModelGoogle()
-            {
-                ProjectId = fixture.ProjectId, 
-                Region = fixture.Region
-            };
+            var vertex = await GenerativeModelGoogle.CreateAsync();
+            vertex.ProjectId = fixture.ProjectId;
+            vertex.Region = fixture.Region;
             
             // Act
-            var model = vertex.CreateModel(expected);
+            var model = await vertex.CreateModelAsync(expected);
 
             // Assert
             model.ShouldNotBeNull();
@@ -118,12 +112,10 @@ namespace Test.Mscc.GenerativeAI.Google
         public async Task List_Models()
         {
             // Arrange
-            var vertex = new GenerativeModelGoogle()
-            {
-                ProjectId = fixture.ProjectId, 
-                Region = fixture.Region
-            };
-            var model = vertex.CreateModel(model: _model);
+            var vertex = await GenerativeModelGoogle.CreateAsync();
+            vertex.ProjectId = fixture.ProjectId;
+            vertex.Region = fixture.Region;
+            var model = await vertex.CreateModelAsync(model: _model);
 
             // Act & Assert
             await Assert.ThrowsAsync<NotSupportedException>(() => model.ListModels());
@@ -136,7 +128,7 @@ namespace Test.Mscc.GenerativeAI.Google
             var vertex = GenerativeModelGoogle.CreateInstance(fixture.ServiceAccount, passphrase:fixture.Passphrase)
                 .WithProjectId(fixture.ProjectId)
                 .WithRegion(fixture.Region);
-            var model = vertex.CreateModel(model: _model);
+            var model = await vertex.CreateModelAsync(model: _model);
 
             // Act & Assert
             await Assert.ThrowsAsync<NotSupportedException>(() => model.ListModels());

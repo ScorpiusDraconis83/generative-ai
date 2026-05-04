@@ -15,9 +15,9 @@ namespace Mscc.GenerativeAI.Types
         private readonly WebSocket _webSocket;
         private readonly IHttpClientFactory? _httpClientFactory;
         private readonly bool _isVertexAI;
-        private int _isDisposed = 0; // 0 = false, 1 = true. Used with Interlocked.
+        private int _isDisposed; // 0 = false, 1 = true. Used with Interlocked.
 
-        public AsyncSession(WebSocket webSocket, IHttpClientFactory? httpClientFactory, bool isVertexAI)
+		public AsyncSession(WebSocket webSocket, IHttpClientFactory? httpClientFactory, bool isVertexAI)
         {
             _webSocket = webSocket ?? throw new ArgumentNullException(nameof(webSocket));
             _httpClientFactory = httpClientFactory;

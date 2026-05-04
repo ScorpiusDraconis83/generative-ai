@@ -185,41 +185,41 @@ namespace Mscc.GenerativeAI
         /// </summary>
         internal override bool IsVertexAI => _useVertexAi;
 
-        /// <summary>
-        /// You can enable Server Sent Events (SSE) for gemini-1.0-pro
-        /// </summary>
-        /// <remarks>
-        /// See <a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events">Server-sent Events</a>
-        /// </remarks>
-        public bool UseServerSentEventsFormat { get; set; } = false;
+		/// <summary>
+		/// You can enable Server Sent Events (SSE) for gemini-1.0-pro
+		/// </summary>
+		/// <remarks>
+		/// See <a href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events">Server-sent Events</a>
+		/// </remarks>
+		public bool UseServerSentEventsFormat { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to activate JSON Mode, which instructs the model to generate a JSON object.
-        /// </summary>
-        public bool UseJsonMode { get; set; } = false;
+		/// <summary>
+		/// Gets or sets a value indicating whether to activate JSON Mode, which instructs the model to generate a JSON object.
+		/// </summary>
+		public bool UseJsonMode { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to activate grounding with Google Search, which connects the model to real-time information.
-        /// </summary>
-        public bool UseGrounding { get; set; } = false;
+		/// <summary>
+		/// Gets or sets a value indicating whether to activate grounding with Google Search, which connects the model to real-time information.
+		/// </summary>
+		public bool UseGrounding { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to activate the Google Search tool, allowing the model to query Google Search.
-        /// </summary>
-        public bool UseGoogleSearch { get; set; } = false;
+		/// <summary>
+		/// Gets or sets a value indicating whether to activate the Google Search tool, allowing the model to query Google Search.
+		/// </summary>
+		public bool UseGoogleSearch { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to activate automatic code execution, allowing the model to run code.
-        /// </summary>
-        public bool UseCodeExecution { get; set; } = false;
+		/// <summary>
+		/// Gets or sets a value indicating whether to activate automatic code execution, allowing the model to run code.
+		/// </summary>
+		public bool UseCodeExecution { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether to enable a realtime stream using the Multimodal Live API.
-        /// </summary>
-        public bool UseRealtime { get; set; } = false;
+		/// <summary>
+		/// Gets or sets a value indicating whether to enable a realtime stream using the Multimodal Live API.
+		/// </summary>
+		public bool UseRealtime { get; set; }
 
-        /// <inheritdoc/>
-        protected override void ThrowIfUnsupportedRequest<T>(T request)
+		/// <inheritdoc/>
+		protected override void ThrowIfUnsupportedRequest<T>(T request)
         {
             if (request is CopyModelRequest && !_useVertexAi)
                 throw new NotSupportedException("Copying a model is not supported with Google AI");

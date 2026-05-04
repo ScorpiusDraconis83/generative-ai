@@ -5,9 +5,9 @@ namespace Mscc.GenerativeAI.Types
     /// </summary>
     public partial class StreamOptions
     {
-        /// <summary>
-        /// Optional. If set, include usage statistics in the response.
-        /// </summary>
-        public bool IncludeUsage { get; set; } = false;
-    }
+		/// <summary>
+		/// Optional. If set, include usage statistics in the response.
+		/// </summary>
+		public bool IncludeUsage { get; set; }
+	}
 }

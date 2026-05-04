@@ -18,21 +18,18 @@ namespace Mscc.GenerativeAI.Google
     // Reference: https://cloud.google.com/docs/authentication 
     public class GenerativeModelGoogle
     {
-        private readonly List<string> _scopes =
+        private static readonly IReadOnlyList<string> s_scopes =
         [
             "https://www.googleapis.com/auth/cloud-platform",
             "https://www.googleapis.com/auth/generative-language.retriever",
             "https://www.googleapis.com/auth/generative-language.tuning"
         ];
 
-        private string _clientFile = "client_secret.json";
-        private string _tokenFile = "token.json";
-        private string _certificateFile = "key.p12";
-        private string _certificatePassphrase;
+        private const string DefaultClientFile = "client_secret.json";
+        private const string DefaultTokenFile = "token.json";
+        private const string DefaultCertificateFile = "key.p12";
 
-        private gauth.ICredential _credential;
-        // private string ClientId;
-        // private string ClientSecret;
+        private readonly gauth.ICredential _credential;
 
         /// <summary>
         /// Gets or sets the project ID for the service.
@@ -47,116 +44,99 @@ namespace Mscc.GenerativeAI.Google
         private Tools Tools { get; set; }
 
         /// <summary>
-        /// Constructor via application default credentials (ADC) or user credentials using client ID and secret.
+        /// Private constructor used by async factory methods. Stores the pre-resolved credential.
         /// </summary>
-        public GenerativeModelGoogle()
+        private GenerativeModelGoogle(gauth.ICredential credential)
         {
-            var clientSecrets = getClientSecrets();
-            _credential = clientSecrets == null
-                ? GetApplicationDefaultCredentials()
-                : gauth.GoogleWebAuthorizationBroker.AuthorizeAsync(
-                    clientSecrets,
-                    _scopes,
-                    "user",
-                    CancellationToken.None,
-                    new FileDataStore(_tokenFile)).Result;
+            _credential = credential;
         }
 
         /// <summary>
-        /// Constructor via service account using its email address.
+        /// Private constructor for service account credentials — fully synchronous, no async work required.
         /// </summary>
-        /// <param name="serviceAccountEmail"></param>
-        /// <param name="certificate"></param>
-        /// <param name="passphrase"></param>
-        private GenerativeModelGoogle(string serviceAccountEmail, string? certificate = null, string? passphrase = null)
+        private GenerativeModelGoogle(string serviceAccountEmail, string? certificate, string? passphrase)
         {
             var x509Certificate = new X509Certificate2(
-                certificate ?? _certificateFile,
-                passphrase ?? _certificatePassphrase,
+                certificate ?? DefaultCertificateFile,
+                passphrase,
                 X509KeyStorageFlags.Exportable);
             _credential = new gauth.ServiceAccountCredential(
-                new gauth.ServiceAccountCredential.Initializer(serviceAccountEmail) { Scopes = _scopes }
+                new gauth.ServiceAccountCredential.Initializer(serviceAccountEmail) { Scopes = s_scopes }
                     .FromCertificate(x509Certificate));
         }
 
         /// <summary>
-        /// 
+        /// Creates an instance using application default credentials (ADC) or user credentials
+        /// from a local <c>client_secret.json</c> file.
         /// </summary>
-        /// <param name="serviceAccountEmail"></param>
-        /// <param name="certificate"></param>
-        /// <param name="passphrase"></param>
-        /// <returns></returns>
-        public static GenerativeModelGoogle CreateInstance(string? serviceAccountEmail = null,
+        /// <param name="cancellationToken">Optional. Cancellation token.</param>
+        /// <returns>A fully initialised <see cref="GenerativeModelGoogle"/> instance.</returns>
+        public static async Task<GenerativeModelGoogle> CreateAsync(CancellationToken cancellationToken = default)
+        {
+            var clientSecrets = await GetClientSecretsAsync(DefaultClientFile).ConfigureAwait(false);
+            gauth.ICredential credential = clientSecrets == null
+                ? await GetApplicationDefaultCredentialsAsync().ConfigureAwait(false)
+                : await gauth.GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    clientSecrets,
+                    s_scopes,
+                    "user",
+                    cancellationToken,
+                    new FileDataStore(DefaultTokenFile)).ConfigureAwait(false);
+            return new GenerativeModelGoogle(credential);
+        }
+
+        /// <summary>
+        /// Creates an instance using a service account certificate.
+        /// </summary>
+        /// <param name="serviceAccountEmail">Service account email address.</param>
+        /// <param name="certificate">Optional. Path to the .p12 certificate file.</param>
+        /// <param name="passphrase">Optional. Certificate passphrase.</param>
+        /// <returns>A fully initialised <see cref="GenerativeModelGoogle"/> instance.</returns>
+        public static GenerativeModelGoogle CreateInstance(string serviceAccountEmail,
             string? certificate = null,
             string? passphrase = null)
-        {
-            return serviceAccountEmail == null
-                ? new GenerativeModelGoogle()
-                : new GenerativeModelGoogle(serviceAccountEmail, certificate, passphrase);
-        }
+            => new GenerativeModelGoogle(serviceAccountEmail, certificate, passphrase);
 
         /// <summary>
         /// Returns an instance of the specified model.
         /// </summary>
         /// <param name="model">The model name, ie. "gemini-pro"</param>
         /// <param name="requestOptions">Optional. Options for the request.</param>
+        /// <param name="cancellationToken">Optional. Cancellation token.</param>
         /// <returns>The model.</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        /// <exception cref="ArgumentNullException"></exception>
-        public GenerativeModel CreateModel(string model = Model.Gemini25Pro,
-            RequestOptions? requestOptions = null)
+        public async Task<GenerativeModel> CreateModelAsync(string model = Model.Gemini25Pro,
+            RequestOptions? requestOptions = null,
+            CancellationToken cancellationToken = default)
         {
             if (ProjectId == null) throw new ArgumentNullException(nameof(ProjectId));
             if (Region == null) throw new ArgumentNullException(nameof(Region));
 
-            var accessToken = _credential.GetAccessTokenForRequestAsync().Result; // _credential.Token.AccessToken
+            var accessToken = await _credential.GetAccessTokenForRequestAsync(cancellationToken: cancellationToken)
+                .ConfigureAwait(false);
             var vertex = new VertexAI(projectId: ProjectId, region: Region, accessToken: accessToken, requestOptions: requestOptions);
-            var generativeModel = vertex.GenerativeModel(model, GenerationConfig, SafetySettings);
-            return generativeModel;
+            return vertex.GenerativeModel(model, GenerationConfig, SafetySettings);
         }
 
-        private gauth.ClientSecrets? getClientSecrets()
+        private static async Task<gauth.ClientSecrets?> GetClientSecretsAsync(string clientFile)
         {
-            // _credentials = GoogleCredential.GetApplicationDefaultAsync();
+            if (!File.Exists(clientFile))
+                return null;
 
-            // if (File.Exists(_tokenFile))
-            // {
-            //     _credentials = await GoogleCredential.FromFileAsync(_tokenFile);
-            // }
-            // if (!_credentials.)
-            gauth.ClientSecrets clientSecrets = null;
-
-            // if (!string.IsNullOrEmpty(ClientId))
-            // {
-            //     clientSecrets = new ClientSecrets { ClientId = ClientId, ClientSecret = ClientSecret };
-            // }
-
-            if (File.Exists(_clientFile))
-            {
-                using (var stream = new FileStream(_clientFile, FileMode.Open, FileAccess.Read))
-                {
-                    // clientSecrets = GoogleClientSecrets.Load(stream).Secrets;
-                    clientSecrets = gauth.GoogleClientSecrets.FromStreamAsync(stream).Result.Secrets;
-                }
-            }
-
-            return clientSecrets;
+            using var stream = new FileStream(clientFile, FileMode.Open, FileAccess.Read,
+                FileShare.Read, bufferSize: 4096, useAsync: true);
+            return (await gauth.GoogleClientSecrets.FromStreamAsync(stream).ConfigureAwait(false)).Secrets;
         }
 
-        private gauth.GoogleCredential GetApplicationDefaultCredentials()
+        private static async Task<gauth.GoogleCredential> GetApplicationDefaultCredentialsAsync()
         {
             try
             {
-                var credentialTask = gauth.GoogleCredential.GetApplicationDefaultAsync();
-                gauth.GoogleCredential credential = credentialTask.GetAwaiter().GetResult();
+                var credential = await gauth.GoogleCredential.GetApplicationDefaultAsync().ConfigureAwait(false);
 
                 if (credential.IsCreateScopedRequired)
-                {
-                    foreach (var scope in _scopes)
-                    {
+                    foreach (var scope in s_scopes)
                         credential = credential.CreateScoped(scope);
-                    }
-                }
 
                 return credential;
             }
@@ -167,31 +147,5 @@ namespace Mscc.GenerativeAI.Google
                     e);
             }
         }
-
-        // private ICredential LoadCredentials()
-        // {
-        //     ICredential credentials = null;
-        //     if (File.Exists(_tokenFile))
-        //     {
-        //         using (var stream = new FileStream(_tokenFile, FileMode.Open, FileAccess.Read))
-        //         {
-        //             credentials = GoogleCredential.FromStreamAsync(stream, new CancellationToken()).Result
-        //                 .UnderlyingCredential;
-        //         }
-        //     }
-        //
-        //     if (credentials == null || credentials.)
-        //     {
-        //         var clientSecrets = getClientSecrets();
-        //         var flow = new GoogleAuthorizationCodeFlow(
-        //             new GoogleAuthorizationCodeFlow.Initializer()
-        //             {
-        //                 ClientSecrets = clientSecrets,
-        //             });
-        //         flow.
-        //     }
-        //
-        //     return credentials;
-        // }
     }
 }
