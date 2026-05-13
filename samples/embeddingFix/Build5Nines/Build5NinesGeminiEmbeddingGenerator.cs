@@ -7,7 +7,8 @@ namespace EmbeddingFix.Build5Nines;
 public class Build5NinesGeminiEmbeddingGenerator : IBatchEmbeddingsGenerator
 {
 
-    private const string ApiKey = "AIzaSyB3jq7xZWyxdsFs0GWpUlwdUPJtIfiT1kU";
+    private string? ApiKey => Environment.GetEnvironmentVariable("GEMINI_API_KEY") ?? 
+                               Environment.GetEnvironmentVariable("GOOGLE_API_KEY");
     private const string Model = "gemini-embedding-001";
 
     public async Task<float[]> GenerateEmbeddingsAsync(string text)
