@@ -17,9 +17,14 @@ namespace Mscc.CodeGenerator
 				return;
 			}
 
+			string basePath = Path.GetFullPath(Directory.GetCurrentDirectory());
+			if (!basePath.EndsWith(Path.DirectorySeparatorChar))
+			{
+				basePath += Path.DirectorySeparatorChar;
+			}
+
 			string unsafePath = args[0];
 			string schemaFilePath = Path.GetFullPath(unsafePath);
-			string basePath = Directory.GetCurrentDirectory();
 
 			if (!schemaFilePath.StartsWith(basePath, StringComparison.OrdinalIgnoreCase))
 			{
@@ -33,7 +38,15 @@ namespace Mscc.CodeGenerator
 				return;
 			}
 
-			string outputDirectory = args[1];
+			string unsafeOutputDir = args[1];
+			string outputDirectory = Path.GetFullPath(unsafeOutputDir);
+
+			if (!outputDirectory.StartsWith(basePath, StringComparison.OrdinalIgnoreCase))
+			{
+				Console.WriteLine($"Error: Output directory '{unsafeOutputDir}' is outside the current working directory.");
+				return;
+			}
+
 			if (!Directory.Exists(outputDirectory))
 			{
 				Directory.CreateDirectory(outputDirectory);
@@ -708,7 +721,7 @@ namespace Mscc.CodeGenerator
 			if (string.IsNullOrEmpty(s))
 				return s;
 
-			if (s.StartsWith('_'))
+			if (s.StartsWith('_'.ToString(), StringComparison.OrdinalIgnoreCase))
 				return s;
 
 			if (!string.IsNullOrEmpty(_name))
@@ -728,11 +741,11 @@ namespace Mscc.CodeGenerator
 
 			var pascalCase = string.Concat(s.Substring(0, 1).ToUpperInvariant(), s.AsSpan(1));
 			if (containingClassName == null && enumMember)
-				pascalCase = s.Substring(0, 1).ToUpperInvariant() + s.Substring(1).ToLowerInvariant();
+				pascalCase = string.Concat(s.Substring(0, 1).ToLowerInvariant(), s.AsSpan(1));
 			if (s.IndexOfAny(['_', '-']) != -1)
 			{
 				pascalCase = string.Concat(s.Split(['_', '-'], StringSplitOptions.RemoveEmptyEntries)
-					.Select(word => word.Substring(0, 1).ToUpperInvariant() + word.Substring(1).ToLowerInvariant()));
+					.Select(word => string.Concat(word.Substring(0, 1).ToUpperInvariant(), word.AsSpan(1))));
 			}
 
 			if (pascalCase == containingClassName)
